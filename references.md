@@ -13,6 +13,7 @@ https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML_sections_and_
 - [Flex box Froggy - Game](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 - Book: Definitive Guide (Eric Meyer, Estelle Weyl)
 - [A guide to flexbox - CSS Tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+- [RWD Patterns](https://developers.google.com/web/fundamentals/design-and-ux/responsive/patterns)
 
 ## Workshops App
 - [Workshops App Server](http://workshops-server.herokuapp.com/)
