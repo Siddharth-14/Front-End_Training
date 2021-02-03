@@ -11,7 +11,8 @@
         <link rel="stylesheet" href="css/utils.css">
         <link rel="stylesheet" href="css/app.css">
         <link rel="stylesheet" href="css/nav.css">
-        <link rel="stylesheet" href="css/workshops-list.css">
+        <link rel="stylesheet" href="css/workshop-details.css">
+        <link rel="stylesheet" href="css/workshop-details-print.css" media="print">
 
         <title>React - Workshop Details | Workshops App</title>
     </head>
@@ -94,19 +95,49 @@
                     </div>
                 </div>
             </section>
-            <section class="container">
+            <section class="container" id="form-add-new-session">
                 <header>
                     <div class="d-flex justify-content-space-between my-5">
                         <h2>Details of new session</h1>
                     </div>
                     <hr />
+                    <div>
+                        All fields marked with <span class="required-indicator">*</span> are required.
+                    </div>
                     <form>
-                        <div class="form-group">
-                            <label for="sequenceId" class="control-label">Sequence ID</label>
-                            <div>
+                        <div class="form-group my-3">
+                            <label for="sequenceId" class="control-label">
+                                Sequence ID
+                                <span class="required-indicator">*</span>
+                            </label>
+                            <div class="form-control-container">
                                 <input type="text" name="sequenceId" id="sequenceId" class="form-control" aria-describedby="sequenceid-help" />
-                                <div id="sequenceid-help">
+                                <div id="sequenceid-help" class="form-control-help my-1">
                                     Sequence ID is the serial number of the session in the workshop
+                                </div>
+                                <div class="form-control-error">
+                                    This field is required.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group my-3">
+                            <label for="level" class="control-label">
+                                Level
+                                <span class="required-indicator">*</span>
+                            </label>
+                            <div class="form-control-container">
+                                <select name="level" id="level" class="form-control" aria-describedby="level-help">
+                                    <option value="">-- Select the level of the session --</option>
+                                    <option value="basic">Basic</option>
+                                    <option value="intermediate">Intermediate</option>
+                                    <option value="advanced">Advanced</option>
+                                </select>
+
+                                <div id="level-help" class="form-control-help my-1">
+                                    The level of the session.
+                                </div>
+                                <div class="form-control-error">
+                                    This field is required.
                                 </div>
                             </div>
                         </div>
