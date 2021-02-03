@@ -19,6 +19,7 @@ https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML_sections_and_
 - [Workshops App](https://vw-angular.s3.ap-south-1.amazonaws.com/index.html)
 
 ## Miscellaneous
+- [Using Git and Bitbucket](https://support.atlassian.com/bitbucket-cloud/docs/clone-and-make-a-change-on-a-new-branch/)
 - [Apache Web Server - Quick and dirty .htaccess for small personal sites](https://dev.to/thejessleigh/quick-and-dirty-htaccess-for-small-personal-sites-2cfn)
 
 ## Browser support
