@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box
+        }
+
+        .row {
+            overflow: auto;
+        }
+
+        .col {
+            float: left;
+            width: 22.5%;
+            margin: 1.55557%;
+        }
+
+        .col:nth-child(4n+1) {
+            margin-left: 0;
+        }
+
+        .col:nth-child(4n) {
+            margin-right: 0;
+        }
+
+        @media all and (max-width:992px) {
+            .col {
+                width: 47.5%;
+                margin: 2.5%;
+            }
+
+            .col:nth-child(2n+1) {
+                margin-left: 0;
+            }
+
+            .col:nth-child(2n) {
+                margin-right: 0;
+            }
+        }
+
+        /*override styles for tablets*/
+
+        @media all and (max-width:640px) {
+            .col {
+                width: 100%;
+                margin-left: 0%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus nesciunt, ratione omnis, porro alias consequatur veniam
+            rem iusto, magni quod cum sint suscipit architecto nostrum aspernatur perferendis repellendus quibusdam dolore.
+        </div>
+        <div class="col">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium velit laudantium maiores accusamus suscipit, nisi neque
+            harum ipsam cum, veniam obcaecati cupiditate dolorem mollitia officia ab at. Exercitationem, commodi illo.
+        </div>
+        <div class="col">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium velit laudantium maiores accusamus suscipit, nisi neque
+            harum ipsam cum, veniam obcaecati cupiditate dolorem mollitia officia ab at. Exercitationem, commodi illo.
+        </div>
+        <div class="col">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium velit laudantium maiores accusamus suscipit, nisi neque
+            harum ipsam cum, veniam obcaecati cupiditate dolorem mollitia officia ab at. Exercitationem, commodi illo.
+        </div>
+    </div>
+</body>
+
+</html>

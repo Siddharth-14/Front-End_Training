@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /*
+            1.inline style wins
+            2.more specific wins like using id or class
+            3.attributes wins
+            4.Last style wins
+            no difference between internal style and external styles. only order matters
+        */
+        #div-1{
+            color: crimson;
+        }
+        /*only same attributes clash*/
+        div {
+            color:olive;
+        }
+        #div-2{
+            color:gold;
+        }
+        .x{
+            color:olive;
+        }
+        div{
+            color:red;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--inline style have highest specificity(importance)-->
+    <div id="div-1">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non inventore minima hic animi ullam, error reprehenderit excepturi
+        corporis velit autem veritatis, provident ipsa dolorem at reiciendis aspernatur nam, quod aliquam!
+    </div>
+    <div id="div-2" class="x">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum voluptatem maiores commodi beatae doloremque nam suscipit iure at quo nobis veritatis eveniet culpa quis delectus temporibus officiis quae, esse soluta!
+    </div>
+    <div class="x">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis sunt repellendus saepe atque necessitatibus minima et numquam mollitia, odio earum consequuntur doloremque, voluptatum ea eos quaerat nemo deserunt excepturi voluptas!
+    </div>
+</body>
+
+</html>

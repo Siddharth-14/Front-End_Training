@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Structural pseudo code</title>
+    <style>
+        /* " " space is any p under div can be even nested.">" immediate decendent."" no space means contains a that class."," used to concatinate multiple selectors*/
+        div>p {
+            color: crimson
+        }
+        .x{
+            font-weight: bold
+        }
+        p.x{
+            font-style: italic
+        }
+        div p.x{
+            text-decoration: line-through;
+        }
+
+        p,div{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed repellat quis blanditiis animi aut, necessitatibus repudiandae
+        odio magnam iusto iure nobis cumque magni est reiciendis voluptatem tenetur veritatis ad neque.
+    </p>
+    <!--cant have div in p but p can be in div-->
+    <div>
+        div - Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit totam in blanditiis libero asperiores molestiae earum
+        pariatur numquam voluptates adipisci temporibus qui labore similique repellendus delectus tempore ducimus, voluptate
+        vitae.
+        <p class="x">
+            para2 - Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab ut odio, illum quo cupiditate suscipit. Eos odit iste
+            minus eaque aliquam beatae? Est nemo harum sequi consequatur voluptatem amet a.
+        </p>
+        <section>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, placeat quas? Ab, sequi voluptate molestiae sint, asperiores nam incidunt fuga tenetur consequatur optio dicta tempora obcaecati, suscipit perferendis impedit possimus.
+            </p>
+        </section>
+    </div>
+    <div>
+        div - Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit totam in blanditiis libero asperiores molestiae earum
+        pariatur numquam voluptates adipisci temporibus qui labore similique repellendus delectus tempore ducimus, voluptate
+        vitae.
+        <p>
+            para2 - Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab ut odio, illum quo cupiditate suscipit. Eos odit iste
+            minus eaque aliquam beatae? Est nemo harum sequi consequatur voluptatem amet a.
+        </p>
+    </div>
+</body>
+
+</html>

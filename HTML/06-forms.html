@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Forms</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        :focus {
+            outline-color: lightblue;
+            outline-style: dashed;
+            outline-width: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- input can be out of form but data cant be sent to the backend -->
+    <!-- action makes a request to that page -->
+    <!-- name of the input helps create a query string parameter (?fname=John&lname=Doe) -->
+    <!-- POST will not display info on URL, GET will display all info on the URL -->
+    <!--enctype="multipart/form-data" used when submitting files-->
+    <form action="07-sucess.html" method="POST" novalidate enctype="multipart/form-data">
+        <!--label to associate an input-->
+        <label for="fname">First Name:</label>
+        <!--text to give a simple text field, value gives a default value-->
+        <!--autofocus gives default facus-->
+        <input name="fname" type="text" id="fname" value="John" autofocus tabindex="-1" required/>
+        <br>
+        <label for="lname">Last Name:</label>
+        <!--autocomplete gives previously typed data as a recommendation-->
+        <input name="lname" autocomplete="off" type="text" id="lname" />
+        <br>
+        <label for="pass">Password</label>
+        <!--password to make the text into a password format like '.'-->
+        <input type="password" name="pass" id="pass" />
+        <br>
+        <!--use same name for all radio button which are grouped together, put value to send a value while submitting-->
+        <input type="radio" name="base_loaction" value="blr" checked/>Bangalore
+        <input type="radio" name="base_loaction" value="gur" />Gurgaon
+        <input type="radio" name="base_loaction" value="nd" />Noida
+        <input type="radio" name="base_loaction" value="mum" />Mumbai
+        <br>
+        <!--use different name for all radio button which are grouped together, put value to send a value while submitting-->
+        <fieldset>
+            <legend>Base Location</legend>
+            <label>
+                <input type="checkbox" name="base_loaction" value="blr" checked />Bangalore
+            </label>
+            <label>
+                <input type="checkbox" name="base_loaction" value="gur" />Gurgaon
+            </label>
+            <label>
+                <input type="checkbox" name="base_loaction" value="nd" />Noida
+            </label>
+            <label>
+                <input type="checkbox" name="base_loaction" value="mum" />Mumbai
+            </label>
+        </fieldset>
+        <br>
+
+        <label for="birthday">Birthday:</label>
+        <input type="date" id="birthday" name="birthday" value="2018-07-22" min="2018-01-01" max="2021-01-23" step="1">
+        <br>
+
+        <label for="gsearch">Search Google:</label>
+        <input type="search" id="gsearch" name="gsearch">
+        <br>
+
+        <label for="cars">Choose a car:</label>
+        <select name="cars" id="cars" multiple>
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="mercedes" selected>Mercedes</option>
+            <option value="audi">Audi</option>
+        </select>
+        <br>
+
+        <label for="emailid">Email:</label>
+        <input type="email" id="emailid" name="emailid" placeholder="xyz@gmail.com" pattern=".+@gmail.com" size="30" required>
+        <br>
+
+        <label for="color">Favorite color</label>
+        <input type="color" name="color" id="color" />
+        <br>
+
+        <!--create a data list for multiple uses-->
+        <datalist id="cities">
+            <option>Chennai</option>
+            <option>Mumbai</option>
+        </datalist>
+        <!--name is important to submit-->
+        <label for="cities_list">Base location:</label>
+        <input list="cities" id="cities_list" name="citites_list"/>
+        <!--More than one field need button to submit-->
+        <!--use button or input type="Submit"-->
+        <button type="button">Submit</button>
+        <input type="reset" />
+        <input type="submit" formnovalidate/>
+    </form>
+</body>
+
+</html>
