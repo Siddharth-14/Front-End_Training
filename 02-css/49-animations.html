@@ -19,7 +19,7 @@
 
             .move {
                 animation-name: move, pulse;
-                animation-duration: 3s, 2s;
+                animation-duration: 3s, 1s;
                 animation-delay: 2s, 0s;
                 animation-timing-function: linear, ease-in-out;
                 animation-iteration-count: 2, infinite; /*infinite*/;
@@ -111,6 +111,28 @@
                     top: 0px;
                 }
             }
+            
+            @keyframes move2 {
+                0% {
+                    transform: translate( 0, 0 )
+                }
+
+                25% {
+                    transform: translate( calc( 100vw - 100px ), 0 )
+                }
+
+                50% {
+                    transform: translate( calc( 100vw - 100px ), calc( 100vw - 100px ) );
+                }
+
+                75% {
+                    transform: translate( 0, calc( 100vw - 100px ) );
+                }
+
+                100% {
+                    transform: translate( 0, 0 );
+                }
+            }
 
             @keyframes pulse {
                 0% {
@@ -118,7 +140,7 @@
                 }
 
                 50% {
-                    transform: scale( 1.2, 1.2 );
+                    transform: scale( 1.2 );
                 }
 
                 100% {
