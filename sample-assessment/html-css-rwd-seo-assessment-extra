@@ -1,0 +1,132 @@
+------------------------------------------------------------------------------------------------------------------------
+LEVEL: EASY
+------------------------------------------------------------------------------------------------------------------------
+
+
+
+------------------------------------------------------------------------------------------------------------------------
+LEVEL: MEDIUM
+------------------------------------------------------------------------------------------------------------------------
+
+MEDIUM
+1.	What are the two means by which form data can be submitted to the server in an HTTP request?
+a)	As query string parameters
+b)	As part of the request body
+c)	As part of the request headers
+d)	As part of cookies
+
+MEDIUM
+2.	We would like to check in JavaScript if canvas is supported or not and take appropriate action. Fill in the blank with an appropriate condition. Assume the page includes Modernizr.
+
+if( ______________ ) {
+...
+   } else {
+...    
+   }
+
+MEDIUM
+3.	Give a definition for the clearfix class?
+
+MEDIUM
+4.	Which of these is NOT a valid font file format?
+a)	ttf
+b)	eot
+c)	ogg
+d)	woff
+
+------------------------------------------------------------------------------------------------------------------------
+LEVEL: DIFFICULT
+------------------------------------------------------------------------------------------------------------------------
+
+DIFFICULT
+5.	You are setting up a background image of size 300px x 200px, and would like to move it to the left by 150px and up by 100px. What value for background position would you give?
+a)	150px 100px
+b)	150px -100px 
+c)	-150px 100px 
+d)	-150px -100px
+
+DIFFICULT
+6.	You would like to provide different styles for each state of links. Which of these CSS rules applied in order would help then style correctly?
+a)	a { ... }, a:visited { ... }, a:hover { ... }, a:active { ... }
+b)	a:visited { ... }, a:active { ... }, a:hover { ... }, a { ... }
+c)	a { ... }, a:visited { ... }, a:active { ... }, a:hover { ... }
+d)	a:visited { ... }, a:hover { ... }, a:active { ... }, a { ... }
+
+DIFFICULT
+7.	You would like to start off every web page you author with a default set of styles for common elements, such that useful styles are preserved (example, list-style-type for list items). There are no special requirements otherwise. What would be your preferred approach? (choose the most appropriate one)
+a)	Use a reset stylesheet
+b)	Use a normalize stylesheet
+c)	Author and use a custom stylesheet
+d)	Provide inline styles for elements where browser styles need to be overridden.
+
+DIFFICULT
+8.	Given the following styles, what is the color of the content within the para?
+<head>
+<style>
+p { color: green; }
+p { color: goldenrod; }
+</style>
+<style>
+p { color: orange; }
+</style>
+	</head>
+	<body>
+		<p style="color: initial;">Some text</p>
+	</body>
+a)	green
+b)	goldenrod
+c)	orange
+d)	black
+
+DIFFICULT
+9.	Given the following styles, what is the color of the paragraph (with class main, and id page) that lies within a div?
+<style>
+        div > p.main {
+            color: red;
+        }
+
+        p.main#page {
+            color: green;
+        }
+
+        div > p#page {
+            color: blue;
+        }
+</style>
+a)	red
+b)	green
+c)	blue
+d)	black
+
+DIFFICULT
+10.	Given the following styles for a div that exists within the body, what is the width of the div when the body is 1280px wide?
+div {
+   	width: 80%;
+    max-width: 960px;
+    min-width: 640px;
+}
+a)	640px
+b)	960px
+c)	1024px
+d)	1280px
+
+DIFFICULT
+11.	We would like to have a 3-column layout with the 3 columns together occupying the entire width of the parent row. Fill in the blanks to achieve this result.
+<head>
+    <style>
+        .row { overflow: _________; }
+        .col { float: left; width: 30%; margin-right: ____; }
+        .col:nth-child(3n) { margin-right: ____; }
+    </style>
+</head>
+<body>
+    <div class="row">
+		<div class="col">...</div>
+		<div class="col">...</div>
+		<div class="col">...</div>
+    </div>
+</body>
+a)	visible, 3.333333%, 0
+b)	visible, 5%, 0
+c)	auto, 3.333333%, 5%
+d)	auto, 5%, 0

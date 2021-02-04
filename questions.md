@@ -8,3 +8,4 @@ https://stackoverflow.com/questions/45507970/how-can-i-change-the-color-of-a-pro
 - loading different images / background images based on screen sizes - what are the techniques?
 - forming responsive layouts using grid
 - examples / implementations using grid
+- best ways to handle warning when installing npm dependencies and transitive dependencies
