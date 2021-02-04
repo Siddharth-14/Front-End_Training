@@ -6,3 +6,4 @@ https://stackoverflow.com/questions/7372038/is-there-any-way-to-change-input-typ
 - how to change color of progress bar
 https://stackoverflow.com/questions/45507970/how-can-i-change-the-color-of-a-progress-bar-value-in-html/45508152
 - loading different images / background images based on screen sizes - what are the techniques?
+- forming responsive layouts using grid
