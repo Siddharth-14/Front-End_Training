@@ -1,4 +1,5 @@
 # Sample Readme
 
 ## Links
-- [NOtepad for sharing code](https://notepad.pw/sapient-ux)
+- [Zoom meeting](https://jigsawacademy.zoom.us/j/93436955278)
+- [Notepad for sharing code](https://notepad.pw/sapient-ux)
