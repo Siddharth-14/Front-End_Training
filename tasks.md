@@ -63,5 +63,7 @@
     - Normalize stylesheet - what is it? How is it different from reset stylesheet?
     - Fix the navigation menu for the workshops app on the top
     - Complete workshop details page
-
+- Feb 5
+    - Is there placeholder for a prompt dialog input? How do we set it if so?
+    - !== - how does that work?
     
