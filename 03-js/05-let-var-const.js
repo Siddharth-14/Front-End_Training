@@ -19,5 +19,14 @@ console.log( z );
 // z = 2; // reassignment is not allowed for const variables
 // console.log( z );
 
-const a;
-console.log( a );
+// error - missing initializer for const variable
+// const a;
+// console.log( a );
+
+// error - assignment to const variable not allowed
+z = z + 1;
+console.log( z );
+
+const PI = 3.142;
+console.log( PI * r * r );
+console.log( PI * 2 * r );
