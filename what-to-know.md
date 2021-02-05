@@ -15,25 +15,9 @@
 ## Software development
 - Git
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+## Further Learning
 - Angular, React
 - Flutter
-
-
 
 ## Backend
 - PHP
@@ -47,8 +31,6 @@
 ## Mobile Native
 - Android Studio (Java with Android SDK, Kotlin), Swift
 - Flutter (only mobile?)
-
-
 
 ## Deployment
 - Docker
