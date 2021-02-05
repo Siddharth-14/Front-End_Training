@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+        //blocking and non-blocking functions
+        //blocking- start a function and function doesnt return until it is confirmed
+        // non-blocking - start a function and return immediately. When the operation has completed it informs the caller using a callback function
+
+
+        //alert - if you want to inform the user
+        alert("Your data has been saved successfully");
+        //confirm - if you want user to take one of two action
+        const choice = confirm("Are you sure you want to leave the website?");
+
+        console.log(choice);
+        //prompt - take an input from user
+        const name = prompt('What is your name?','John');
+        console.log(name);// user input for OK and null for CANCEL
+    </script>
+    </body>
+</html>
