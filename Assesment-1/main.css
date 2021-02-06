@@ -1,0 +1,302 @@
+@font-face {
+    font-family: Robotmy;
+    src: url(Assets/font/Roboto-Regular.ttf);
+}
+
+@font-face {
+    font-family: Robotmy;
+    src: url(Assets/font/Roboto-Bold.ttf);
+    font-weight: bolder;
+}
+
+@font-face {
+    font-family: Robotmy;
+    src: url(Assets/font/Roboto-Light.ttf);
+    font-weight: lighter;
+}
+
+* {
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: Robotmy;
+}
+
+.container {
+    max-width: 1280px;
+    width: 85%;
+    margin: 0 auto;
+}
+
+.top {
+    text-align: center;
+}
+
+.container-edge {
+    max-width: 1280px;
+    text-align: center;
+}
+
+.container-form {
+    margin: 0px 400px;
+}
+
+.navigator {
+    background-color: black;
+    color: white;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.nav-wrapper {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 1em;
+}
+
+#title-section {
+    text-align: center;
+}
+
+.title {
+    font-size: 2em;
+    margin-top: 10px;
+    font-weight: bolder;
+}
+
+.subtitle {
+    font-size: 1em;
+    color: grey;
+    line-height: 1.5em;
+    margin-top: 10px;
+    font-weight: bolder;
+}
+
+.main-call, .second-call {
+    margin-top: 10px;
+}
+
+.main-call {
+    background-color: #1979db;
+    border-radius: 3px;
+    border: none;
+    padding: 8px 15px;
+    color: white;
+}
+
+.second-call {
+    background-color: #677179;
+    border-radius: 3px;
+    border: none;
+    padding: 8px 15px;
+    color: white;
+    margin-bottom: 15px;
+}
+
+#galary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-around;
+    align-content: center;
+    background-color: #f8f9fa;
+}
+
+p.text {
+    word-wrap: normal;
+    text-align: left;
+    width: 150px;
+    padding: 10px 0px 5px 10px;
+    font-size: 0.85em;
+    line-height: 1.5em;
+    font-weight: 500;
+}
+
+.card {
+    margin: 30px 0px;
+    flex-basis: 12%;
+    width: auto;
+    background-color: white;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0 0px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+div.card:first-child {
+    margin-left: 150px;
+}
+
+div.card:last-child {
+    margin-right: 150px;
+}
+
+.bottom-bar {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    color: lightgray;
+}
+
+.bottom-butttons {
+    display: inline-flex;
+    flex-basis: 80%;
+}
+
+p.bottom-time {
+    display: inline-flex;
+    justify-content: center;
+    flex-basis: 30%;
+    align-items: center;
+    font-size: 0.8em;
+    color: #797c7f;
+}
+
+.tbutton {
+    background-color: white;
+    border-width: 1px;
+    border-collapse: collapse;
+    font-size: 0.8em;
+    color: #797c7f;
+    margin-left: -4px;
+    border-color: #bfc1c2;
+}
+
+.tbutton:nth-child(1) {
+    margin-left: 0px;
+    border-radius: 3px 0px 0px 3px;
+}
+
+.tbutton:nth-child(2) {
+    border-radius: 0px 3px 3px 0px;
+    border-left: none;
+}
+
+.form {
+    display: flex;
+}
+
+#sign-in {
+    font-size: 2em;
+}
+
+label {
+    display: block;
+}
+
+.form-in {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.email {
+    padding-top: 10px;
+}
+
+.email-input {
+    margin-top: 10px;
+    width: 230%;
+    border-radius: 5px;
+    border: 0.5px solid black
+}
+
+.password {
+    padding-top: 5px;
+}
+
+.password-input {
+    margin-top: 8px;
+    width: 230%;
+    border-radius: 5px;
+    border: 0.5px solid;
+    border-color: #797c7f;
+}
+
+#remeber-me {
+    margin-top: 5px;
+}
+
+.buttons {
+    display: block;
+    width: 230%;
+}
+
+.footer-whole {
+    background-color: #f0f8fe;
+    padding-bottom: 30px;
+}
+
+.flex-footer {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 130px;
+    padding-right: 130px;
+    padding-top: 20px;
+    font-size: 1em;
+}
+
+.footer {
+    padding-top: 10px;
+    padding-left: 130px;
+    padding-right: 130px;
+}
+
+@media all and (max-width:1120px) {
+    div.card:first-child {
+        margin-left: 0px;
+    }
+    div.card:last-child {
+        margin-right: 0px;
+    }
+    .card {
+        flex-basis: 15%;
+    }
+    .container-form {
+        margin: 0px 800px;
+    }
+    .buttons {
+        width: 150%;
+    }
+    .buttons:first-child {
+        margin-top: 20px;
+    }
+    .buttons:last-child {
+        margin-top: 20px;
+    }
+    .flex-footer {
+        padding-left: 30px;
+        gap: 10px;
+    }
+    .footer {
+        padding-left: 30px;
+        padding-right: 10px;
+    }
+}
+
+@media all and (max-width:700px) {
+    .container-form {
+        margin: 0px 50px;
+    }
+    .buttons {
+        width: 150%;
+    }
+    .email-input {
+        width: 150%;
+    }
+    .password-input {
+        width: 150%;
+    }
+    .flex-footer {
+        padding-right: 30px;
+        padding-left: 30px;
+        gap: 10px;
+    }
+    .footer {
+        font-size: 0.9em;
+        padding-left: 30px;
+    }
+}
