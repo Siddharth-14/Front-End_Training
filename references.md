@@ -15,6 +15,9 @@ https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML_sections_and_
 - [A guide to flexbox - CSS Tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 - [RWD Patterns](https://developers.google.com/web/fundamentals/design-and-ux/responsive/patterns)
 
+## JavaScript
+- [Best tutorials on JS - javascript.info](https://javascript.info/)
+
 ## Workshops App
 - [Workshops App Server](http://workshops-server.herokuapp.com/)
 - [Workshops App](https://vw-angular.s3.ap-south-1.amazonaws.com/index.html)

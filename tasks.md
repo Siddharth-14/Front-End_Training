@@ -70,4 +70,11 @@
 - Feb 8
     - Design an array of objects that holds data for some restaurants - say for details displayed on https://www.swiggy.com/restaurants
     - Also include a method increaseRating() that increases rating by 0.1
+    - The Math Object
+        - Rounding Up and Rounding Down (Math.round(), .ceil(), .floor())
+        - Generating Random Numbers (Math.random())
+            - Write a function that generates a random number within a given range of number
+                - random( 10, 20 );
+                - random( 120, 200 );
+    - What is hoisting? - https://javascript.info/var
     
