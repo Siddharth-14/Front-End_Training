@@ -28,4 +28,5 @@ function p() {
     };
 }
 
+// call p to get a function, then call that function
 p()();
