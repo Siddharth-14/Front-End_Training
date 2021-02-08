@@ -1,3 +1,7 @@
+// "function declaration syntax" functions can be used before their line of declaration
+const result1 = sum1( 12, 13 );
+console.log( 'result1 = ', result1 );
+
 // Function declaration syntax
 function sum1( x, y ) {
     let result;
@@ -7,13 +11,11 @@ function sum1( x, y ) {
     return result;
 }
 
-const result1 = sum1( 12, 13 );
-console.log( 'result1 = ', result1 );
-
 // Function expression syntax (the RHS is called a "function expression")
 // function expression can be 
     // i) named
     // ii) anonymous (unnamed)
+// "function expression" functions cannot be used before their line of delcaration
 let sum2 = function( x, y ) {
     return x + y;
 };

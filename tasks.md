@@ -67,4 +67,7 @@
     - Is there placeholder for a prompt dialog input? How do we set it if so?
     - !== - how does that work?
     - Understand how to use label in a statement and goto (or continue?)
+- Feb 8
+    - Design an array of objects that holds data for some restaurants - say for details displayed on https://www.swiggy.com/restaurants
+    - Also include a method increaseRating() that increases rating by 0.1
     
