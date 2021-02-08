@@ -66,4 +66,5 @@
 - Feb 5
     - Is there placeholder for a prompt dialog input? How do we set it if so?
     - !== - how does that work?
+    - Understand how to use label in a statement and goto (or continue?)
     
