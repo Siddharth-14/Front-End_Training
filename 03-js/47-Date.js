@@ -27,3 +27,7 @@ console.log( fifteenthOfCurrentMonth );
 console.log( fifteenthOfCurrentMonth.getDay() );
 
 // Exercise: which day was I born? Sunday / Monday / ...
+
+const todayPlus20 = new Date();
+todayPlus20.setDate( todayPlus20.getDate() + 20 );
+console.log( todayPlus20 );

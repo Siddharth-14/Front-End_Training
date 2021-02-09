@@ -80,5 +80,6 @@
 - Feb 9
     - Read up, understand and implement Mondrian pattern, gallery pattern
     - Implement fibonacci( n ) recursively
+    - String method substring() - how is it differemt from substr()
     
     

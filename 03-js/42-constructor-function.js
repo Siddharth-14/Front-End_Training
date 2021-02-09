@@ -50,3 +50,6 @@ jane.addEmailid( 'jane@yahoo.com' );
 
 console.log( john );
 console.log( jane );
+
+// const today = new Date; can also be used since constructor takes no arguments
+const today = new Date();
