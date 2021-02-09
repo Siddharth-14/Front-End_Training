@@ -77,4 +77,8 @@
                 - random( 10, 20 );
                 - random( 120, 200 );
     - What is hoisting? - https://javascript.info/var
+- Feb 9
+    - Read up, understand and implement Mondrian pattern, gallery pattern
+    - Implement fibonacci( n ) recursively
+    
     

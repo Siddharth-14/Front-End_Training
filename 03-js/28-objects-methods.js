@@ -17,6 +17,10 @@ const jonathan = {
         // "this" is called the function's context
         // this.name or this['name'] is fine
         this['favorite color'] = newColor;
+    },
+    // any object can have a toString() method - returns a string representation of the object
+    toString: function() {
+        return `My name is ${this.name}`;
     }
 };
 
