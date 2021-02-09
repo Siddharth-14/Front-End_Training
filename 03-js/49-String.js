@@ -1,5 +1,5 @@
 // Primitive wrappers works even without "new" - they will create the object anyway
-const greeting = 'Good morning'; // primitive
+let greeting = 'Good morning'; // primitive
 const greetingObj = new String( greeting ); // object
 
 // startIndex, numChars
@@ -22,6 +22,9 @@ console.log( greetingObj.valueOf() ); // primitive value that it stores
 // EXERCISE: 
 // indexOf()
 // toLowerCase(), toUpperCase()
-// replace()
-// includes
+// replace() // does it change the original string ? - NO
+// includes()
 // Q.26 in JS Lab Guide (ES5 and Earlier)
+
+greeting = greeting.replace( 'morning', 'evening' );
+console.log( greeting );
