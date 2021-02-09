@@ -15,6 +15,10 @@ greeting.substr( 5, 6 );
 const greetingObj2 = String( greeting );
 console.log( greetingObj2.substr( 5, 6 ) ); // mornin
 
+// greetingObj -> primtive string
+console.log( greetingObj ); // object
+console.log( greetingObj.valueOf() ); // primitive value that it stores
+
 // EXERCISE: 
 // indexOf()
 // toLowerCase(), toUpperCase()
