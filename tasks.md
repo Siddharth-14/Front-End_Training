@@ -81,5 +81,10 @@
     - Read up, understand and implement Mondrian pattern, gallery pattern
     - Implement fibonacci( n ) recursively
     - String method substring() - how is it differemt from substr()
+    - shift(), unshift() - Also check if push, pop, shift, unshift return any value? - Explore splice()
+    - Exercise 23, 24, 25 from JS Lab guide (ES5 and before)
+    - Use getElementsByTagName()
+
+
     
     
