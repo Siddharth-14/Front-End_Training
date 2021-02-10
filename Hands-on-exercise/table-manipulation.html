@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            #adder{
+                border: 1px solid black;
+                width: 50%;
+                margin:10px;
+            }
+            #adder th{
+                padding:10px;
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+            #adder td{
+                padding:10px;
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+        </style>
+    </head>
+    <body>
+        <form method="POST" id="mainForm">
+            <label for="city">City</label>
+            <input type="text" id="city" required/>
+            <label for="min">Min</label>
+            <input type="text" id="min" required/>
+            <label for="max">Max</label>
+            <input type="text" id="max" />
+            <button type="button" id="addElement">Submit</button>
+        </form>
+        <table id="adder">
+            <thead>
+                <tr>
+                    <th>City</th>
+                    <th>Min</th>
+                    <th>Max</th>
+                </tr>
+            </thead>
+        </table>
+        <script>
+        const btnAddData = document.querySelector("#addElement");
+
+        btnAddData.onclick = function(){
+
+            const tableEl = document.querySelector('#adder');
+            console.log(tableEl);
+            const city = document.querySelector("#city").value;
+            const min = document.querySelector("#min").value;
+            const max = document.querySelector("#max").value;
+
+            const row = document.createElement('tr')
+            const elementcity = document.createElement('td');
+            const elementmin = document.createElement('td');
+            const elementmax = document.createElement('td');
+
+            const cityNode = document.createTextNode(city);
+            elementcity.appendChild(cityNode);
+            const minNode = document.createTextNode(min);
+            elementmin.appendChild(minNode);
+            const maxNode = document.createTextNode(max);
+            elementmax.appendChild(maxNode);
+
+            row.appendChild(elementcity);
+            row.appendChild(elementmin);
+            row.appendChild(elementmax);
+
+            tableEl.appendChild(row);
+
+            document.getElementById("mainForm").reset();
+        }
+    </script>
+    </body>
+</html>

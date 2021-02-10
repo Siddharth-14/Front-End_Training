@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p title="Intro to DOM" id="p1" data-user="xyz">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat provident dolorum, perspiciatis earum modi officiis aspernatur minima illum similique officia tenetur perferendis libero culpa eaque labore! Iste deleniti doloribus consequatur!
+    </p>
+    <p title="Conclusion" id="p2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Et explicabo eaque commodi! Beatae aperiam necessitatibus ex tempore id harum, laborum fuga reprehenderit optio nam omnis odio labore doloribus dolores quis!
+    </p>
+    <input typ="text" id="username" value="John Doe"/>
+    <script>
+        const para1El = document.querySelector('#p1');
+        const para2El = document.querySelector('#p2');
+        const usernameEl = document.querySelector('#username');
+
+        //Standard HTML element attributes are exposed as properties on the DOM node 
+        console.log(para1El.id);
+        console.log(para1El.title);
+
+        //custom and standar properties can be accessed using getAttribute()
+        console.log(para1El.getAttribute("data-user"))
+        console.log(para1El.getAttribute("id"))
+        console.log(document.querySelector('username').value);
+
+        //getAttribute() gives the initial value and '.attribute' gives live value
+        usernameEl.setAttribute('value','mary');
+        
+        console.log(para1El.hasAttribute('title'));
+        console.log(usernameEl.hasAttribute('title'));
+
+        para2El.removeAttribute('title');
+
+        para1El.title = "Conclusion";
+    </script>
+</body>
+</html>

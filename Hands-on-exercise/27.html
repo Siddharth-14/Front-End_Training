@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            .newstyle{
+                border:1px solid black;
+                padding: 10px;
+                color: olive;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <p id="p-1">Lorem ipsum dolor, sit amet consectetur adipisicing
+                elit.
+                Assumenda, veniam! Tempore ea cumque necessitatibus. Assumenda
+                accusamus in labore ipsam? Eius ad pariatur adipisci nam
+                reprehenderit quae magnam? Consequuntur, tempora laboriosam
+            </p>
+            <p id="p-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Voluptatibus harum voluptates iusto eum debitis provident ad
+                odit
+                necessitatibus! Alias in excepturi ipsa delectus vitae cum iste
+                commodi. Cum, repudiandae recusandae!
+            </p>
+            <p id="p-3">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Maxime,
+                eum aperiam. Maiores commodi, vitae ea itaque quam asperiores
+                incidunt quasi obcaecati dolores. Hic aliquid modi dolore beatae
+                temporibus officia quaerat.
+            </p>
+            <p id="p-4">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea libero debitis odio unde sapiente? Eaque delectus nam exercitationem, aspernatur nisi veritatis in, laborum repudiandae molestiae, minus impedit odit quo sed.
+            </p>
+        </div>
+        <script>
+            const parent = document.querySelector("div");
+            const p1 = document.querySelector("#p-1");
+            const start = document.createElement("p");
+            const startText = document.createTextNode("Start");
+            start.appendChild(startText);
+            parent.insertBefore(start,p1);
+            const end = document.createElement("p");
+            const endText = document.createTextNode("End");
+            end.appendChild(endText);
+            parent.appendChild(end);
+            console.log(document.getElementById("p-2").innerHTML);
+
+            const span1 = document.createElement("span");
+            const span1Text = document.createTextNode("span 1");
+            span1.appendChild(span1Text);
+            const span2 = document.createElement("span");
+            const span2Text = document.createTextNode("span 2");
+            span2.appendChild(span2Text);
+            
+            document.getElementById("p-2").innerHTML = "";
+            document.getElementById("p-2").appendChild(span1);
+            document.getElementById("p-2").appendChild(span2);
+
+            console.log(document.getElementById("p-2").id);
+
+            document.getElementById("p-2").id = "para-2"
+
+            document.getElementById("para-2").setAttribute("name","this is para 2");
+
+            document.getElementById("p-3").setAttribute("style","background-color: crimson; color:white;");
+
+            document.getElementById("p-4").className = "newstyle";
+        </script>
+    </body>
+</html>

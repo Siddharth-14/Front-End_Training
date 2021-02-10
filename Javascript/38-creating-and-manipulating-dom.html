@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <button id="btn-add-card">Add a card</button>
+        <div class="card">
+            <!--<div class="card">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Voluptas, error nobis aspernatur odio vel pariatur saepe
+                dolores, vitae, sunt blanditiis architecto expedita culpa
+                placeat a repellendus quibusdam velit. Maiores, sunt.
+            </div>-->
+
+        </div>
+        <script>
+        const p1El = document.querySelector('#p1');
+        const btnAddCard = document.querySelector("#btn-add-card");
+
+        btnAddCard.onclick = function(){
+            const cardEl = document.createElement('div');
+            cardEl.className = 'card';
+
+            const textEl = document.createTextNode("I am a card")
+            cardEl.appendChild(textEl)
+
+            const cardsEl = document.querySelector(".cards");
+            cardsEl.appendChild(cardEl)
+
+        }
+    </script>
+    </body>
+</html>
