@@ -17,12 +17,12 @@
             const name = prompt( 'How can i call you?' );
             const pageAlert = document.querySelector( '#page-alert' );
 
-            console.log( pageAlert.innerHTML );
+            console.log( pageAlert.innerText );
 
             if( name ) {
-                pageAlert.innerHTML = pageAlert.innerHTML + `Welcome <strong>${name}</strong>! Good to have you with me.`;
+                pageAlert.innerText = pageAlert.innerText + `Welcome <strong>${name}</strong>! Good to have you with me.`;
             } else {
-                pageAlert.innerHTML = pageAlert.innerHTML + `Sorry, you do not want to share your name. We understand and respect your privacy.`;
+                pageAlert.innerText = pageAlert.innerText + `Sorry, you do not want to share your name. We understand and respect your privacy.`;
             }
         </script>
     </body>

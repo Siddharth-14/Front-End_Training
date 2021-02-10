@@ -14,6 +14,8 @@ https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML_sections_and_
 - Book: Definitive Guide (Eric Meyer, Estelle Weyl)
 - [A guide to flexbox - CSS Tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 - [RWD Patterns](https://developers.google.com/web/fundamentals/design-and-ux/responsive/patterns)
+- [Mondrian with CSS Grid](https://www.youtube.com/watch?v=qNtJ5p3h2A4). Also https://googlecreativelab.github.io/coder-projects/projects/mondrian/
+
 
 ## JavaScript
 - [Best tutorials on JS - javascript.info](https://javascript.info/)
