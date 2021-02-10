@@ -18,32 +18,34 @@
         <input type="text" id="username" value="johndoe" />
 
         <script>
-            const para1El = document.querySelector( '#p1' );
-            const para2El = document.querySelector( '#p2' );
-            const usernameEl = document.querySelector( '#username' );
+            (function() {
+                const para1El = document.querySelector( '#p1' );
+                const para2El = document.querySelector( '#p2' );
+                const usernameEl = document.querySelector( '#username' );
 
-            // Standard HTML element attributes are exposed as properties on the DOM node
-            console.log( para1El.id );
-            console.log( para1El.title );
+                // Standard HTML element attributes are exposed as properties on the DOM node
+                console.log( para1El.id );
+                console.log( para1El.title );
 
-            // Standard and custom properties can be accessed using getAttribute()
-            console.log( para1El.getAttribute( 'data-user' ) );
-            console.log( para1El.getAttribute( 'id' ) );
+                // Standard and custom properties can be accessed using getAttribute()
+                console.log( para1El.getAttribute( 'data-user' ) );
+                console.log( para1El.getAttribute( 'id' ) );
 
-            para1El.title = 'First paragraph';
+                para1El.title = 'First paragraph';
 
-            console.log( 'value = ', usernameEl.value ); // live value
-            console.log( 'value = ', usernameEl.getAttribute( 'value' ) ); // initial value
+                console.log( 'value = ', usernameEl.value ); // live value
+                console.log( 'value = ', usernameEl.getAttribute( 'value' ) ); // initial value
 
-            // setting attributes
-            // usernameEl.value = 'mark'; // changes live value, but not in HTML DOM
-            usernameEl.setAttribute( 'value', 'mary' ); // changes in the HTML DOM too
+                // setting attributes
+                // usernameEl.value = 'mark'; // changes live value, but not in HTML DOM
+                usernameEl.setAttribute( 'value', 'mary' ); // changes in the HTML DOM too
 
-            console.log( para1El.hasAttribute( 'title' ) ); // true
-            console.log( usernameEl.hasAttribute( 'title' ) ); // false
+                console.log( para1El.hasAttribute( 'title' ) ); // true
+                console.log( usernameEl.hasAttribute( 'title' ) ); // false
 
-            // remove attribute
-            para2El.removeAttribute( 'title' );
+                // remove attribute
+                para2El.removeAttribute( 'title' );
+            })();
         </script>
     </body>
 </html>

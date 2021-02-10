@@ -84,6 +84,8 @@
     - shift(), unshift() - Also check if push, pop, shift, unshift return any value? - Explore splice()
     - Exercise 23, 24, 25 from JS Lab guide (ES5 and before)
     - Use getElementsByTagName()
+- Feb 10
+    - Read up and use insertBefore() to add a child
 
 
     
