@@ -26,6 +26,7 @@ https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML_sections_and_
 - [Using Git and Bitbucket](https://support.atlassian.com/bitbucket-cloud/docs/clone-and-make-a-change-on-a-new-branch/)
 - [Apache Web Server - Quick and dirty .htaccess for small personal sites](https://dev.to/thejessleigh/quick-and-dirty-htaccess-for-small-personal-sites-2cfn)
 - [Modernizr](https://modernizr.com/)
+- [NVDA keyboard shortcuts](https://dequeuniversity.com/screenreaders/nvda-keyboard-shortcuts)
 
 ## Browser support
 - https://kangax.github.io/compat-table/es6/
