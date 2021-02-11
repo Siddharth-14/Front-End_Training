@@ -1,0 +1,56 @@
+## Pointers for presentation
+
+- 2 days on html + 5 - 6 days on css (SEO, some parts accessibility - except ARIA)
+- Project introduction
+    - 4 lines summary
+    - screenshots
+- Tools and Approach
+    - VSCode
+        - HTML and CSS validator
+        - minify CSS files
+    - Lighthouse for ...
+    - NVDA for ...
+        - Landmarks menu (shows regions - to check for udnerstanding of semantic tags)
+        - Landmarks menu screenshot
+        - Keyboard navigation - take some form (say add meetings)
+    - Branching
+        - Main branch per person
+            - A milestone branch
+            - A PR was raised to merge milestone branch to main branch
+- Hosted the project on Apache Web server
+- Open the screen and VSCode
+- Explain project structure
+        - css/
+        - dist/
+        - js
+        - html
+    - Explain different HTML pages - 1 line
+    - How the CSS has been structured
+        - Explain about the responsive approach
+        - 640px is breakpoint
+    - Brief note on JS
+- SEO checklist
+    - description (145-165 characters)
+    - semantic
+    - img have alt attribute
+    - title tag for links with more description ( 5 - 6words at max)
+- Accessibility
+    - semantic
+    - labels
+    - hidden labels (sr-only)
+    - "Read more" links etc. should come with .sr-only text
+- Why doctype -> we are using the html5
+- lang attribute in html
+    - meta tags
+        - viewport
+        - description
+        - order in which you included CSS
+            - how does the order help? if you want to override any general styles in pages-pecific stylesheet for example
+            - top-down appraoch to explain HTML
+                - why lists?
+            - explain forms
+                - action
+                - method
+                - label and association with input
+                - make sure form has submit button
+        - in calendar page explain how you used relative and absolute positioning to position the calendar entry within the calendar
