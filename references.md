@@ -20,6 +20,7 @@ https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML_sections_and_
 - [Best tutorials on JS - javascript.info](https://javascript.info/)
 - [Working with forms - MDN](https://developer.mozilla.org/en-US/docs/Learn/Forms)
 - [Client-side form validation - MDN](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation)
+- [Building custom form controls](https://developer.mozilla.org/en-US/docs/Learn/Forms/How_to_build_custom_form_controls)
 
 ## Workshops App
 - [Workshops App Server](http://workshops-server.herokuapp.com/)
