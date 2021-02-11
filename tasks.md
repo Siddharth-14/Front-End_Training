@@ -87,6 +87,9 @@
 - Feb 10
     - Read up and use insertBefore() to add a child, and removeChild() to remove a child
     - Read up on template tag in HTML
+- Feb 11
+    - Read up some properties of https://developer.mozilla.org/en-US/docs/Web/API/Window
+    - Read up on the unload event 
 
 
     

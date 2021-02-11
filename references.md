@@ -16,9 +16,10 @@ https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML_sections_and_
 - [RWD Patterns](https://developers.google.com/web/fundamentals/design-and-ux/responsive/patterns)
 - [Mondrian with CSS Grid](https://www.youtube.com/watch?v=qNtJ5p3h2A4). Also https://googlecreativelab.github.io/coder-projects/projects/mondrian/
 
-
 ## JavaScript
 - [Best tutorials on JS - javascript.info](https://javascript.info/)
+- [Working with forms - MDN](https://developer.mozilla.org/en-US/docs/Learn/Forms)
+- [Client-side form validation - MDN](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation)
 
 ## Workshops App
 - [Workshops App Server](http://workshops-server.herokuapp.com/)
