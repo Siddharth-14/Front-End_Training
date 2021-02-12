@@ -27,6 +27,8 @@ https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML_sections_and_
 - [Enabling CORS on browser and server](https://enable-cors.org/)
 - [JS style guide](https://github.com/airbnb/javascript)
 - [Video on JSON](https://www.youtube.com/playlist?list=PLEzQf147-uEoNCeDlRrXv6ClsLDN-HtNm)
+- [Various ways of fetching data from backend using Ajax](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Fetching_data)
+- [Using the fetch() API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
 
 ## Workshops App
 - [Workshops App Server](http://workshops-server.herokuapp.com/)
