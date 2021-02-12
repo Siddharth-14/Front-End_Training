@@ -39,6 +39,7 @@
             // always pass true as 3rd argument - makes the request async
             xhr.open( 'GET', 'https://workshops-server.herokuapp.com/workshops', true );
 
+            // send() will send the request from the browser
             // since this is async, the second method will initiate data fetch and return immediately
             xhr.send();
 
