@@ -22,6 +22,11 @@ https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML_sections_and_
 - [Client-side form validation - MDN](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation)
 - [Building custom form controls](https://developer.mozilla.org/en-US/docs/Learn/Forms/How_to_build_custom_form_controls)
 - [Form - Constraint Validation API](https://developer.mozilla.org/en-US/docs/Web/API/Constraint_validation)
+- [An Ajax implementation](https://krasimirtsonev.com/blog/article/Cross-browser-handling-of-Ajax-requests-in-absurdjs)
+- [Ajax and CORS](https://web.dev/cross-origin-resource-sharing/)
+- [Enabling CORS on browser and server](https://enable-cors.org/)
+- [JS style guide](https://github.com/airbnb/javascript)
+- [Video on JSON](https://www.youtube.com/playlist?list=PLEzQf147-uEoNCeDlRrXv6ClsLDN-HtNm)
 
 ## Workshops App
 - [Workshops App Server](http://workshops-server.herokuapp.com/)
@@ -32,6 +37,7 @@ https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML_sections_and_
 - [Apache Web Server - Quick and dirty .htaccess for small personal sites](https://dev.to/thejessleigh/quick-and-dirty-htaccess-for-small-personal-sites-2cfn)
 - [Modernizr](https://modernizr.com/)
 - [NVDA keyboard shortcuts](https://dequeuniversity.com/screenreaders/nvda-keyboard-shortcuts)
+- [Mardown format](https://www.markdownguide.org/basic-syntax/)
 
 ## Browser support
 - https://kangax.github.io/compat-table/es6/

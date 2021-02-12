@@ -7,15 +7,22 @@
         <title>Document</title>
     </head>
     <body>
-        <form>
-            <input type="text" name="username" required />
+        <form name="form-login">
+            <input type="text" name="username" required value="John Doe" />
             <input type="password" name="password" required />
+
             <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
         </form>
 
         <button id="btn-outside-form">This will also submit the form</button>
+        <button id="btn-outside-form-reset">This will also reset the form</button>
 
         <script>
+            console.log( document.forms['form-login'] );
+            console.log( document.forms['form-login']['username'] );
+            console.log( document.forms['form-login'].username );
+
             const formEl = document.querySelector( 'form' );
             console.dir( formEl );
             console.log( formEl[0] );
@@ -39,7 +46,12 @@
             });
 
             document.querySelector( '#btn-outside-form' ).addEventListener( 'click', function() {
+                // HTML5-based validations will not happen
                 formEl.submit();
+            });
+            
+            document.querySelector( '#btn-outside-form-reset' ).addEventListener( 'click', function() {
+                formEl.reset();
             });
         </script>
     </body>

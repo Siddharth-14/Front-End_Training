@@ -91,6 +91,9 @@
     - Read up some properties of https://developer.mozilla.org/en-US/docs/Web/API/Window
     - Read up on the 'unload' event 
     - Read up on the 'change' event
+    - Read up on dispatchEvent (optional reading)
+- Feb 12
+    
 
 
     

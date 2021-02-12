@@ -1,0 +1,12 @@
+# Ajax
+- _AJAX_ - Asynchronous JavaScript and XML
+- Why Ajax? - for making HTTP (protocol) requests (header (key-value pairs, eg. 'Content-Type' : 'text/html'), body - has the data)
+- How is the data formatted (content type)
+    - understood and editable by us and machines (any language)
+        - XML (eXtensible Markup Language)
+        - JSON 
+            - JavaScript Object Notation
+            - number, boolean, string, plain JS object, array, null
+            - Usually the top level has an object / array
+            - string should be double quoted
+        - We usually work with JSON - in general it is lighter than XML, and it is closer to JS object syntax
