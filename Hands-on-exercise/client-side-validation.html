@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <label for="name">Enter username (upper and lowercase letters): </label>
+      <input type="text" name="name" id="name" required pattern="[A-Za-z]+" />
+      <label for="age">Enter age : </label>
+      <input type="text" name="age" id="age" required pattern="[1-9][0-9]+" />
+      <button>Submit</button>
+    </form>
+
+    <script>
+      const nameInput = document.querySelector("input[name=name]");
+      const ageInput = document.querySelector("input[name=age]");
+      const form = document.querySelector("form");
+
+      ageInput.addEventListener("input", () => {
+        ageInput.setCustomValidity("");
+        ageInput.checkValidity();
+      });
+
+      ageInput.addEventListener("invalid", () => {
+        if (ageInput.value === "") {
+          ageInput.setCustomValidity("Enter your age!");
+        } else if(ageInput.value[0] === "0") {
+          ageInput.setCustomValidity(
+            "Age can not be zero. Try again!"
+          );
+        }else{
+          ageInput.setCustomValidity(
+            "Age can only contain numbers. Try again!"
+          );
+        }
+      });
+
+      nameInput.addEventListener("input", function(){
+        nameInput.setCustomValidity("");
+        nameInput.checkValidity();
+      });
+
+      nameInput.addEventListener("invalid", function(){
+        if (nameInput.value === "") {
+          nameInput.setCustomValidity("Enter your username!");
+        } else {
+          nameInput.setCustomValidity(
+            "Usernames can only contain upper and lowercase letters. Try again!"
+          );
+        }
+      });
+    </script>
+  </body>
+</html>

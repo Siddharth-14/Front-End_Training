@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <a href="https://www.google.com/" class="confirm">Go to google</a>
+        <a href="https://www.google.com/">Go to google</a>
+        <a href="https://www.facebook.com/" class="confirm">Go to facebook</a>
+        <script>
+            for(let i = 0;i<document.getElementsByClassName("confirm").length;i++){
+            document.getElementsByClassName("confirm")[i].addEventListener("click",function(event){
+        if (confirm("Proceed to the new link?")) {
+            
+        } else {
+            event.preventDefault();
+        }
+    })}
+  
+</script>
+    </body>
+</html>

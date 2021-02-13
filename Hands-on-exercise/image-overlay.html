@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+    .container {
+        position: relative;
+        width: 50%;
+      }
+      
+      .image {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+      
+      .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        *transition: .5s ease;
+        background-color: #000000;
+      }
+      
+      .text {
+        color: white;
+        font-size: 40px;
+        position: absolute;
+        font-family: Arial, Helvetica, sans-serif;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+      </style>
+    </head>
+    <body>
+        <div class="container">
+            <img
+                src="C:\Users\sidgorad\Desktop\Assesment\assessment-1\Assets\757-200x150.jpg"
+                alt="Car" class="image">
+            <div class="overlay">
+                <div class="text">Picture of a car</div>
+            </div>
+        </div>
+        <script>
+          document.querySelector(".container").addEventListener("mouseover",function(){
+            document.querySelector(".overlay").style.opacity = "0.8";
+          });
+
+          document.querySelector(".container").addEventListener("mouseout",function(){
+            document.querySelector(".overlay").style.opacity = "0";
+          });
+      </script>
+    </body>
+</html>
