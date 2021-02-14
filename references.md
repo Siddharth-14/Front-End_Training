@@ -1,12 +1,21 @@
 # References
 
+## Lab guides
+Lab guides for various topics can be found [here](./docs/lab-guides/)
+
+## GIT
+- [Supplied documentation](./docs/01-git.pdf)
+
 ## HTML
+- [Supplied documentation](./docs/02-html.pdf)
 - [Using HTML sections and outlines](
 https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML_sections_and_outlines)
 - [Block vs inline - there are other display values apart from these two](https://www.w3schools.com/html/html_blocks.asp)
 - [Google style guide for HTML/CSS](https://google.github.io/styleguide/htmlcssguide.html)
 
 ## CSS
+- [Supplied documentation](./docs/03-css.pdf)
+- [Supplied documentation](./docs/03-css3.pdf)
 - [Shorthand properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties)
 - [box-sizing: border-box](https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing)
 - [Airbnb Style Guide for CSS](https://github.com/airbnb/css)
@@ -17,10 +26,10 @@ https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML_sections_and_
 - [Mondrian with CSS Grid](https://www.youtube.com/watch?v=qNtJ5p3h2A4). Also https://googlecreativelab.github.io/coder-projects/projects/mondrian/
 
 ## JavaScript
+- [Supplied documentation](./docs/04-js.pdf)
 - [Best tutorials on JS - javascript.info](https://javascript.info/)
 - [Working with forms - MDN](https://developer.mozilla.org/en-US/docs/Learn/Forms)
 - [Client-side form validation - MDN](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation)
-- [Building custom form controls](https://developer.mozilla.org/en-US/docs/Learn/Forms/How_to_build_custom_form_controls)
 - [Form - Constraint Validation API](https://developer.mozilla.org/en-US/docs/Web/API/Constraint_validation)
 - [An Ajax implementation](https://krasimirtsonev.com/blog/article/Cross-browser-handling-of-Ajax-requests-in-absurdjs)
 - [Ajax and CORS](https://web.dev/cross-origin-resource-sharing/)
@@ -29,6 +38,17 @@ https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML_sections_and_
 - [Video on JSON](https://www.youtube.com/playlist?list=PLEzQf147-uEoNCeDlRrXv6ClsLDN-HtNm)
 - [Various ways of fetching data from backend using Ajax](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Fetching_data)
 - [Using the fetch() API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
+
+## Accessibility
+- [Supplied documentation](./docs/05-web-accessibility.pdf)
+- [ARIA - Introduction on MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA)
+- [Building custom form controls](https://developer.mozilla.org/en-US/docs/Learn/Forms/How_to_build_custom_form_controls)
+- [Accessible Custom widgets and controls](https://accessibility.huit.harvard.edu/content/custom-widgets-and-controls)
+- [Accessibility Techniques for Custom Controls](https://dequeuniversity.com/checklists/web/custom-widgets)
+- [Custom JavaScript / ARIA Widgets](https://www.a11yportal.com/advanced/code/wai-aria.html)
+
+## Node and npm
+- [Supplied documentation](./docs/06-node-npm-command-reference.pdf)
 
 ## Workshops App
 - [Workshops App Server](http://workshops-server.herokuapp.com/)
