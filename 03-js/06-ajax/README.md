@@ -37,3 +37,8 @@
 
     // internal server errors
     // 500
+- HTTP methods
+    - GET - get a resource
+    - POST - add a new resource (it gets a new URL)
+    - PUT / PATCH - change an existing resource fully / partially
+    - DELETE - remove an existing resource (the URL for that resource will not be functional)
