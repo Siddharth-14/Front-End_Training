@@ -92,9 +92,5 @@
     - Read up on the 'unload' event 
     - Read up on the 'change' event
     - Read up on dispatchEvent (optional reading)
-- Feb 12
-    
-
-
-    
-    
+- Feb 15
+    - Promise.all(), Promise.race()

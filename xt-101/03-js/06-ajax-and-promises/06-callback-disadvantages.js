@@ -2,6 +2,8 @@ function sum( x, y, cb ) {
     setTimeout(function() {
         cb( x + y );
     }, 3000);
+
+    // return; // undefined is returned
 }
 
 // christmas tree (callback hell)
