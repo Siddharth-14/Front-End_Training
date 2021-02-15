@@ -12,6 +12,19 @@ class Person {
     }
 }
 
+class Employee extends Person {
+    constructor( name, emailids, address, role, dept ) {
+        super( name, emailids, address ); // Person contructor is called
+
+        this.role = role;
+        this.dept = dept;
+    }
+
+    promote() {
+        this.role = `Senior ${this.role}`;
+    }
+}
+
 const john = new Person( 
     'John',
     [ 
@@ -24,7 +37,7 @@ const john = new Person(
     }
 );
 
-const jane = new Person( 
+const jane = new Employee(
     'Jane',
     [ 
         'jane@example.com',
@@ -33,11 +46,15 @@ const jane = new Person(
     {
         city: 'Chennai',
         pinCode: 600101
-    } 
+    },
+    'Web Developer',
+    'IT'
 );
 
 john.addEmailid( 'john@yahoo.com' );
 jane.addEmailid( 'jane@yahoo.com' );
+
+jane.promote();
 
 console.log( john );
 console.log( jane );

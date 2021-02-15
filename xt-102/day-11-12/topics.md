@@ -11,6 +11,7 @@
 - destructuring in-depth
 - ES6 Modules and classes
 - Iterators and Generators
+- Proxies
 - New Array Extensions and  Collections
 
 ### Typescript
