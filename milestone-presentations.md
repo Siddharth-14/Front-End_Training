@@ -73,7 +73,7 @@
     - description (145-165 characters)
     - semantic
     - img have alt attribute
-    - title tag for links with more description ( 5 - 6words at max)
+    - title tag for links with more description (5 - 6 words at max)
 - Accessibility
     - semantic
     - labels
