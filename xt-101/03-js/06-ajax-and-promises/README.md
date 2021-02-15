@@ -10,6 +10,14 @@
             - Usually the top level has an object / array
             - string should be double quoted
         - We usually work with JSON - in general it is lighter than XML, and it is closer to JS object syntax
+- Caching problem
+    - Cache busting techniques used to prevet stale data from being given by browser
+- CORS
+    - Cross-Origin Resource Sharing
+    - When you make a cross-domain request (even different port numbers qualify as cross-domain), your browser first makes
+        - OPTIONS request to that resource
+            - Yes / NO from server (some HTTP headers are there in response)
+            - Proceeds / Failure with request
 - How to use Ajax
     - XMLHttpRequest
         - old API

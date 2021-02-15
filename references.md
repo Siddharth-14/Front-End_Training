@@ -38,6 +38,10 @@ https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML_sections_and_
 - [Video on JSON](https://www.youtube.com/playlist?list=PLEzQf147-uEoNCeDlRrXv6ClsLDN-HtNm)
 - [Various ways of fetching data from backend using Ajax](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Fetching_data)
 - [Using the fetch() API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
+- [Browser Caching Issues in HTTP (Ajax) requests](https://www.itgeared.com/articles/1401-ajax-browser-cache-issues-fix/)
+- [Cache busting using a unique query string parameter](https://stackoverflow.com/questions/367786/prevent-browser-caching-of-ajax-call-result)
+- [Critical Rendering Path - Google Web Fundamentals](https://developers.google.com/web/fundamentals/performance/critical-rendering-path)
+- [Website Performace Optimization - Course on Udacity](https://www.udacity.com/course/website-performance-optimization--ud884)
 
 ## Accessibility
 - [Supplied documentation](./docs/05-web-accessibility.pdf)
@@ -46,6 +50,13 @@ https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML_sections_and_
 - [Accessible Custom widgets and controls](https://accessibility.huit.harvard.edu/content/custom-widgets-and-controls)
 - [Accessibility Techniques for Custom Controls](https://dequeuniversity.com/checklists/web/custom-widgets)
 - [Custom JavaScript / ARIA Widgets](https://www.a11yportal.com/advanced/code/wai-aria.html)
+- [WebAxe - blog and podcast on web accessibility](https://www.webaxe.org/category/aria/)
+- [Automated Accessibility Testing during Development](https://humanmade.com/2018/05/17/automated-accessibility-testing-during-development/)
+- [Using Axe - Video by Google Chrome Developers](https://www.youtube.com/watch?v=jC_7NnRdYb0)
+- [Axe core - GitHub project](https://github.com/dequelabs/axe-core)
+- [Pa11y - GitHub project](https://github.com/pa11y/pa11y)
+- [Using Axe core with Selenium for automated testing](https://github.com/dequelabs/axe-webdriverjs)
+- [Getting started with Tenon](https://tenon.io/documentation/quick-start)
 
 ## Node and npm
 - [Supplied documentation](./docs/06-node-npm-command-reference.pdf)

@@ -7,14 +7,24 @@
         <title>Document</title>
     </head>
     <body>
-        <script src="ajax2.js"></script>
+        <script src="ajax-final.js"></script>
 
         <script>
+            function printWorkshopNames( responseText ) {
+                const createdWorkshop = JSON.parse( responseText );
+
+                console.log( createdWorkshop );
+            }
+
+            function onError( error ) {
+                console.log( error );
+            }
+
             ajax(
                 {
                     url: 'https://workshops-server.herokuapp.com/workshops',
                     method: 'POST',
-                    onSuccess: onSuccess,
+                    onSuccess: printWorkshopNames,
                     onError: onError,
                     data: {
                         "name": "Rules of Tennis",

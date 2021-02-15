@@ -18,5 +18,11 @@ function ajax( { url, method, data, onSuccess, onError } ) {
     });
 
     xhr.open( method, url, true );
-    xhr.send();
+
+    if( method === 'GET' ) {
+        xhr.send();
+    } else {
+        xhr.setRequestHeader( 'Content-Type', 'application/json' );
+        xhr.send( JSON.stringify( data ) );
+    }
 }
