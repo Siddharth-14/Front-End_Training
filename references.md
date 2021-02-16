@@ -42,6 +42,9 @@ https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML_sections_and_
 - [Cache busting using a unique query string parameter](https://stackoverflow.com/questions/367786/prevent-browser-caching-of-ajax-call-result)
 - [Critical Rendering Path - Google Web Fundamentals](https://developers.google.com/web/fundamentals/performance/critical-rendering-path)
 - [Website Performace Optimization - Course on Udacity](https://www.udacity.com/course/website-performance-optimization--ud884)
+- [HTML script element - async and defer](https://javascript.info/script-async-defer)
+- [Diagram - async vs defer](https://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html#script)
+-[How the Browser Pre-loader Makes Pages Load Faster](https://andydavies.me/blog/2013/10/22/how-the-browser-pre-loader-makes-pages-load-faster/)
 
 ## Accessibility
 - [Supplied documentation](./docs/05-web-accessibility.pdf)
