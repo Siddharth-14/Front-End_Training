@@ -1,4 +1,0 @@
-- Small button on login screen
-- fieldset is not required for login - if ou use it it should be within the form.
-- font size (login page) is too big for mobile view - it can be reduced
-- use mobile first
