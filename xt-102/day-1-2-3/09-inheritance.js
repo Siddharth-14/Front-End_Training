@@ -41,7 +41,8 @@ jane.promote();
 console.log( john.age );
 console.log( jane.age );
 
-console.log( john.celebrateBirthday === jane.celebrateBirthday ); // false -> they are 2 different function
+// true -> they are the same function
+console.log( john.celebrateBirthday === jane.celebrateBirthday );
 
 john.setName( 'Jonathan' );
 console.log( john );

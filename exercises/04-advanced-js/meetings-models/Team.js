@@ -18,6 +18,13 @@ function User( _id, name, email ) {
     this.email = email;
 }
 
+User.prototype.getName = function() {
+    return this.name;
+};
+
+// EXERCISE: Implement AdminUser derived class
+// has an extra property privileges - an array of strings, and an extra method addPrivilige( privilege ) { ... }
+
 const aravind = new User( 1, 'Aravind', 'aravind@example.com' );
 const asmitha = new User( 2, 'Asmitha', 'asmitha@example.com' );
 
