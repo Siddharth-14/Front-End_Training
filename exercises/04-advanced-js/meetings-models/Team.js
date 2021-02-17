@@ -10,7 +10,7 @@ function Team( _id, name, description, teamMembers ) {
 
 Team.prototype.addTeamMember = function( user ) {
     this.teamMembers.push( user )
-}
+};
 
 function User( _id, name, email ) {
     this._id = _id;
