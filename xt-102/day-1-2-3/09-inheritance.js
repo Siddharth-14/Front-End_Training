@@ -13,7 +13,9 @@ Person.prototype.setName = function( name ) {
 
 function Employee( name, age, role, dept ) {
     // Like super( name, age ) in Java
-    Person.call( this, name, age ); // this -> window (in browser), this -> global (in Node.js)
+    // By default this -> window (in browser), this -> global (in Node.js)
+    // We need to make sure this -> current object - Hence we use function.call() to call a function
+    Person.call( this, name, age );
     
     this.role = role;
     this.dept = dept;
@@ -27,8 +29,8 @@ Employee.prototype.promote = function() {
 };
 
 // john.__proto__ -> { constructor: Employee, __proto__: Person.prototype } 
-const john = new Employee( 'John', 32, 'Accountant', 'Finance' ); // __proto__ -> Employee.prototype
-const jane = new Employee( 'Jane', 28, 'Web Developer', 'IT' ); // __proto__ -> Employee.prototype
+const john = new Employee( 'John', 32, 'Accountant', 'Finance' );
+const jane = new Employee( 'Jane', 28, 'Web Developer', 'IT' );
 
 john.celebrateBirthday(); // this -> john
 jane.celebrateBirthday(); // this -> jane
