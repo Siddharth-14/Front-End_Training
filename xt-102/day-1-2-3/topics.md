@@ -9,11 +9,11 @@
 - Inheritance, Encapsulation, Abstraction, Polymorphism
 - Encapsulation
 - What is a class
-- The new operator
-- The typeof operator
-- Create user-defined Objects
-- Object Constructor
-- Dynamic object properties
+- The new operator (DONE)
+- The typeof operator (DONE)
+- Create user-defined Objects (DONE)
+- Object Constructor (DONE)
+- Dynamic object properties (DONE)
 - instanceof operator
 - constructor property
 
