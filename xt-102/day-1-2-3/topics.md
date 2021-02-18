@@ -5,7 +5,7 @@
 ### Advance JavaScript
 - Object Oriented Javascript Overview
 
-### OOP Concepts
+### OOP Concepts (DONE)
 - Inheritance, Encapsulation, Abstraction, Polymorphism
 - Encapsulation
 - What is a class
@@ -21,7 +21,7 @@
 
 ### Polymorphism
 
-### Inheritance
+### Inheritance (DONE)
 - Resuability of code
 - Super class/Sub class
 - Prototype
@@ -34,7 +34,7 @@
 ### Hands-on exercises
 
 ### Objects
-- JSON and Literal Objects
+- JSON and Literal Objects (DONE)
 
 ### Namespacing
 - Global Namespace pollution
@@ -43,9 +43,9 @@
 - Creating user defined context
 
 ### Change the Scope
-- The call() method
-- The apply()method
-- The with statement 
+- The call() method (DONE)
+- The apply() method (DONE)
+- The with statement (DONE)
 
 ### Handling "this" 
 - this in borrowing method; in callback; in global scope

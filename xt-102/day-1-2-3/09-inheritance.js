@@ -28,9 +28,12 @@ Employee.prototype.promote = function() {
     this.role = `Senior ${this.role}`;
 };
 
-// john.__proto__ -> { constructor: Employee, __proto__: Person.prototype } 
+// john.__proto__ -> { constructor: Employee, __proto__: Person.prototype } -> { constructor: Person, ... }
 const john = new Employee( 'John', 32, 'Accountant', 'Finance' );
 const jane = new Employee( 'Jane', 28, 'Web Developer', 'IT' );
+
+console.log( 'john instanceof Employee = ', john instanceof Employee );
+console.log( 'john instanceof Person = ', john instanceof Person );
 
 john.celebrateBirthday(); // this -> john
 jane.celebrateBirthday(); // this -> jane

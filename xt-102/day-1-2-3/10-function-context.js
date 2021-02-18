@@ -29,3 +29,9 @@ const bar = obj.bar;
 
 // "this" -> window (in the browser), global (in Node.js)
 bar();
+
+function f( cb ) {
+    cb(); // window (careful: the function cb cannot access obj)
+}
+
+f( obj.bar ); // cb = obj.bar;
