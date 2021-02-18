@@ -8,8 +8,9 @@ const payroll = {
         IT: 10,
         Finance: 20
     },
-    raise: function () {
-        this.employees.forEach(function (employee) {
+    raise: function() {
+        // const that = this;
+        this.employees.forEach(( employee ) => {
             const dept = employee.dept;
             const salary = employee.salary;
             const hikePercentage = this.hikePercentage[dept];
@@ -18,5 +19,6 @@ const payroll = {
         });
     }
 }
+
 payroll.raise();
 console.log(payroll.employees);

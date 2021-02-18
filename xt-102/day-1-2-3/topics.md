@@ -47,7 +47,7 @@
 - The apply() method (DONE)
 - The with statement (DONE)
 
-### Handling "this" 
+### Handling "this" (DONE)
 - this in borrowing method; in callback; in global scope
 - Arrow Functions & this
 
