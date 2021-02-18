@@ -1,4 +1,7 @@
+// Closure - the set of variables that a function can access
+
 // x, y, g, obj (b is a method)
+// In the closure of f, there are the variables - x, y, g, obj, any other global variables
 function f( x ) {
     let y = 2;
 
@@ -8,7 +11,7 @@ function f( x ) {
 
     return {
         a: g,
-        b: function() {
+        b: function( z ) { // Closure( f ), z, any other global variables
             console.log( x, y );
         }
     };

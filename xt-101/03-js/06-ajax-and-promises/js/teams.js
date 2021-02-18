@@ -33,7 +33,7 @@ function showTeams( teams ) {
         }
 
         teamsEl.innerHTML += `
-            <li class="team">
+            <li class="team" data-team-id="${team._id}">
                 <div>Name: ${team.name}</div>
                 <div>Short name: @${team.shortName}</div>
                 <div>Description: ${team.description}</div>
@@ -56,6 +56,11 @@ function addListeners() {
     
     document.querySelectorAll( 'button.add-member' ).forEach(function( button ) {
         button.addEventListener( 'click', addMember );
+
+        const select = button.previousElementSibling;
+        
+        // expore closest()
+        const teamId = button.closest( '.team' ).getAttribute( 'data-team-id' );
     });
 }
 
