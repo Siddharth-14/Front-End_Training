@@ -47,6 +47,7 @@ https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML_sections_and_
 - [HTML script element - async and defer](https://javascript.info/script-async-defer)
 - [Diagram - async vs defer](https://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html#script)
 -[How the Browser Pre-loader Makes Pages Load Faster](https://andydavies.me/blog/2013/10/22/how-the-browser-pre-loader-makes-pages-load-faster/)
+- [JavaScript Form Validation - Tutorial](https://www.tutorialrepublic.com/javascript-tutorial/javascript-form-validation.php)
 
 ## Accessibility
 - [Supplied documentation](./docs/05-web-accessibility.pdf)
