@@ -2,7 +2,7 @@
 
 ## Day 1, 2, 3
 
-### Advance JavaScript
+### Advance JavaScript (DONE)
 - Object Oriented Javascript Overview
 
 ### OOP Concepts (DONE)
@@ -39,7 +39,7 @@
 ### Namespacing
 - Global Namespace pollution
 - window context
-- Global Abetment Pattern
+- Global Abatement Pattern
 - Creating user defined context
 
 ### Change the Scope
@@ -63,7 +63,7 @@
 - How to find memory leaks/loitering objects
 - Memory leaks & closures, how to handle them
 
-### Modules and Namespaces
+### Modules and Namespaces (DONE)
 - Creating a module
 - Breaking a module in different modules
 - || operator
@@ -76,4 +76,4 @@
 - What? Why? When?
 - How to write test cases? (High Level)
 - Tools for Unit tessting
-- JSUnit
+- JSUnit / ( Jest / Jasmine )
