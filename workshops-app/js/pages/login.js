@@ -15,11 +15,21 @@
 
         await login( loginForm.email.value, loginForm.password.value );
         
-        window.location = '/workshops'; // path
+        window.location = '/workshops';
+    }
+
+    function addListeners() {
+        loginForm.addEventListener( 'submit', function( event ) {
+            event.preventDefault();
+            loginToApp();
+        });
     }
     
-    loginForm.addEventListener( 'submit', function( event ) {
-        event.preventDefault();
-        loginToApp();
-    });
+    // initial page setup
+    function init() {
+        addListeners();
+    }
+
+    // setup page on load
+    init();
 }());

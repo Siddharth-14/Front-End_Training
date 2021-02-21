@@ -853,6 +853,39 @@
       "upvoteCount": 0,
       "createdDate": "Oct 12, 2020",
       "id": 57
+    },
+    {
+      "workshopId": 3,
+      "sequenceId": 123,
+      "name": "Geo-spatial Indexing",
+      "speaker": "John Doe",
+      "duration": 2,
+      "level": "advanced",
+      "abstract": "Geo-spatial indexes and usage in apps",
+      "createdDate": "Feb 21, 2021",
+      "id": 58
+    },
+    {
+      "workshopId": 3,
+      "sequenceId": 124,
+      "name": "Hello",
+      "speaker": "Jane Doe",
+      "duration": 1,
+      "level": "basic",
+      "abstract": "Hello world",
+      "createdDate": "Feb 21, 2021",
+      "id": 59
+    },
+    {
+      "workshopId": 2,
+      "sequenceId": 234,
+      "name": "New session",
+      "speaker": "Jane Doe",
+      "duration": 2.5,
+      "level": "intermediate",
+      "abstract": "A new intermediate level session",
+      "createdDate": "Feb 21, 2021",
+      "id": 60
     }
   ],
   "users": [

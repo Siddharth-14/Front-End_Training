@@ -11,22 +11,21 @@
         <link rel="stylesheet" href="css/utils.css">
         <link rel="stylesheet" href="dist/css/app.min.css">
         <link rel="stylesheet" href="dist/css/nav.min.css">
-        <link rel="stylesheet" href="css/workshops-list.css">
 
-        <title>Workshops List | Workshops App</title>
+        <title>Home | Workshops App</title>
     </head>
     <body>
         <nav class="navbar-main">
             <div class="container nav-wrapper">
                 <ul class="nav nav-desktop">
                     <li>
-                        <a href="index.html">Home</a>
+                        <a href="index.html" class="active">Home</a>
                     </li>
                     <li>
                         <a href="workshops.html">Workshops List</a>
                     </li>
                     <li>
-                        <a href="feedback.html">Feedback</a>
+                        <a href="about.html">About</a>
                     </li>
                 </ul>
                 <button class="btn-menu btn-icon">
@@ -41,20 +40,22 @@
                     <a href="workshops.html">Workshops List</a>
                 </li>
                 <li>
-                    <a href="feedback.html">Feedback</a>
+                    <a href="about.html">About</a>
                 </li>
             </ul>
         </nav>
         <main>
             <section class="container">
-                <header>
-                    <div class="d-flex justify-content-space-between my-5">
-                        <h1>List of Workshops</h1>
-                        <button class="btn btn-primary">Hide details</button>
-                    </div>
+                <div class="jumbotron my-3">
+                    <h1>Workshops App</h1>
                     <hr />
-                </header>
-                <div class="workshops-list" id="workshops-list"></div>
+                    <p>
+                        The Workshops application serves details of (fictitious) technical workshops happening in various cities. Every workshop has a broad topic (eg. JavaScript), and a workshop has many sessions (each session covers a sub-topic, eg. Closures in JavaScript).
+                    </p>
+                    <p>
+                        You can view a list of workshops, details of every workshop, sessions in a workshop, and also add a new session for a workshop.
+                    </p>
+                </div>
             </section>
         </main>
         <footer class="page-footer">
@@ -68,7 +69,7 @@
                             <a href="workshops.html">Workshops List</a>
                         </li>
                         <li>
-                            <a href="feedback.html">Feedback</a>
+                            <a href="about.html">About</a>
                         </li>
                         <li>
                             <a href="sitemap.html">Site map</a>
@@ -76,11 +77,9 @@
                     </ul>
                 </div>
             </nav>
-            <div class="text-center">&copy; ABC Consulting</div>
+            <div class="text-center">&copy; <a href="http://www.digdeeper.in">www.digdeeper.in</a></div>
         </footer>
+
         <script src="js/app.js"></script>
-        <script src="js/services/auth.js"></script>
-        <script src="js/services/workshops.js"></script>
-        <script src="js/workshops.js"></script>
     </body>
 </html>
