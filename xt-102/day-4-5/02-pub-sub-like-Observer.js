@@ -1,5 +1,5 @@
 /**
- * Publisher-Subscriber Pattern
+ * Publisher-Subscriber Pattern (pub-sub)
  * It is like another pattern called Observer
  * 
  * Why this pattern?
@@ -24,6 +24,7 @@ const EventQueue = (function() {
             }
         },
 
+        // also called on, addListener etc.
         // called by the subscribers of the event
         subscribe: function( eventName, callback ) {
             if( !events[eventName] ) {
