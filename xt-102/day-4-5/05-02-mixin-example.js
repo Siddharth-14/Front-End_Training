@@ -6,11 +6,11 @@ Stack.prototype.push = function( data ) {
     this.arr.push( data );
 };
 
-Stack.prototype.pop = function( data ) {
+Stack.prototype.pop = function() {
     return this.arr.pop();
 };
 
-Stack.prototype.show = function( data ) {
+Stack.prototype.show = function() {
     console.log( this.arr );
 };
 
