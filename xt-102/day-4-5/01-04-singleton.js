@@ -4,7 +4,7 @@ const dashboard = (function() {
 
     function init( options ) {
         // private property
-        const widgets = options.widgets;
+        const widgets = options.widgets || [];
 
         // similar to above private methods may be defined
 
@@ -33,7 +33,7 @@ const dashboard = (function() {
 }());
 
 // creates an returns an object
-dashboard.getInstance( { widgets: [ /* has initial set of widgets to load and show */ ] } );
+dashboard.getInstance( { widgets: [ { name: 'Some widget' } ] } );
 
 // later on when we want to add widgets, dashbaord.getInstance() gives us the initially created object
 dashboard.getInstance().addWidget( { name: 'Team progress chart' } );
