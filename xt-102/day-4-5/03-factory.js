@@ -34,6 +34,7 @@ function Defect( { summary, components, description } ) {
 Object.setPrototypeOf( Defect.prototype, Issue.prototype );
 
 // Factory is a function for generating objects at runtime based on certain inputs available then
+// The factory function encapsulates logic for generating the appropriate kind of object based on runtime infor passed to it
 function factory( issueType, data ) {
     let newIssue;
 
