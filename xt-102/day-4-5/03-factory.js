@@ -33,14 +33,6 @@ function Defect( { summary, components, description } ) {
 
 Object.setPrototypeOf( Defect.prototype, Issue.prototype );
 
-const issueType = 'Epic';
-const formData = {
-    epicName: 'Milestone 3',
-    summary: 'Design pattern, good practices implementation',
-    components: [],
-    description: 'lorem'
-};
-
 // Factory is a function for generating objects at runtime based on certain inputs available then
 function factory( issueType, data ) {
     let newIssue;
@@ -60,4 +52,12 @@ function factory( issueType, data ) {
     return newIssue;
 }
 
-const newIssue = factory( 'Epic' );
+const formData = {
+    epicName: 'Milestone 3',
+    summary: 'Design pattern, good practices implementation',
+    components: [],
+    description: 'lorem'
+};
+
+const newIssue = factory( 'Epic', formData );
+console.log( newIssue );
