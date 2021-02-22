@@ -49,6 +49,7 @@ https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML_sections_and_
 -[How the Browser Pre-loader Makes Pages Load Faster](https://andydavies.me/blog/2013/10/22/how-the-browser-pre-loader-makes-pages-load-faster/)
 - [JavaScript Form Validation - Tutorial 1](https://www.tutorialrepublic.com/javascript-tutorial/javascript-form-validation.php)
 - [JavaScript Form Validation - Tutorial 2](https://www.javascripttutorial.net/javascript-dom/javascript-form-validation/)
+- [JavaScript Design Patterns, Addy Osmani (free book, online)](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)
 
 ## Accessibility
 - [Supplied documentation](./docs/05-web-accessibility.pdf)
