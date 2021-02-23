@@ -6,6 +6,7 @@ function c() {
         console.log( 'after call to d' ); // this will NOT execute
     } catch( err ) { // control comes here
         console.log( err.message );
+        console.log( err.stack ); // prints out function call stack
     }
 
     console.log( 'after try..catch block' );
