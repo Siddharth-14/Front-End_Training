@@ -34,7 +34,17 @@ johnCopy.address = { // johnCopy.address references a different object now
 console.log( 'john =', john );
 console.log( 'johnCopy = ', johnCopy );
 
+// EXERCISE:
 // how to create a copy where email and address have copies of the original email and address
 const johnProperCopy = {
-
+    ...john,
+    address: {
+        ...john.address
+    },
+    emails: [ ...john.emails ]
 };
+
+johnProperCopy.address.city = 'Mumbai';
+
+console.log( 'john = ', john );
+console.log( 'johnProperCopy = ', johnProperCopy );
