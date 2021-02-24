@@ -96,3 +96,5 @@
     - Promise.all(), Promise.race()
 - Feb 23
     - Exercises 3, 4 from ES2015 Lab Guide (rest operator)
+- Feb 24
+    - Exercise 7 from ES2015 Lab Guide (arrow function)
