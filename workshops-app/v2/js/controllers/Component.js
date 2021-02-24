@@ -8,7 +8,7 @@ class Component {
         this.container = container;
     }
 
-    render() {
+    renderView() {
         console.log( 'todo: Component::render()' );
     }
 }

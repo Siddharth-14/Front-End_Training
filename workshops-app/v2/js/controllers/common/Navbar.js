@@ -1,7 +1,7 @@
 import Component from '../Component';
 
 class Navbar extends Component {
-    render() {
+    renderView() {
         const { links } = this.props;
 
         const linksStr = links.map(link => (

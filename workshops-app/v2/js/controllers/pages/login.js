@@ -1,5 +1,6 @@
-import Component from '../Component';
+import Component from '../Component.js';
 import AppConfig from '../../config.js';
+import User from '../../models/User.js';
 
 class Login extends Component {
     state = {
@@ -7,7 +8,8 @@ class Login extends Component {
     };
 
     addListeners() {
-        const loginForm = Handlebars.compile( document.querySelector( '#tpl-login-page' ).innerHTML );
+        const loginForm = document.querySelector( '#login-form' );
+        console.log( loginForm );
 
         loginForm.email.addEventListener( 'input', function( event ) {
             this.state.user.setEmail( event.target.value );
@@ -23,9 +25,12 @@ class Login extends Component {
         });
     }
 
-    render() {
-        const tplLoginPage = Handlebars.compile( document.querySelector( '#tpl-login-page' ).innerHTML );
-        tplLoginForm( this.props );
+    renderView() {
+        const tplLoginView = Handlebars.compile( document.querySelector( '#tpl-login-page' ).innerHTML );
+        document.querySelector( '#root' ).innerHTML = tplLoginView({
+            ...this.props,
+            AppConfig
+        });
         this.addListeners();
     }
 }

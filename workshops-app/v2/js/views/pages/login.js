@@ -13,9 +13,11 @@ async function loginToApp() {
 
 // initial page setup
 function init() {
-    new Login({
-        action: 
+    const loginCtrl = new Login({
+        action: '/login'
     });
+
+    loginCtrl.renderView();
 }
 
 init();

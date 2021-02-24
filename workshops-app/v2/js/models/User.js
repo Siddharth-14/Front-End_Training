@@ -2,6 +2,8 @@ import Model from './Model.js';
 
 class User extends Model {
     constructor( email = '', password = '' ) {
+        super();
+        
         this.email = email;
         this.password = password;
     }
