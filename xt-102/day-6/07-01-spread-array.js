@@ -16,8 +16,10 @@ console.log( Math.max.apply( null, nums ) );
 // new way
 console.log( Math.max( ...nums ) ); // Math.max( 45, 78, 23, 89, 34 );
 
-// EXERCISE:
+// EXERCISE: Concatenated 2 arrays
 const weekdays = [ 'Mon', 'Tue', 'Wed', 'Thu', 'Fri' ], weekends = [ 'Sat', 'Sun' ];
-// Create a new array which has all the days
-
-// along with an object
+// Create a new array which has all the days (use spread operator)
+const days = [
+    ...weekdays, // 'Mon', 'Tue', 'Wed', 'Thu', 'Fri',
+    ...weekends // 'Sat', 'Sun'
+];
