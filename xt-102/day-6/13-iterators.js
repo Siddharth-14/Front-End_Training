@@ -14,6 +14,8 @@ numbers.add( 29 );
 numbers.add( 13 );
 numbers.add( 5 ); // not added - duplicate
 
+console.log( Array.from( numbers ) );
+
 // for of is used for iterables
 // NOTE: for in loop is used for objects (covered earlier)
 for( let item of numbers ) {
