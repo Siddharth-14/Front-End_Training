@@ -20,7 +20,8 @@ const {
     spouse = 'Single',
     name : firstName,
     address : { 
-        city : place
+        city : place,
+        pincode
     },
     emails : [ , secondEmailId ]
 } = john;

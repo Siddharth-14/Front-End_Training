@@ -94,3 +94,5 @@
     - Read up on dispatchEvent (optional reading)
 - Feb 15
     - Promise.all(), Promise.race()
+- Feb 23
+    - Exercises 3, 4 from ES2015 Lab Guide (rest operator)

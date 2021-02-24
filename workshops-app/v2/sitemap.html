@@ -3,23 +3,21 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="This is a workshops application. It helps find technical workshops happening in and around your place.">
-        
-        <!-- reset stylesheet - removes default styling by browser -->
+        <title>Sitemap | Workshops App</title>
+
         <link rel="stylesheet" href="css/external/reset.css">
-        <link rel="stylesheet" href="css/external/fontawesome-free-5.15.2-web/css/all.min.css">
+        <link rel="stylesheet" href="libs/fontawesome-free-5.15.2-web/css/all.min.css">
         <link rel="stylesheet" href="css/utils.css">
         <link rel="stylesheet" href="dist/css/app.min.css">
         <link rel="stylesheet" href="dist/css/nav.min.css">
-
-        <title>Home | Workshops App</title>
+        <link rel="stylesheet" href="css/pages/site-map.css">
     </head>
     <body>
         <nav class="navbar-main">
             <div class="container nav-wrapper">
                 <ul class="nav nav-desktop">
                     <li>
-                        <a href="index.html" class="active">Home</a>
+                        <a href="index.html">Home</a>
                     </li>
                     <li>
                         <a href="workshops.html">Workshops List</a>
@@ -46,16 +44,28 @@
         </nav>
         <main>
             <section class="container">
-                <div class="jumbotron my-3">
-                    <h1>Workshops App</h1>
+                <header class="my-5">
+                    <h1>Sitemap of Workshops App</h1>
                     <hr />
-                    <p>
-                        The Workshops application serves details of (fictitious) technical workshops happening in various cities. Every workshop has a broad topic (eg. JavaScript), and a workshop has many sessions (each session covers a sub-topic, eg. Closures in JavaScript).
-                    </p>
-                    <p>
-                        You can view a list of workshops, details of every workshop, sessions in a workshop, and also add a new session for a workshop.
-                    </p>
-                </div>
+                </header>
+                <nav aria-label="site-map" class="site-map">
+                    <h2 class="my-1">Pages</h2>
+                    <ul>
+                        <li>
+                            <a href="/index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="#">Workshops</a>
+                            <ul>
+                                <li><a href="/workshops.html">Workshops List</a></li>
+                                <li><a href="/workshop-details.html">Workshop Details</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/about.html">About</a>
+                        </li>
+                    </ul>
+                </nav>
             </section>
         </main>
         <footer class="page-footer">

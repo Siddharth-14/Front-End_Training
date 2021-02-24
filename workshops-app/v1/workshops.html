@@ -3,14 +3,19 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Sitemap | Workshops App</title>
-
+        <meta name="description" content="Welcome to Workshops Application. This helps find technical workshops happening in and around your place.">
+        
+        <!-- reset stylesheet - removes default styling by browser -->
         <link rel="stylesheet" href="css/external/reset.css">
-        <link rel="stylesheet" href="css/external/fontawesome-free-5.15.2-web/css/all.min.css">
+        <link rel="stylesheet" href="libs/fontawesome-free-5.15.2-web/css/all.min.css">
+        <link rel="stylesheet" href="libs/notifications-center/css/notifications.css">
+        <link rel="stylesheet" href="js/external">
         <link rel="stylesheet" href="css/utils.css">
         <link rel="stylesheet" href="dist/css/app.min.css">
         <link rel="stylesheet" href="dist/css/nav.min.css">
-        <link rel="stylesheet" href="css/pages/site-map.css">
+        <link rel="stylesheet" href="css/pages/workshops.css">
+
+        <title>Workshops List | Workshops App</title>
     </head>
     <body>
         <nav class="navbar-main">
@@ -20,7 +25,7 @@
                         <a href="index.html">Home</a>
                     </li>
                     <li>
-                        <a href="workshops.html">Workshops List</a>
+                        <a href="workshops.html" class="active">Workshops List</a>
                     </li>
                     <li>
                         <a href="about.html">About</a>
@@ -45,27 +50,13 @@
         <main>
             <section class="container">
                 <header class="my-5">
-                    <h1>Sitemap of Workshops App</h1>
+                    <div class="d-flex justify-content-space-between">
+                        <h1>List of Workshops</h1>
+                        <button class="btn btn-primary" id="btn-hide-details">Hide details</button>
+                    </div>
                     <hr />
                 </header>
-                <nav aria-label="site-map" class="site-map">
-                    <h2 class="my-1">Pages</h2>
-                    <ul>
-                        <li>
-                            <a href="/index.html">Home</a>
-                        </li>
-                        <li>
-                            <a href="#">Workshops</a>
-                            <ul>
-                                <li><a href="/workshops.html">Workshops List</a></li>
-                                <li><a href="/workshop-details.html">Workshop Details</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="/about.html">About</a>
-                        </li>
-                    </ul>
-                </nav>
+                <div class="workshops-list" id="workshops-list"></div>
             </section>
         </main>
         <footer class="page-footer">
@@ -90,6 +81,13 @@
             <div class="text-center">&copy; <a href="http://www.digdeeper.in">www.digdeeper.in</a></div>
         </footer>
 
+        <script src="libs/notifications-center/js/notifications.js"></script>
+        <script src="js/utils/ajax.js"></script>
+        <script src="js/utils/date.js"></script>
+        <script src="js/config.js"></script>
         <script src="js/app.js"></script>
+        <script src="js/services/auth.js"></script>
+        <script src="js/services/workshops.js"></script>
+        <script src="js/pages/workshops.js"></script>
     </body>
 </html>
