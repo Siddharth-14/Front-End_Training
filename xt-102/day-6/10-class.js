@@ -1,3 +1,4 @@
+// EXERCISE: Q9 from ES2015 lab guide
 class Person {
     // ES2018 feature (class properties syntax - setting up properties outside of methods)
     nationality = Person.getNationality();

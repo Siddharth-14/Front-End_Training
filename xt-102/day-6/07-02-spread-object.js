@@ -1,3 +1,4 @@
+// Not ES2015 (I think it is ES2018)
 const john = {
     name: 'John',
     // spouse: 'Jane',
