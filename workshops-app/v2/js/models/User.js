@@ -29,18 +29,18 @@ class User extends Model {
 
         if( this.email === '' ) {
             errors.push( 'Email is empty' );
-            this.publish( EMAIL_VALIDATION_FAILED, errors );
+            this.publish( User.Events.EMAIL_VALIDATION_FAILED, errors );
         }
 
         return errors;
     }
     
-    validatePasswordl() {
+    validatePassword() {
         const errors = [];
 
         if( this.password === '' ) {
             errors.push( 'Password is empty' );
-            this.publish( PASSWORD_VALIDATION_FAILED, errors );
+            this.publish( User.Events.PASSWORD_VALIDATION_FAILED, errors );
         }
 
         return errors;
@@ -53,7 +53,7 @@ class User extends Model {
         errors.password = this.validatePassword();
 
         if( errors.email.length || errors.password.length ) {
-            this.publish( VALIDATION_FAILED, errors );
+            this.publish( User.Events.VALIDATION_FAILED, errors );
         }
 
         return errors;

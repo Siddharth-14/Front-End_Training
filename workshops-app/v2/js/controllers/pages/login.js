@@ -1,6 +1,7 @@
 import Component from '../Component.js';
 import User from '../../models/User.js';
 import AppConfig from '../../config.js';
+import { login } from '../../services/auth.js';
 
 class Login extends Component {
     state = {
@@ -19,7 +20,11 @@ class Login extends Component {
         node.classList.add( 'hide' );
     }
 
-    onValidationFailure( errors ) {
+    onValidationFailure = ( errors ) => {
+        const loginForm = document.querySelector( '#login-form' );
+        const emailEl = loginForm.email;
+        const passwordEl = loginForm.password;
+
         if( errors.email ) {
             this.showError( emailEl, errors.join( ', ' ) );
         } else {
@@ -35,19 +40,21 @@ class Login extends Component {
     
     login = ( event ) => {
         event.preventDefault();
-        if( this.user.validate()
-        login( this.email, this.password );
+
+        const { user } = this.state;
+        
+        if( user.validate() ) {
+            login( user.email, user.password );
+        }
     };
 
     addListeners() {
         const loginForm = document.querySelector( '#login-form' );
-        const emailEl = loginForm.email;
-        const passwordEl = loginForm.password;
         
         loginForm.email.addEventListener( 'input', this.setEmail );
         loginForm.password.addEventListener( 'input', this.setPassword );
 
-        this.state.user.subscribe( User.Events.VALIDATION_FAILED, onValidationFailure );
+        this.state.user.subscribe( User.Events.VALIDATION_FAILED, this.onValidationFailure );
         
         loginForm.addEventListener( 'submit', this.login );
     }
