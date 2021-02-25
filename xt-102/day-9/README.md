@@ -67,7 +67,17 @@ Installation and usage
 npm install -g node-sass nodemon
 node-sass path/to/input.scss path/to/output.css”
 ```
+To compile an entire folder with Sass files
+```
+node-sass path/to/src/folder -o path/to/output/folder
+```
 We shall use npm scripts to run Sass and nodemon to watch for changes.
+
+### Windows issues
+Please run the following to get admin privileges
+```
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
 
 ### Features
 Similar to Less. Inheritance is specific to Sass.

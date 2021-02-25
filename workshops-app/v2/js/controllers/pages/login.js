@@ -62,7 +62,7 @@ class Login extends Component {
     renderView() {
         const tplLoginView = Handlebars.compile( document.querySelector( '#tpl-login-page' ).innerHTML );
         document.querySelector( '#root' ).innerHTML = tplLoginView({
-            ...this.props,
+            action: '/login',
             AppConfig
         });
         this.addListeners();
