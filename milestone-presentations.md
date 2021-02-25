@@ -1,5 +1,21 @@
 # Milestone presentations
 
+## Milestone 3
+- Have you decided whose code will be carried forward?
+- Create 2 branches on Interactive projects
+    - milestone_3_group_a_develop (team members share this for development)
+    - milestone_3_group_a_master (permissions will be revoked)
+- Each person works on a page (suggestion)
+- Implement all feedback
+- Start with the SCSS
+    - How will you split CSS into partials
+        - _vars.scss
+        - utils.scss
+        - nav.scss
+        - btn.scss
+        - card.scss
+- Go through the v2 version of workshops-app
+
 ## Checklist - Things to care of in Milestone 1 (and later)
 - RWD
     - Fluid layout
