@@ -35,3 +35,5 @@ function makeAjaxRequest( { method, endpoint, body, authenticated } ) {
             return response.json();
         });
 }
+
+export default makeAjaxRequest;

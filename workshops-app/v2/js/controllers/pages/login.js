@@ -1,28 +1,55 @@
 import Component from '../Component.js';
-import AppConfig from '../../config.js';
 import User from '../../models/User.js';
+import AppConfig from '../../config.js';
 
 class Login extends Component {
     state = {
         user: new User()
     };
 
+    setEmail = ( event ) => this.state.user.setEmail( event.target.value );
+    setPassword = ( event ) => this.state.user.setPassword( event.target.value );
+
+    showError( node, message ) {
+        node.innerText = message;
+        node.classList.remove( 'hide' );
+    }
+    
+    hideError( node ) {
+        node.classList.add( 'hide' );
+    }
+
+    onValidationFailure( errors ) {
+        if( errors.email ) {
+            this.showError( emailEl, errors.join( ', ' ) );
+        } else {
+            this.showError( emailEl );
+        }
+
+        if( errors.password ) {
+            this.showError( passwordEl, errors.join( ', ' ) );
+        } else {
+            this.showError( passwordEl );
+        }
+    }
+    
+    login = ( event ) => {
+        event.preventDefault();
+        if( this.user.validate()
+        login( this.email, this.password );
+    };
+
     addListeners() {
         const loginForm = document.querySelector( '#login-form' );
-        console.log( loginForm );
-
-        loginForm.email.addEventListener( 'input', function( event ) {
-            this.state.user.setEmail( event.target.value );
-        });
+        const emailEl = loginForm.email;
+        const passwordEl = loginForm.password;
         
-        loginForm.password.addEventListener( 'input', function() {
-            user.setPassword( this.value );
-        });
-    
-        loginForm.addEventListener( 'submit', function( event ) {
-            event.preventDefault();
-            loginToApp();
-        });
+        loginForm.email.addEventListener( 'input', this.setEmail );
+        loginForm.password.addEventListener( 'input', this.setPassword );
+
+        this.state.user.subscribe( User.Events.VALIDATION_FAILED, onValidationFailure );
+        
+        loginForm.addEventListener( 'submit', this.login );
     }
 
     renderView() {

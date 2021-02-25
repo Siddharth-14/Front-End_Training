@@ -1,6 +1,12 @@
 import Model from './Model.js';
 
 class User extends Model {
+    static Events = {
+        EMAIL_VALIDATION_FAILED: 'EMAIL_VALIDATION_FAILED',
+        PASSWORD_VALIDATION_FAILED: 'PASSWORD_VALIDATION_FAILED',
+        VALIDATION_FAILED: 'VALIDATION_FAILED'
+    };
+
     constructor( email = '', password = '' ) {
         super();
         
@@ -10,35 +16,47 @@ class User extends Model {
 
     setEmail( email ) {
         this.email = email;
+        return this.validateEmail();
     }
     
     setPassword( password ) {
         this.password = password;
+        return this.validatePassword();
+    }
+
+    validateEmail() {
+        const errors = [];
+
+        if( this.email === '' ) {
+            errors.push( 'Email is empty' );
+            this.publish( EMAIL_VALIDATION_FAILED, errors );
+        }
+
+        return errors;
+    }
+    
+    validatePasswordl() {
+        const errors = [];
+
+        if( this.password === '' ) {
+            errors.push( 'Password is empty' );
+            this.publish( PASSWORD_VALIDATION_FAILED, errors );
+        }
+
+        return errors;
     }
 
     validate() {
-        let isValid = true;
+        const errors = {};
 
-        const errors = {
-            email: [],
-            password: []
-        };
+        errors.email = this.validateEmail();
+        errors.password = this.validatePassword();
 
-        if( this.email === '' ) {
-            isValid = false;
-            errors.email.push( 'Email is required' );
-        }
-        
-        if( this.password === '' ) {
-            isValid = false;
-            errors.password.push( 'Password is required' );
+        if( errors.email.length || errors.password.length ) {
+            this.publish( VALIDATION_FAILED, errors );
         }
 
-        if( isValid ) {
-            return null;
-        } else {
-            return errors;
-        }
+        return errors;
     }
 }
 

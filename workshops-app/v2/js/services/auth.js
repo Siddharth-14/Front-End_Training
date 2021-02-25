@@ -29,3 +29,9 @@ function login( email, password ) {
         }
     }).then( storeUserInfo );
 }
+
+export {
+    storeUserInfo,
+    getToken,
+    login
+};

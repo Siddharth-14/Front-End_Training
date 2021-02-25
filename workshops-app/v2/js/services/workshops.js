@@ -1,3 +1,5 @@
+import makeAjaxRequest from '../utils/ajax.js';
+
 async function getWorkshops() {
     return makeAjaxRequest({
         method: 'GET',
@@ -13,3 +15,8 @@ async function getWorkshopById( id ) {
         authenticated: true
     });
 }
+
+export {
+    getWorkshops,
+    getWorkshopById
+};

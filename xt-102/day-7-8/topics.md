@@ -54,3 +54,8 @@
 - Bootstrap Buttons
 
 ### Hands-on exercises
+
+## Reference
+- [Bootstrap 4 Essentials - On LinkedIn Learning](https://www.linkedin.com/learning-login/share?account=2130370&forceAccount=false&redirect=https%3A%2F%2Fwww.linkedin.com%2Flearning%2Fbootstrap-4-essential-training%3Ftrk%3Dshare_ent_url%26shareId%3D8TRnXq8aTc%252BT%252BpQqAxDzCA%253D%253Dv)
+- [Twitter Bootstrap Docs](https://getbootstrap.com/docs/4.6/getting-started/introduction/)
+- [Zurb FOundation Docs](https://get.foundation/)
