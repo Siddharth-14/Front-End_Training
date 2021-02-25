@@ -15,6 +15,8 @@
         - btn.scss
         - card.scss
 - Go through the v2 version of workshops-app
+- Go through handlebars documentation (how to use loops, how to use if statements)
+- Creating models, views, controllers
 
 ## Checklist - Things to care of in Milestone 1 (and later)
 - RWD
