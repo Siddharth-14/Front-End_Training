@@ -1,5 +1,8 @@
-(async function() {
-    function appendWorkshopCard( workshop ) {
+import { getWorkshops } from '../services/workshops.js';
+import { formatDate } from '../utils/date.js';
+
+class WorkshopList {
+    appendWorkshopCard( workshop ) {
         const workshopsList = document.querySelector( '#workshops-list' );
 
         const tpl = `
@@ -23,37 +26,37 @@
         workshopsList.innerHTML += tpl;
     }
 
-    function render( workshops ) {
+    render( workshops ) {
         // populate the DOM with workshops
-        workshops.forEach(function( workshop ) {
-            appendWorkshopCard( workshop );
+        workshops.forEach( workshop => {
+            this.appendWorkshopCard( workshop );
         });
     }
 
-    function onClickBtnHideDetails() {
-        document.querySelectorAll( '.workshops-list-item-details' ).forEach(function( itemDetails ) {
+    onClickBtnHideDetails() {
+        document.querySelectorAll( '.workshops-list-item-details' ).forEach( itemDetails => {
             itemDetails.classList.toggle( 'hide' );
         });
 
         this.innerText = document.querySelector( '.workshops-list-item-details' ).classList.contains( 'hide' ) ? 'Show details' : 'Hide details';
     }
 
-    function addListeners() {
-        document.querySelector( '#btn-hide-details' ).addEventListener( 'click', onClickBtnHideDetails );
+    addListeners() {
+        document.querySelector( '#btn-hide-details' ).addEventListener( 'click', this.onClickBtnHideDetails );
     }
 
     // initial page setup
-    async function init() {
+    async init() {
         NC.init({
             position: NC.POSITION.TOP_RIGHT
         });
 
         try {
             // IMPORTANT: It is ok to call addListeners before data fetch on this page, as the only element on which the click handler is set is the hide details button, which is available in the HTML even BEFORE data is fetched and workshop list item cards are shown.
-            addListeners();
+            this.addListeners();
             
             const workshops = await getWorkshops();
-            render( workshops );
+            this.render( workshops );
             
             NC.show({
                 type: 'info',
@@ -69,7 +72,10 @@
             });
         }
     }
+}
 
-    // setup page on load
-    init();
-}());
+// setup page on load
+const page = new WorkshopList();
+page.init();
+
+export default WorkshopList;

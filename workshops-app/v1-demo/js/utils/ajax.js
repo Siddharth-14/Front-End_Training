@@ -1,3 +1,6 @@
+import AppConfig from '../config.js';
+import { getToken } from '../services/auth.js';
+
 function makeAjaxRequest( { method, endpoint, body, authenticated } ) {
     const headers = new Headers();
     
@@ -35,3 +38,7 @@ function makeAjaxRequest( { method, endpoint, body, authenticated } ) {
             return response.json();
         });
 }
+
+export {
+    makeAjaxRequest
+};

@@ -1,3 +1,5 @@
+import { makeAjaxRequest } from '../utils/ajax.js';
+
 /**
  * Authorization for the app
  */
@@ -29,3 +31,8 @@ function login( email, password ) {
         }
     }).then( storeUserInfo );
 }
+
+export {
+    getToken,
+    login
+};

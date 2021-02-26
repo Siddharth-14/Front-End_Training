@@ -7,3 +7,7 @@ function formatDate( isoDateStr = '', format = 'standard' ) {
             return isoDateStr.substr( 0, 10 );
     }
 }
+
+export {
+    formatDate
+};

@@ -3,7 +3,7 @@ import User from '../../models/User.js';
 import AppConfig from '../../config.js';
 import { login } from '../../services/auth.js';
 
-class Login extends Component {
+class LoginForm extends Component {
     state = {
         user: new User()
     };
@@ -69,4 +69,4 @@ class Login extends Component {
     }
 }
 
-export default Login;
+export default LoginForm;

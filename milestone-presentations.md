@@ -4,7 +4,16 @@
 - Have you decided whose code will be carried forward?
 - Create 2 branches on Interactive projects
     - milestone_3_group_a_develop (team members share this for development)
+        - protected
+        - create a branch for yourself for every feature you create
+            - milestone_3_group_a_sidgorad_add_meetings
+                - Alternatively, branches can be named like...
+                - Story/PJXIB-123—saketa-yasavi
+                - defect/PJXIB-345—fixed-alignment-card
     - milestone_3_group_a_master (permissions will be revoked)
+        - protected
+- Commit messages convention
+    - Commit BUDP-898 Fixed merge cart scenarios
 - Each person works on a page (suggestion)
 - Implement all feedback
 - Start with the SCSS

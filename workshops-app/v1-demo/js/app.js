@@ -1,6 +1,21 @@
-const navMobile = document.querySelector( '.nav-mobile' ) ;
-const btnMenu = document.querySelector( '.btn-menu' );
+class Navbar {
+    navMobile = document.querySelector( '.nav-mobile' ) ;
+    btnMenu = document.querySelector( '.btn-menu' );
 
-btnMenu.onclick = function() {
-    navMobile.classList.toggle( 'hide' );
-};
+    onClickBtnMenu() {
+        navMobile.classList.toggle( 'hide' );
+    }
+
+    addListeners() {
+        this.btnMenu.addEventListener( 'click', this.onClickBtnMenu );
+    }
+
+    init() {
+        this.addListeners();
+    }
+}
+
+const navbar = new Navbar();
+navbar.init();
+
+export default Navbar;
