@@ -1,5 +1,6 @@
 import { getWorkshops } from '../services/workshops.js';
 import { formatDate } from '../utils/date.js';
+import Navbar from '../navbar.js';
 
 class WorkshopList {
     appendWorkshopCard( workshop ) {

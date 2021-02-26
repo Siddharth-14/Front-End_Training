@@ -2,8 +2,8 @@ class Navbar {
     navMobile = document.querySelector( '.nav-mobile' ) ;
     btnMenu = document.querySelector( '.btn-menu' );
 
-    onClickBtnMenu() {
-        navMobile.classList.toggle( 'hide' );
+    onClickBtnMenu = () => {
+        this.navMobile.classList.toggle( 'hide' );
     }
 
     addListeners() {
