@@ -1,0 +1,1 @@
+// EXERCISE: Check MDN on how to use String split() method
