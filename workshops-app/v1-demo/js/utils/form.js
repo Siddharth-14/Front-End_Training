@@ -36,3 +36,10 @@ function showError( formControlEl ) {
 function hideError( formControlEl ) {
     formControlEl.closest( '.form-group' ).querySelector( '.form-control-error' ).style.display = 'none';
 }
+
+export {
+    getFormData,
+    getTrimmedFormData,
+    showError,
+    hideError
+};

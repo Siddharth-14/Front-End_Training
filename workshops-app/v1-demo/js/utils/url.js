@@ -20,3 +20,7 @@ function getQueryParams( queryString ) {
 
     return queryParamsObj;
 }
+
+export {
+    getQueryParams
+};

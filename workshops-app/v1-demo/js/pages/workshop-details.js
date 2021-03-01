@@ -1,5 +1,11 @@
-(async function() {
-    function addWorkshopCard( workshop ) {
+import { formatDate } from '../utils/date.js';
+import { getTrimmedFormData, showError, hideError } from '../utils/form.js';
+import { getQueryParams } from '../utils/url.js';
+import { addSession } from '../services/sessions.js';
+import { getWorkshopById } from '../services/workshops.js';
+
+class WorkshopDetails {
+    addWorkshopCard( workshop ) {
         const workshopDetailsWrapper = document.querySelector( '#workshop-details-wrapper' );
 
         const tpl = `
@@ -48,7 +54,7 @@
         workshopDetailsWrapper.innerHTML = tpl;
     }
 
-    function addNewSessionForm( workshop ) {
+    addNewSessionForm( workshop ) {
         const formAddNewSession = document.querySelector( '#form-add-new-session-wrapper' );
 
         const tpl = `
@@ -170,7 +176,7 @@
         formAddNewSession.innerHTML = tpl;
     }
 
-    function getFormattedSessionData( formEl ) {
+    getFormattedSessionData( formEl ) {
         const formData = getTrimmedFormData( formEl );
 
         formData.workshopId = parseInt( formData.workshopId );
@@ -180,7 +186,7 @@
         return formData;
     }
 
-    function validateAddNewSessionForm( formEl ) {
+    validateAddNewSessionForm( formEl ) {
         const formData = getTrimmedFormData( formEl );
         let firstErrorEl = null;
 
@@ -235,16 +241,12 @@
         return firstErrorEl === null;
     }
 
-    function onSubmitAddNewSessionForm( event ) {
+    // We use => function syntax here as we would like the "this" to refer to the page object, rather than the form DOM node
+    onSubmitAddNewSessionForm = ( event ) => {
         event.preventDefault();
 
-        if( validateAddNewSessionForm( event.target ) ) {
-            makeAjaxRequest({
-                method: 'post',
-                endpoint: 'sessions',
-                body: getFormattedSessionData( event.target ),
-                authenticated: true
-            })
+        if( this.validateAddNewSessionForm( event.target ) ) {
+            addSession( getFormattedSessionData( event.target ) )
                 .then( session => {
                     event.target.reset();
                     NC.show({
@@ -265,17 +267,17 @@
         }
     }
 
-    function addListeners() {
-        document.querySelector( '#form-add-new-session' ).addEventListener( 'submit', onSubmitAddNewSessionForm );
+    addListeners() {
+        document.querySelector( '#form-add-new-session' ).addEventListener( 'submit', this.onSubmitAddNewSessionForm );
     }
 
-    function render( workshop ) {
-        addWorkshopCard( workshop );
-        addNewSessionForm( workshop );
+    render( workshop ) {
+        this.addWorkshopCard( workshop );
+        this.addNewSessionForm( workshop );
     }
 
     // initial page setup
-    async function init() {
+    async init() {
         NC.init({
             position: NC.POSITION.TOP_RIGHT
         });
@@ -283,10 +285,10 @@
         try {
             const id = parseInt( getQueryParams( window.location.search ).id );
             const workshop = await getWorkshopById( id );
-            render( workshop );
+            this.render( workshop );
             
             // IMPORTANT: It is important to call addListeners after render, as the form whose submission is being handled is available in the HTML only after rendering the page (in particular the form).
-            addListeners();
+            this.addListeners();
 
             NC.show({
                 type: 'info',
@@ -298,12 +300,12 @@
             NC.show({
                 type: 'error',
                 title: 'Oops! Something went wrong.',
-                description: error.message,
+                description: err.message,
                 duration: 10
             });
         }
     }
+}
 
-    // setup page on load
-    init();
-}());
+const page = new WorkshopDetails();
+page.init();
