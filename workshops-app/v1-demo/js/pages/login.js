@@ -44,7 +44,7 @@ class LoginPage {
     // a method which is defined using arrow function syntax will ALWAYS have its context ("this") set to the object
     onSubmitLoginForm = ( event ) => {
         event.preventDefault();
-        this.loginToApp( this.loginForm.email.value, this.loginForm.password.value );
+        this.loginToApp();
     }
 
     addListeners() {
