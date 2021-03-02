@@ -38,14 +38,19 @@ class User {
         return errors;
     }
 
+    isValid() {
+        const errors = this.validate();
+        return errors.email.length === 0 && errors.password.length === 0;
+    }
+
     setEmail( email ) {
         this.email = email;
         return this.validateEmail();
     }
     
-    setPassword( email ) {
-        this.email = email;
-        return this.validateEmail();
+    setPassword( password ) {
+        this.password = password;
+        return this.validatePassword();
     }
 }
 

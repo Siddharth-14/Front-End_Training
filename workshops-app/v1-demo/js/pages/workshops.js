@@ -1,8 +1,11 @@
 import { getWorkshops } from '../services/workshops.js';
 import { formatDate } from '../utils/date.js';
 import Navbar from '../navbar.js';
+import Workshop from '../models/Workshop.js';
 
 class WorkshopList {
+    workshops = null;
+
     appendWorkshopCard( workshop ) {
         const workshopsList = document.querySelector( '#workshops-list' );
 
@@ -56,7 +59,9 @@ class WorkshopList {
             // IMPORTANT: It is ok to call addListeners before data fetch on this page, as the only element on which the click handler is set is the hide details button, which is available in the HTML even BEFORE data is fetched and workshop list item cards are shown.
             this.addListeners();
             
-            const workshops = await getWorkshops();
+            const workshopsRaw = await getWorkshops();
+            const workshops = workshopsRaw.map( workshop => new Workshop( workshop ) );
+
             this.render( workshops );
             
             NC.show({
