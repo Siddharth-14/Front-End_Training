@@ -29,7 +29,15 @@
         <script src="external/jquery-3.2.1.min.js"></script>
         <script>
             $(document).ready(function() {
-                $( '.ads-container' ).load( './ads/ad-1.html .ad' );
+                // the second argument (callback function executes on success / error)
+                $( '.ads-container' ).load( './ads/ad-1.html .ad', function( response, status, xhr ) {
+                    
+                    if( status === 'error' ) {
+                        $( '.ads-container' ).html( 'Some problem loading ads...' );
+                    }
+
+                    // similarly you can do something if successful
+                });
             });
         </script>
     </body>
