@@ -32,9 +32,19 @@
 
     <script src="external/jquery-3.2.1.min.js"></script>
     <script>
+      var page = 1;
       $(document).ready(function () {
-        $(".ads-container").load("./ads/ad-1.html .ad");
+        setInterval(addSwitcher,1000);
       });
+      
+     
+      function addSwitcher(){
+        if(page>=5){
+          page=1;
+        }
+        $(".ads-container").load(`./ads/ad-${page}.html .ad`);
+        page++
+      }
     </script>
   </body>
 </html>
