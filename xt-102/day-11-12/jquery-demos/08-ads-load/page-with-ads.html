@@ -29,15 +29,31 @@
         <script src="external/jquery-3.2.1.min.js"></script>
         <script>
             $(document).ready(function() {
-                // the second argument (callback function executes on success / error)
-                $( '.ads-container' ).load( './ads/ad-1.html .ad', function( response, status, xhr ) {
-                    
-                    if( status === 'error' ) {
-                        $( '.ads-container' ).html( 'Some problem loading ads...' );
-                    }
+                const ads = [
+                    './ads/ad-1.html',
+                    './ads/ad-2.html',
+                    './ads/ad-3.html',
+                    './ads/ad-4.html'
+                ];
 
-                    // similarly you can do something if successful
-                });
+                adIdx = -1;
+
+                function nextAd() {
+                    adIdx = ( adIdx + 1 ) % 4;
+
+                    $( '.ads-container' ).load( `${ads[adIdx]} .ad`, function( response, status, xhr ) {
+                        
+                        if( status === 'error' ) {
+                            $( '.ads-container' ).html( 'Some problem loading ads...' );
+                        }
+
+                        // similarly you can do something if successful
+                    });
+                }
+
+                // the second argument (callback function executes on success / error)
+                nextAd();
+                setInterval( nextAd, 5000 );
             });
         </script>
     </body>
