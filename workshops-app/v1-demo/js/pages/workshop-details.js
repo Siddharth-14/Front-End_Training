@@ -3,8 +3,13 @@ import { getTrimmedFormData, showError, hideError } from '../utils/form.js';
 import { getQueryParams } from '../utils/url.js';
 import { addSession } from '../services/sessions.js';
 import { getWorkshopById } from '../services/workshops.js';
+import Workshop from '../models/Workshop.js';
+import Session from '../models/Session.js';
 
 class WorkshopDetails {
+    workshop = null;
+    session = null;
+
     addWorkshopCard( workshop ) {
         const workshopDetailsWrapper = document.querySelector( '#workshop-details-wrapper' );
 
@@ -284,8 +289,9 @@ class WorkshopDetails {
 
         try {
             const id = parseInt( getQueryParams( window.location.search ).id );
-            const workshop = await getWorkshopById( id );
-            this.render( workshop );
+            const workshopRaw = await getWorkshopById( id );
+            this.workshop = new Workshop( workshopRaw );
+            this.render( this.workshop );
             
             // IMPORTANT: It is important to call addListeners after render, as the form whose submission is being handled is available in the HTML only after rendering the page (in particular the form).
             this.addListeners();
