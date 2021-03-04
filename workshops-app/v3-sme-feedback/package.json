@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "start": "http-server -c-1 ./",
-        "build:css": "sass ./src:dist/css"
+        "build:css": "sass --style=compressed ./src:dist/css"
     },
     "keywords": [],
     "author": "",
