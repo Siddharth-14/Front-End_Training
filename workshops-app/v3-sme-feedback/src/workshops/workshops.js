@@ -5,29 +5,12 @@ import Workshop from '/src/js/models/Workshop.js';
 
 class WorkshopList {
     workshops = null;
+    workshopsListTplFn = Handlebars.compile( document.querySelector( '#workshops-list-tpl' ).innerHTML );
 
     appendWorkshopCard( workshop ) {
         const workshopsList = document.querySelector( '#workshops-list' );
 
-        const tpl = `
-            <a class="card workshops-list-item my-3 text-reset text-no-underline" href="/src/workshops/workshop-details.html?id=${workshop.id}">
-                <div class="text-center">
-                    <img src="${workshop.imageUrl}" alt="${workshop.name}" />
-                </div>
-                <h2 class="workshops-list-item-title my-3">${workshop.name}</h2>
-                
-                <div class="my-3 workshops-list-item-details">
-                    <div class="my-1">
-                        <time datetime="${formatDate(workshop.startDate)}">${formatDate(workshop.startDate, 'display')}</time> - <time datetime="${formatDate(workshop.endDate)}">${formatDate(workshop.endDate, 'display')}</time>
-                    </div>
-                    <div>
-                        <time>${workshop.time}</time>
-                    </div>
-                </div>
-            </a>
-        `;
-
-        workshopsList.innerHTML += tpl;
+        workshopsList.innerHTML += this.workshopsListTplFn( { workshop } );
     }
 
     render( workshops ) {
@@ -53,6 +36,11 @@ class WorkshopList {
     async init() {
         NC.init({
             position: NC.POSITION.TOP_RIGHT
+        });
+
+        Handlebars.registerHelper( 'formatDate', function( ...args ) {
+            const result = formatDate( ...args );
+            return result;
         });
 
         try {

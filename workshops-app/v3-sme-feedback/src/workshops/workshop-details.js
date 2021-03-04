@@ -216,7 +216,7 @@ class WorkshopDetails {
         this.addNewSession();
     }
 
-    addListeners() {
+    addListeners( this ) {
         this.addNewSessionForm.sequenceId.addEventListener( 'input', this.onInput.bind( null, 'setSequenceId', parseInt ) );
         this.addNewSessionForm.name.addEventListener( 'input', this.onInput.bind( null, 'setName', identity ) );
         this.addNewSessionForm.speaker.addEventListener( 'input', this.onInput.bind( null, 'setSpeaker', identity ) );
