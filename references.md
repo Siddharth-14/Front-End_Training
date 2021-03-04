@@ -50,6 +50,7 @@ https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML_sections_and_
 - [JavaScript Form Validation - Tutorial 1](https://www.tutorialrepublic.com/javascript-tutorial/javascript-form-validation.php)
 - [JavaScript Form Validation - Tutorial 2](https://www.javascripttutorial.net/javascript-dom/javascript-form-validation/)
 - [JavaScript Design Patterns, Addy Osmani (free book, online)](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)
+- [Javascript "use strict" Tutorial with Examples](http://qnimate.com/javascript-strict-mode-in-nutshell/)
 
 ## Accessibility
 - [Supplied documentation](./docs/05-web-accessibility.pdf)
