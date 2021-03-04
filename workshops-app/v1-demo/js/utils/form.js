@@ -1,5 +1,5 @@
 // gather named inputs in a form into an object
-function getFormData( formEl ) {
+const getFormData = ( formEl ) => {
     const formData = {};
 
     for( let i = 0; i < formEl.length; i++ ) {
@@ -13,7 +13,7 @@ function getFormData( formEl ) {
 }
 
 // gather named inputs in a form into an object, while removing leading and trailing whitespaces from their values
-function getTrimmedFormData( formEl ) {
+const getTrimmedFormData = ( formEl ) => {
     const formData = getFormData( formEl );
 
     for( let key in formData ) {

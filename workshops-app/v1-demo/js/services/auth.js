@@ -22,7 +22,7 @@ function getToken() {
 }
 
 function login( email, password ) {
-    return makeAjaxRequest( {
+    return makeAjaxRequest({
         method: 'POST',
         endpoint: 'login',
         body: {

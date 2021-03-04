@@ -7,19 +7,8 @@ class LoginPage {
     loginForm = document.querySelector( 'form' );
     user = new User( '', '' );
 
-    async loginToApp() {
-        if( !this.user.isValid() ) {
-            return;
-        }
-    
-        await login( this.user.email, this.user.password );
-        
-        window.location = '/workshops';
-    }
-
     onInputEmail = ( event ) => {
         const errors = this.user.setEmail( event.target.value );
-        console.log( this.user );
         
         if( errors.length === 0 ) {
             hideError( event.target );
@@ -31,7 +20,6 @@ class LoginPage {
     
     onInputPassword = ( event ) => {
         const errors = this.user.setPassword( event.target.value );
-        console.log( this.user );
 
         if( errors.length === 0 ) {
             hideError( event.target );
@@ -39,6 +27,16 @@ class LoginPage {
         }
 
         showError( event.target, errors.join( ', ' ) );
+    }
+
+    async loginToApp() {
+        if( !this.user.isValid() ) {
+            return;
+        }
+    
+        await login( this.user.email, this.user.password );
+        
+        window.location = '/workshops';
     }
 
     // a method which is defined using arrow function syntax will ALWAYS have its context ("this") set to the object

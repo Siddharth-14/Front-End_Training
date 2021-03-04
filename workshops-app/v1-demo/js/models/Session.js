@@ -7,7 +7,7 @@ class Session {
 
     constructor( sessionObjOrWorkshopId, sequenceId, name, speaker, duration, level, abstract, upvoteCount = 0 ) {
         if( typeof sessionObjOrWorkshopId === 'object' ) {
-            Object.assign( this, sessionObj );
+            Object.assign( this, sessionObjOrWorkshopId );
             return; // in a constructor this still causes to return the newly created object
         }
 
@@ -27,24 +27,24 @@ class Session {
         }
     }
 
-    validateWorkshopId( workshopId ) {
+    validateWorkshopId( workshopId = this.workshopId ) {
         const errors = [];
 
-        if( typeof workshopId !== number ) {
+        if( typeof workshopId !== 'number' ) {
             errors.push( 'Workshop ID is not a number' )
         } else {
             if( workshopId < 0 ) {
                 errors.push( 'Workshop ID is not a positive number' );
             }
         }
-       
+    
         this.throwErrorIfExists( errors );
     }
     
-    validateSequenceId( sequenceId ) {
+    validateSequenceId( sequenceId = this.sequenceId ) {
         const errors = [];
 
-        if( typeof sequenceId !== number ) {
+        if( typeof sequenceId !== 'number' ) {
             errors.push( 'Sequence ID is not a number' )
         } else {
             if( sequenceId < 0 ) {
@@ -55,7 +55,7 @@ class Session {
         this.throwErrorIfExists( errors );
     }
 
-    validateName( name ) {
+    validateName( name = this.name ) {
         const errors = [];
 
         if( name.trim() === '' ) {
@@ -65,7 +65,7 @@ class Session {
         this.throwErrorIfExists( errors );
     }
     
-    validateSpeaker( speaker ) {
+    validateSpeaker( speaker = this.speaker ) {
         const errors = [];
 
         if( speaker.trim() === '' ) {
@@ -75,10 +75,10 @@ class Session {
         this.throwErrorIfExists( errors );
     }
 
-    validateDuration( duration ) {
+    validateDuration( duration = this.duration ) {
         const errors = [];
 
-        if( typeof duration !== number ) {
+        if( typeof duration !== 'number' ) {
             errors.push( 'Duration is not a number' )
         } else {
             if( duration < 0 ) {
@@ -89,7 +89,7 @@ class Session {
         this.throwErrorIfExists( errors );
     }
     
-    validateLevel( level ) {
+    validateLevel( level = this.level ) {
         const errors = [];
         const levels = Object.values( Session.Level );
 
@@ -100,14 +100,14 @@ class Session {
         this.throwErrorIfExists( errors );
     }
 
-    validateAbstract( abstract ) {
+    validateAbstract( abstract = this.abstract ) {
         // noop
     }
 
-    validateUpvoteCount( upvoteCount ) {
+    validateUpvoteCount( upvoteCount = this.upvoteCount ) {
         const errors = [];
 
-        if( typeof upvoteCount !== number ) {
+        if( typeof upvoteCount !== 'number' ) {
             errors.push( 'Upvote count is not a number' )
         }
        
@@ -116,7 +116,7 @@ class Session {
 
     isValid() {
         try {
-            this.validateWorkshopId()
+            this.validateWorkshopId();
             this.validateSequenceId();
             this.validateName();
             this.validateSpeaker();
