@@ -11,9 +11,9 @@
         <link rel="stylesheet" href="/libs/fontawesome-free-5.15.2-web/css/all.min.css">
         <link rel="stylesheet" href="/libs/notifications-center/css/notifications.css">
         <link rel="stylesheet" href="/dist/css/common/utils.css">
-        <link rel="stylesheet" href="/dist/css/app/app.css">
+        <link rel="stylesheet" href="/dist/css/common/app.css">
         <link rel="stylesheet" href="/dist/css/common/nav.css">
-        <link rel="stylesheet" href="/dist/css/workshops/workshops.css">
+        <link rel="stylesheet" href="/dist/css/workshops/workshops-list/workshops-list.css">
     </head>
     <body>
         <nav class="navbar-main">
@@ -23,10 +23,10 @@
                         <a href="/src/index.html">Home</a>
                     </li>
                     <li>
-                        <a href="/src/workshops/workshops.html" class="active">Workshops List</a>
+                        <a href="/src/workshops/workshops-list/workshops-list.html" class="active">Workshops List</a>
                     </li>
                     <li>
-                        <a href="/src/app/about.html">About</a>
+                        <a href="/src/app/about/about.html">About</a>
                     </li>
                 </ul>
                 <button class="btn-menu btn-icon">
@@ -38,10 +38,10 @@
                     <a href="/src/index.html">Home</a>
                 </li>
                 <li>
-                    <a href="/src/workshops/workshops.html">Workshops List</a>
+                    <a href="/src/workshops/workshops-list/workshops-list.html">Workshops List</a>
                 </li>
                 <li>
-                    <a href="/src/app/about.html">About</a>
+                    <a href="/src/app/about/about.html">About</a>
                 </li>
             </ul>
         </nav>
@@ -65,13 +65,13 @@
                             <a href="/src/index.html">Home</a>
                         </li>
                         <li>
-                            <a href="/src/workshops/workshops.html">Workshops List</a>
+                            <a href="/src/workshops/workshops-list/workshops-list.html">Workshops List</a>
                         </li>
                         <li>
-                            <a href="/src/app/about.html">About</a>
+                            <a href="/src/app/about/about.html">About</a>
                         </li>
                         <li>
-                            <a href="/src/app/sitemap.html">Site map</a>
+                            <a href="/src/app/sitemap/sitemap.html">Site map</a>
                         </li>
                     </ul>
                 </div>
@@ -80,24 +80,27 @@
         </footer>
 
         <template id="workshops-list-tpl">
-            <a class="card workshops-list-item my-3 text-reset text-no-underline" href="/src/workshops/workshop-details.html?id={{workshop.id}}">
-                <div class="text-center">
-                    <img src="{{workshop.imageUrl}}" alt="{{workshop.name}}" />
-                </div>
-                <h2 class="workshops-list-item-title my-3">{{workshop.name}}</h2>
-                <div class="my-3 workshops-list-item-details">
-                    <div class="my-1">
-                        <time datetime="{{formatDate workshop.startDate}}">{{formatDate workshop.startDate  'display'}}</time> - <time datetime="{{formatDate workshop.endDate}}">{{formatDate workshop.endDate 'display'}}</time>
+            {{#each workshops}}
+                <a class="card workshops-list-item my-3 text-reset text-no-underline" href="/src/workshops/workshop-details/workshop-details.html?id={{this.id}}">
+                    <div class="text-center">
+                        <img src="{{this.imageUrl}}" alt="{{this.name}}" />
                     </div>
-                    <div>
-                        <time>{{workshop.time}}</time>
+                    <h2 class="workshops-list-item-title my-3">{{this.name}}</h2>
+                    <div class="my-3 workshops-list-item-details">
+                        <div class="my-1">
+                            <time datetime="{{formatDate this.startDate}}">{{formatDate this.startDate  'display'}}</time> - <time datetime="{{formatDate this.endDate}}">{{formatDate this.endDate 'display'}}</time>
+                        </div>
+                        <div>
+                            <time>{{this.time}}</time>
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
+            {{/each}}
         </template>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+        <script src="/libs/handlebars-v4.7.7/handlebars.js"></script>
         <script src="/libs/notifications-center/js/notifications.js"></script>
-        <script src="/src/workshops/workshops.js" type="module"></script>
+        <script src="/src/js/navbar.js" type="module"></script>
+        <script src="/src/workshops/workshops-list/workshops-list.js" type="module"></script>
     </body>
 </html>

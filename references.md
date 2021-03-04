@@ -83,6 +83,7 @@ https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML_sections_and_
 - [Modernizr](https://modernizr.com/)
 - [NVDA keyboard shortcuts](https://dequeuniversity.com/screenreaders/nvda-keyboard-shortcuts)
 - [Markdown format](https://www.markdownguide.org/basic-syntax/)
+- [A guide to JavaScript Regular Expressions - inlcudes looahead and look behind like ?=](https://flaviocopes.com/javascript-regular-expressions/)
 
 ## Browser support
 - https://kangax.github.io/compat-table/es6/

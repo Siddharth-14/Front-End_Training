@@ -1,11 +1,11 @@
 @use 'vars';
-@import 'button';
-@import 'display';
-@import 'grid';
-@import 'img';
-@import 'jumbotron';
-@import 'spacing';
-@import 'typography';
+@use 'button';
+@use 'display';
+@use 'grid';
+@use 'img';
+@use 'jumbotron';
+@use 'spacing';
+@use 'typography';
 
 * {
     box-sizing: border-box;
@@ -27,10 +27,10 @@
     padding: 1em;
     border: 1px solid vars.$color-lightgray;
     border-radius: 4px;
-}
 
-.card:hover {
-    box-shadow: 0 0 1px 1px rgb( 235, 165, 32, 0.5 );
+    &:hover {
+        box-shadow: 0 0 1px 1px rgb( 235, 165, 32, 0.5 );
+    }
 }
 
 .form-group {
@@ -64,7 +64,8 @@
     box-shadow: 0px 0px 1px 3px lightskyblue;
 }
 
-.form-control-help, .form-control-error {
+.form-control-help,
+.form-control-error {
     font-size: 0.8em;
 }
 

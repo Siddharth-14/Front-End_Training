@@ -36,7 +36,7 @@ class LoginPage {
     
         await login( this.user.email, this.user.password );
         
-        window.location = '/src/workshops/workshops';
+        window.location = '/src/workshops/workshops-list/workshops-list.html';
     }
 
     // a method which is defined using arrow function syntax will ALWAYS have its context ("this") set to the object
