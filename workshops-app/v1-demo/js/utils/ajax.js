@@ -1,7 +1,8 @@
 import AppConfig from '../config.js';
 import { getToken } from '../services/auth.js';
 
-function makeAjaxRequest( { method, endpoint, body, authenticated } ) {
+const makeAjaxRequest = ( { method, endpoint, body, authenticated } ) => {
+    // const { method, endpoint, body, authenticated } = options;
     const headers = new Headers();
     
     const requestOptions = {

@@ -1,16 +1,29 @@
 import { formatDate } from '../utils/date.js';
-import { getTrimmedFormData, showError, hideError } from '../utils/form.js';
+import { showError, hideError } from '../utils/form.js';
 import { getQueryParams } from '../utils/url.js';
 import { addSession } from '../services/sessions.js';
 import { getWorkshopById } from '../services/workshops.js';
 import Workshop from '../models/Workshop.js';
 import Session from '../models/Session.js';
 
-class WorkshopDetails {
-    workshop = null;
-    session = null;
+const identity = x => x;
 
-    addWorkshopCard( workshop ) {
+class WorkshopDetails {
+    addNewSessionForm = null;
+    workshop = null;
+    session = new Session({
+        workshopId: -1,
+        sequenceId: -1,
+        name: '',
+        speaker: '',
+        duration: 0,
+        level: '',
+        abstract: '',
+        upvoteCount: 0
+    });
+
+
+    renderWorkshopCard( workshop ) {
         const workshopDetailsWrapper = document.querySelector( '#workshop-details-wrapper' );
 
         const tpl = `
@@ -59,8 +72,8 @@ class WorkshopDetails {
         workshopDetailsWrapper.innerHTML = tpl;
     }
 
-    addNewSessionForm( workshop ) {
-        const formAddNewSession = document.querySelector( '#form-add-new-session-wrapper' );
+    renderAddNewSessionForm() {
+        const formAddNewSessionWrapper = document.querySelector( '#form-add-new-session-wrapper' );
 
         const tpl = `
             <header>
@@ -73,7 +86,6 @@ class WorkshopDetails {
                 <div>
                     All fields marked with <span class="required-indicator">*</span> are required.
                 </div>
-                <input type="hidden" name="workshopId" value="${workshop.id}" />
                 <div class="form-group my-3">
                     <label for="sequenceId" class="control-label">
                         Sequence ID
@@ -84,9 +96,7 @@ class WorkshopDetails {
                         <div id="sequenceid-help" class="form-control-help">
                             Sequence ID is the serial number of the session in the workshop
                         </div>
-                        <div class="form-control-error">
-                            This field is required
-                        </div>
+                        <div class="form-control-error"></div>
                     </div>
                 </div>
                 <div class="form-group my-3">
@@ -99,9 +109,7 @@ class WorkshopDetails {
                         <div id="name-help" class="form-control-help">
                             Name of the session
                         </div>
-                        <div class="form-control-error">
-                            This field is required
-                        </div>
+                        <div class="form-control-error"></div>
                     </div>
                 </div>
                 <div class="form-group my-3">
@@ -114,9 +122,7 @@ class WorkshopDetails {
                         <div id="speaker-help" class="form-control-help">
                             Names of the speakers in this session. Separate multiple name by commas. Example: John Doe, Jane Doe
                         </div>
-                        <div class="form-control-error">
-                            This field is required
-                        </div>
+                        <div class="form-control-error"></div>
                     </div>
                 </div>
                 <div class="form-group my-3">
@@ -129,9 +135,7 @@ class WorkshopDetails {
                         <div id="duration-help" class="form-control-help">
                             Duration of the session in hours. Example: 2.5
                         </div>
-                        <div class="form-control-error">
-                            This field is required
-                        </div>
+                        <div class="form-control-error"></div>
                     </div>
                 </div>
                 <div class="form-group my-3">
@@ -142,16 +146,14 @@ class WorkshopDetails {
                     <div class="form-control-container">
                         <select name="level" id="level" class="form-control" aria-describedby="level-help">
                             <option value="">-- Select the level of the session --</option>
-                            <option value="basic">Basic</option>
-                            <option value="intermediate">Intermediate</option>
-                            <option value="advanced">Advanced</option>
+                            <option value="Basic">Basic</option>
+                            <option value="Intermediate">Intermediate</option>
+                            <option value="Advanced">Advanced</option>
                         </select>
                         <div id="level-help" class="form-control-help">
                             The level of the session
                         </div>
-                        <div class="form-control-error">
-                            This field is required
-                        </div>
+                        <div class="form-control-error"></div>
                     </div>
                 </div>
                 <div class="form-group my-3">
@@ -164,9 +166,7 @@ class WorkshopDetails {
                         <div id="abstract-help" class="form-control-help">
                             A summary describing the topics covered
                         </div>
-                        <div class="form-control-error">
-                            This field is required
-                        </div>
+                        <div class="form-control-error"></div>
                     </div>
                 </div>
                 <div class="form-group my-3">
@@ -178,107 +178,67 @@ class WorkshopDetails {
             </form>
         `;
 
-        formAddNewSession.innerHTML = tpl;
+        formAddNewSessionWrapper.innerHTML = tpl;
+        this.addNewSessionForm = formAddNewSessionWrapper.querySelector( '#form-add-new-session' );
     }
 
-    getFormattedSessionData( formEl ) {
-        const formData = getTrimmedFormData( formEl );
+    onInput = ( setter, transform, event ) => {
+        const input = event.target;
 
-        formData.workshopId = parseInt( formData.workshopId );
-        formData.sequenceId = parseInt( formData.sequenceId );
-        formData.duration = parseFloat( formData.duration );
-
-        return formData;
+        try {
+            this.session[setter]( transform( input.value ) );
+            hideError( input );
+        } catch( error ) {
+            showError( input, error.message );
+        }
     }
 
-    validateAddNewSessionForm( formEl ) {
-        const formData = getTrimmedFormData( formEl );
-        let firstErrorEl = null;
+    addNewSession = async ( event ) => {
+        if( !this.session.isValid() ) {
+            return;
+        }
+        
+        try {
+            const updatedSessionRaw = await addSession( this.session );
+            this.session = new Session( updatedSessionRaw );
 
-        if( formData.sequenceId === '' ) {
-            showError( formEl.sequenceId );
-            firstErrorEl = firstErrorEl || formEl.sequenceId;
-        } else {
-            hideError( formEl.sequenceId );
-        }
-        
-        if( formData.name === '' ) {
-            showError( formEl.name );
-            firstErrorEl = firstErrorEl || formEl.name;
-        } else {
-            hideError( formEl.name );
-        }
-        
-        if( formData.speaker === '' ) {
-            showError( formEl.speaker );
-            firstErrorEl = firstErrorEl || formEl.speaker;
-        } else {
-            hideError( formEl.speaker );
-        }
-        
-        if( formData.duration === '' ) {
-            showError( formEl.duration );
-            firstErrorEl = firstErrorEl || formEl.duration;
-        } else {
-            hideError( formEl.duration );
-        }
-        
-        if( formData.level === '' ) {
-            showError( formEl.level );
-            firstErrorEl = firstErrorEl || formEl.level;
-        } else {
-            hideError( formEl.level );
-        }
-        
-        if( formData.abstract === '' ) {
-            showError( formEl.abstract );
-            firstErrorEl = firstErrorEl || formEl.abstract;
-        } else {
-            hideError( formEl.abstract );
-        }
+            this.addNewSessionForm.reset();
 
-        // focus on first erroneous input (if any)
-        if( firstErrorEl ) {
-            firstErrorEl.focus();
+            NC.show({
+                type: 'success',
+                title: 'Success!',
+                description: `Session with id = ${this.session.id} has been added`,
+                duration: 5
+            });
+        } catch( error ) {
+            NC.show({
+                type: 'error',
+                title: 'Oops! Something went wrong.',
+                description: `The session may not have been added.\n${error.message}`,
+                duration: 10
+            });
         }
-
-        // returns true if no errors, and false otherwise
-        return firstErrorEl === null;
     }
 
-    // We use => function syntax here as we would like the "this" to refer to the page object, rather than the form DOM node
     onSubmitAddNewSessionForm = ( event ) => {
         event.preventDefault();
-
-        if( this.validateAddNewSessionForm( event.target ) ) {
-            addSession( getFormattedSessionData( event.target ) )
-                .then( session => {
-                    event.target.reset();
-                    NC.show({
-                        type: 'success',
-                        title: 'Success!',
-                        description: `Session with id = ${session.id} has been added`,
-                        duration: 5
-                    });
-                })
-                .catch( error => {
-                    NC.show({
-                        type: 'error',
-                        title: 'Oops! Something went wrong.',
-                        description: `The session may not have been added.\n${error.message}`,
-                        duration: 10
-                    });
-                });
-        }
+        this.addNewSession();
     }
 
     addListeners() {
-        document.querySelector( '#form-add-new-session' ).addEventListener( 'submit', this.onSubmitAddNewSessionForm );
+        this.addNewSessionForm.sequenceId.addEventListener( 'input', this.onInput.bind( null, 'setSequenceId', parseInt ) );
+        this.addNewSessionForm.name.addEventListener( 'input', this.onInput.bind( null, 'setName', identity ) );
+        this.addNewSessionForm.speaker.addEventListener( 'input', this.onInput.bind( null, 'setSpeaker', identity ) );
+        this.addNewSessionForm.duration.addEventListener( 'input', this.onInput.bind( null, 'setDuration', parseFloat ) );
+        this.addNewSessionForm.level.addEventListener( 'input', this.onInput.bind( null, 'setLevel', identity ) );
+        this.addNewSessionForm.abstract.addEventListener( 'input', this.onInput.bind( null, 'setAbstract', identity ) );
+        
+        this.addNewSessionForm.addEventListener( 'submit', this.onSubmitAddNewSessionForm );
     }
 
     render( workshop ) {
-        this.addWorkshopCard( workshop );
-        this.addNewSessionForm( workshop );
+        this.renderWorkshopCard( workshop );
+        this.renderAddNewSessionForm( workshop );
     }
 
     // initial page setup
@@ -291,6 +251,8 @@ class WorkshopDetails {
             const id = parseInt( getQueryParams( window.location.search ).id );
             const workshopRaw = await getWorkshopById( id );
             this.workshop = new Workshop( workshopRaw );
+            this.session.setWorkshopId( this.workshop.id );
+            
             this.render( this.workshop );
             
             // IMPORTANT: It is important to call addListeners after render, as the form whose submission is being handled is available in the HTML only after rendering the page (in particular the form).

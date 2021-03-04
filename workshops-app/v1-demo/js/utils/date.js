@@ -1,4 +1,4 @@
-function formatDate( isoDateStr = '', format = 'standard' ) {
+const formatDate = ( isoDateStr = '', format = 'standard' ) => {
     switch( format ) {
         case 'display':
             return new Date( isoDateStr ).toDateString().substr( 0, 18 );

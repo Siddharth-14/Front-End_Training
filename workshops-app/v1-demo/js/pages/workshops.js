@@ -60,7 +60,10 @@ class WorkshopList {
             this.addListeners();
             
             const workshopsRaw = await getWorkshops();
+            console.log( workshopsRaw );
+
             const workshops = workshopsRaw.map( workshop => new Workshop( workshop ) );
+            console.log( workshops );
 
             this.render( workshops );
             
