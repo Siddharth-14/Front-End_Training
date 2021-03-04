@@ -8,16 +8,18 @@ const numbers : NumberOrString[] = [];
 
 days.push( 'Sun' );
 days.push( 'Mon' );
-days.push( 1 );
-days.push( true );
-days.push( { x: 1 } );
+// days.push( 1 ); // error
+// days.push( true ); // error
+// days.push( { x: 1 } ); // error
 
 weekdays.push( 'Mon' );
 weekdays.push( 'Tue' );
-weekdays.push( 'Sat' );
-weekdays.push( 'Sun' );
+// weekdays.push( 'Sat' ); // error
+// weekdays.push( 'Sun' ); // error
 
 numbers.push( 1 );
 numbers.push( 'Two' );
 numbers.push( 3 );
 numbers.push( 'Four' );
+
+export {}

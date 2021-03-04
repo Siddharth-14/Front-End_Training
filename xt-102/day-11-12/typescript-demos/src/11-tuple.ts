@@ -13,4 +13,7 @@ const janeDetails = [ 'Jane', 28, 'John' ];
 johnDetails.pop();
 johnDetails.push( 32 ); // does allow
 
-johnDetails[2] = 32; // static code analysis can catch this error - hence reported
+// error
+// johnDetails[2] = 32; // static code analysis can catch this error - hence reported
+
+export {}

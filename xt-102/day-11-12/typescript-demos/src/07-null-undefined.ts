@@ -2,10 +2,10 @@
 
 let x : null;
 x = null; // null is the only value allowed for the null data type
-x = 1; // error
+// x = 1; // error
 
 let y : undefined;
 y = undefined; // undefined is the only value allowed for the undefined data type
-y = 1; // error
+// y = 1; // error
 
 export { }
