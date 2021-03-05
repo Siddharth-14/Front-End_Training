@@ -14,6 +14,6 @@ function sum( x : number | string, y : number | string ) {
 }
 
 sum( 'hello', 'world' ); // hello world
-sum( 1, 'world' ); // error
+// sum( 1, 'world' ); // error
 
 export {}
