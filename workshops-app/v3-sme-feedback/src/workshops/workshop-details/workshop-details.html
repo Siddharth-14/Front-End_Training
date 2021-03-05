@@ -1,71 +1,129 @@
-import { formatDate } from '/src/js/utils/date.js';
-import { showError, hideError } from '/src/js/utils/form.js';
-import { getQueryParams } from '/src/js/utils/url.js';
-import { addSession } from '/src/js/services/sessions.js';
-import { getWorkshopById } from '/src/js/services/workshops.js';
-import Workshop from '/src/js/models/Workshop.js';
-import Session from '/src/js/models/Session.js';
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="This is a workshops application. It helps find technical workshops happening in and around your place.">
+        <title>React - Workshop Details | Workshops App</title>
+        
+        <!-- reset stylesheet - removes default styling by browser -->
+        <link rel="stylesheet" href="/dist/css/common/external/reset.css">
+        <link rel="stylesheet" href="/libs/fontawesome-free-5.15.2-web/css/all.min.css">
+        <link rel="stylesheet" href="/libs/notifications-center/css/notifications.css">
+        <link rel="stylesheet" href="/dist/css/common/utils.css">
+        <link rel="stylesheet" href="/dist/css/common/app.css">
+        <link rel="stylesheet" href="/dist/css/common/nav.css">
+        <link rel="stylesheet" href="/dist/css/workshops/workshop-details/workshop-details.css">
+        <link rel="stylesheet" href="/dist/css/workshops/workshop-details/workshop-details.print.css" media="print">
+    </head>
+    <body>
+        <nav class="navbar-main">
+            <div class="container nav-wrapper">
+                <ul class="nav nav-desktop">
+                    <li>
+                        <a href="/src/index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="/src/workshops/workshops-list/workshops-list.html">Workshops List</a>
+                    </li>
+                    <li>
+                        <a href="/src/app/about/about.html">About</a>
+                    </li>
+                </ul>
+                <button class="btn-menu btn-icon">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <ul class="nav nav-mobile container hide">
+                <li>
+                    <a href="/src/index.html">Home</a>
+                </li>
+                <li>
+                    <a href="/src/workshops/workshops-list/workshops-list.html">Workshops List</a>
+                </li>
+                <li>
+                    <a href="/src/app/about/about.html">About</a>
+                </li>
+            </ul>
+        </nav>
+        <main>
+            <section class="container" id="workshop-details-wrapper"></section>
+            <section class="container" id="form-add-new-session-wrapper"></section>
+        </main>
+        <footer class="page-footer">
+            <nav class="navbar-footer">
+                <div class="container">
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="/src/index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="/src/workshops/workshops-list/workshops-list.html">Workshops List</a>
+                        </li>
+                        <li>
+                            <a href="/src/app/about/about.html">About</a>
+                        </li>
+                        <li>
+                            <a href="/src/app/sitemap/sitemap.html">Site map</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="text-center">&copy; <a href="http://www.digdeeper.in">www.digdeeper.in</a></div>
+        </footer>
 
-const identity = x => x;
-
-class WorkshopDetails {
-    addNewSessionForm = null;
-    workshop = null;
-    session = new Session();
-
-    renderWorkshopCard( workshop ) {
-        const workshopDetailsWrapper = document.querySelector( '#workshop-details-wrapper' );
-
-        const tpl = `
+        <template id="workshop-details-tpl">
             <header class="my-5">
-                <h1>${workshop.name}</h1>
+                <h1>{{workshop.name}}</h1>
                 <hr />
             </header>
             <div class="workshop-details row">
                 <div class="col-12 col-sm-4">
-                    <img src="${workshop.imageUrl}" alt="${workshop.name}" class="img-responsive" />
+                    <img src="{{workshop.imageUrl}}" alt="${workshop.name}" class="img-responsive" />
                 </div>
                 <div class="col-12 col-sm-8">
                     <div class="row">
                         <div class="col-6">
                             <div>
                                 <small>
-                                    <time datetime="${formatDate(workshop.startDate)}">${formatDate(workshop.startDate, 'display')}</time> - <time datetime="${formatDate(workshop.endDate)}">${formatDate(workshop.endDate, 'display')}</time>
+                                    <time datetime="{{formatDate workshop.startDate}}">{{formatDate workshop.startDate 'display'}}</time> - <time datetime="{{formatDate workshop.endDate}}">{{formatDate workshop.endDate 'display'}}</time>
                                 </small>
                             </div>
                             <div>
                                 <small>
-                                    <time>${workshop.time}</time>
+                                    <time>{{workshop.time}}</time>
                                 </small>
                             </div>
                         </div>
                         <div class="col-6">
                             <div>
                                 <small>
-                                    <i class="fas fa-${workshop.modes.inPerson ? 'check' : 'times'}"></i>
+                                    {{#if workshop.modes.inPerson}}
+                                        <i class="fas fa-check"></i>
+                                    {{else}}
+                                        <i class="fas fa-times"></i>
+                                    {{/if}}
                                     In-person
                                 </small>
                             </div>
                             <div>
                                 <small>
-                                <i class="fas fa-${workshop.modes.online ? 'check' : 'times'}"></i>
-                                Online
+                                    {{#if workshop.modes.online}}
+                                        <i class="fas fa-check"></i>
+                                    {{else}}
+                                        <i class="fas fa-times"></i>
+                                    {{/if}}
+                                    Online
                                 </small>
                             </div>
                         </div>
                     </div>
-                    ${workshop.description}
+                    {{{workshop.description}}}
                 </div>
             </div>
-        `;
+        </template>
 
-        workshopDetailsWrapper.innerHTML = tpl;
-    }
-
-    renderAddNewSessionForm() {
-        const formAddNewSessionWrapper = document.querySelector( '#form-add-new-session-wrapper' );
-
-        const tpl = `
+        <template id="form-add-new-session-tpl">
             <header>
                 <div class="d-flex justify-content-space-between my-5">
                     <h2>Add a new session</h1>
@@ -166,105 +224,11 @@ class WorkshopDetails {
                     </div>
                 </div>
             </form>
-        `;
+        </template>
 
-        formAddNewSessionWrapper.innerHTML = tpl;
-        this.addNewSessionForm = formAddNewSessionWrapper.querySelector( '#form-add-new-session' );
-    }
-
-    onInput = ( setter, transform, event ) => {
-        const input = event.target;
-
-        try {
-            this.session[setter]( transform( input.value ) );
-            hideError( input );
-        } catch( error ) {
-            showError( input, error.message );
-        }
-    }
-
-    addNewSession = async ( event ) => {
-        if( !this.session.isValid() ) {
-            return;
-        }
-        
-        try {
-            const updatedSessionRaw = await addSession( this.session );
-
-            NC.show({
-                type: 'success',
-                title: 'Success!',
-                description: `Session with id = ${updatedSessionRaw.id} has been added`,
-                duration: 5
-            });
-        } catch( error ) {
-            NC.show({
-                type: 'error',
-                title: 'Oops! Something went wrong.',
-                description: `The session may not have been added.\n${error.message}`,
-                duration: 10
-            });
-        }
-
-        this.addNewSessionForm.reset();
-        this.session = new Session();
-        this.session.setWorkshopId( this.workshop.id );
-    }
-
-    onSubmitAddNewSessionForm = ( event ) => {
-        event.preventDefault();
-        this.addNewSession();
-    }
-
-    addListeners( this ) {
-        this.addNewSessionForm.sequenceId.addEventListener( 'input', this.onInput.bind( null, 'setSequenceId', parseInt ) );
-        this.addNewSessionForm.name.addEventListener( 'input', this.onInput.bind( null, 'setName', identity ) );
-        this.addNewSessionForm.speaker.addEventListener( 'input', this.onInput.bind( null, 'setSpeaker', identity ) );
-        this.addNewSessionForm.duration.addEventListener( 'input', this.onInput.bind( null, 'setDuration', parseFloat ) );
-        this.addNewSessionForm.level.addEventListener( 'input', this.onInput.bind( null, 'setLevel', identity ) );
-        this.addNewSessionForm.abstract.addEventListener( 'input', this.onInput.bind( null, 'setAbstract', identity ) );
-        
-        this.addNewSessionForm.addEventListener( 'submit', this.onSubmitAddNewSessionForm );
-    }
-
-    render( workshop ) {
-        this.renderWorkshopCard( workshop );
-        this.renderAddNewSessionForm( workshop );
-    }
-
-    // initial page setup
-    async init() {
-        NC.init({
-            position: NC.POSITION.TOP_RIGHT
-        });
-
-        try {
-            const id = parseInt( getQueryParams( window.location.search ).id );
-            const workshopRaw = await getWorkshopById( id );
-            this.workshop = new Workshop( workshopRaw );
-            this.session.setWorkshopId( this.workshop.id );
-            
-            this.render( this.workshop );
-            
-            // IMPORTANT: It is important to call addListeners after render, as the form whose submission is being handled is available in the HTML only after rendering the page (in particular the form).
-            this.addListeners();
-
-            NC.show({
-                type: 'info',
-                title: 'Workshop details fetched',
-                description: `The details of workshop with id=${id} was fetched afresh and shown`,
-                duration: 5
-            });
-        } catch( err ) {
-            NC.show({
-                type: 'error',
-                title: 'Oops! Something went wrong.',
-                description: err.message,
-                duration: 10
-            });
-        }
-    }
-}
-
-const page = new WorkshopDetails();
-page.init();
+        <script src="/libs/handlebars-v4.7.7/handlebars.js"></script>
+        <script src="/libs/notifications-center/js/notifications.js"></script>
+        <script src="/src/js/navbar.js" type="module"></script>
+        <script src="/src/workshops/workshop-details/workshop-details.js" type="module"></script>
+    </body>
+</html>

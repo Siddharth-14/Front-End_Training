@@ -1,7 +1,7 @@
 type Person = {
     name: string,
     readonly age: number, // cannot be modified - like const, but for properties
-    spouse?: string // optional property - may or may ot exist
+    spouse?: string // optional property - may or may not exist
 };
 
 let john : Person;

@@ -994,6 +994,30 @@
       "upvoteCount": 0,
       "createdDate": "Mar 04, 2021",
       "id": 68
+    },
+    {
+      "workshopId": 2,
+      "sequenceId": 123,
+      "name": "New session in React v17",
+      "speaker": "Jane Doe",
+      "duration": 2,
+      "level": "Advanced",
+      "abstract": "New session",
+      "upvoteCount": 0,
+      "createdDate": "Mar 04, 2021",
+      "id": 69
+    },
+    {
+      "workshopId": 1,
+      "sequenceId": 123,
+      "name": "New session in Angular 11",
+      "speaker": "John Doe",
+      "duration": 2,
+      "level": "Basic",
+      "abstract": "New session in Angular 11",
+      "upvoteCount": 0,
+      "createdDate": "Mar 04, 2021",
+      "id": 70
     }
   ],
   "users": [

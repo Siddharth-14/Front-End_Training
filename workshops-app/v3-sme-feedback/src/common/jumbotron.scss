@@ -5,12 +5,12 @@
     font-size: 1.5em;
     line-height: 1.5;
     background-color: vars.$color-extra-lightgray;
-}
-
-.jumbotron h1 {
-    font-size: 2.5em;
-}
-
-.jumbotron p + p {
-    margin-top: 1.5em;
+    
+    h1 {
+        font-size: 2.5em;
+    }
+    
+    p + p {
+        margin-top: 1.5em;
+    }
 }
