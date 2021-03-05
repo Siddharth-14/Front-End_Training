@@ -99,5 +99,5 @@
 - Feb 24
     - Exercise 7 from ES2015 Lab Guide (arrow function)
 - Mar 5
-    - Exercise 1 - 7, 10 - 12
-    - 8, 9 (at home)
+    - Exercise 1 - 7, 10 - 12 (in session) from TypeScript Lab Guide
+    - 8, 9 (at home) from TypeScript Lab Guide

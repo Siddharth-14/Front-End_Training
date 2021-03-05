@@ -11,17 +11,24 @@ interface IEmployee extends IPerson {
 
 // we "implement" the IEmployee interface
 class Employee implements IEmployee {
-    name: string;
-    age: number; // can be initialized here too instead of constructor
-    role: string;
-    private spouse: string;
-    readonly children?: string[]; // cannot change once it is set in constructor
+    // name: string;
+    // age: number; // can be initialized here too instead of constructor
+    // role: string;
+    // private spouse: string;
+    // readonly children?: string[]; // cannot change once it is set in constructor
 
-    constructor( name: string, age : number, role : string, spouse : string = '', children? : string[] ) {
-        this.name = name;
-        this.age = age;
-        this.role = role;
-        this.spouse = spouse;
+    // we can "declare" data member in the constructor by providing the access specifier
+    constructor( 
+        public name: string,
+        public age : number,
+        public role : string,
+        private spouse : string = '',
+        public readonly children? : string[]
+    ) {
+        // this.name = name;
+        // this.age = age;
+        // this.role = role;
+        // this.spouse = spouse;
         
         if( children ) {
             this.children = children;
@@ -43,5 +50,6 @@ john.celebrateBirthday();
 
 console.log( john );
 // console.log( john.spouse ); // error - spouse is a private data member
+
 
 export {}
