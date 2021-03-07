@@ -1,3 +1,6 @@
+/* global Handlebars, NC */
+/* eslint no-undef: "error" */
+
 /// <reference path="../../../node_modules/handlebars/types/index.d.ts" />
 /// <reference path="../../../libs/notifications-center/index.d.ts" />
 

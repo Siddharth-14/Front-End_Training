@@ -15,5 +15,11 @@
         "@typescript-eslint"
     ],
     "rules": {
+        "comma-dangle": ["error", "never"],
+        "keyword-spacing": 0,
+        "import/extensions": 0,
+        "import/no-unresolved": 1,
+        "indent": [ "error", 4 ],
+        "space-in-parens": [ "error", "always" ]
     }
 }
