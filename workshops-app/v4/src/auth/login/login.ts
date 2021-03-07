@@ -5,12 +5,13 @@ import { hideError, showError } from '../../js/utils/form.js';
 class LoginPage {
     // same as saying this.loginForm = ... within the constructor
     loginForm = document.querySelector( 'form' );
+
     user = new User( '', '' );
 
     onInputEmail = ( event : InputEvent ) => {
         const eventTarget = event.target as HTMLInputElement;
         const errors = this.user.setEmail( eventTarget.value );
-        
+
         if( errors.length === 0 ) {
             hideError( eventTarget );
             return;
@@ -18,7 +19,7 @@ class LoginPage {
 
         showError( eventTarget, errors.join( ', ' ) );
     }
-    
+
     onInputPassword = ( event : InputEvent ) => {
         const eventTarget = event.target as HTMLInputElement;
         const errors = this.user.setPassword( eventTarget.value );
@@ -35,9 +36,9 @@ class LoginPage {
         if( !this.user.isValid() ) {
             return;
         }
-    
+
         await login( this.user.email, this.user.password );
-        
+
         window.location.href = '/src/workshops/workshops-list/workshops-list.html';
     }
 

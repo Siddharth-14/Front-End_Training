@@ -8,13 +8,16 @@ export type AjaxRequestOptions<T> = {
     authenticated?: boolean
 }
 
-function makeAjaxRequest<T>( { method, endpoint, body, authenticated } : AjaxRequestOptions<T> ) {
+function makeAjaxRequest<T>( {
+    method, endpoint, body, authenticated
+} : AjaxRequestOptions<T> ) {
     // const { method, endpoint, body, authenticated } = options;
     const headers = new Headers();
-    
+
+    // eslint-disable-next-line no-undef
     const requestOptions : RequestInit = {
-        method: method,
-        headers: headers,
+        method,
+        headers,
         redirect: 'follow'
     };
 
@@ -24,28 +27,29 @@ function makeAjaxRequest<T>( { method, endpoint, body, authenticated } : AjaxReq
     }
 
     if( authenticated ) {
-        headers.append( 'Authorization', 'Bearer ' + getToken() );
+        headers.append( 'Authorization', `Bearer ${getToken()}` );
     }
 
     // sanity check: remove leading slash (if any)
+    let endpointNormalized = endpoint;
     if( endpoint.substr( 0, 1 ) === '/' ) {
-        endpoint = endpoint.substr( 1 );
+        endpointNormalized = endpoint.substr( 1 );
     }
 
-    return fetch( `${AppConfig.API_BASE_URL}/${endpoint}`, requestOptions )
-        .then(async function( response ) {
+    return fetch( `${AppConfig.API_BASE_URL}/${endpointNormalized}`, requestOptions )
+        .then( async ( response ) => {
             if( !response.ok ) {
                 const error = await response.json();
-                
+
                 const customError : Error & { errorResponse? : Error } = new Error( 'Something went wrong with the request' );
                 customError.errorResponse = error;
-                
+
                 throw customError;
             }
-            
+
             return response.json();
-        });
-};
+        } );
+}
 
 export {
     makeAjaxRequest

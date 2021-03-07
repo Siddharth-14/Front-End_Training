@@ -20,9 +20,11 @@ type NonFunctionPropertyNames<T> = {
 type NonFunctionProperties<T> = Pick<T, NonFunctionPropertyNames<T>>;
 
 type OptionalNonFunctionPropertiesToStringArray<T> = {
+    // eslint-disable-next-line no-unused-vars
     [K in keyof Pick<T, NonFunctionPropertyNames<T>>]?: string[]
 };
 
+// eslint-disable-next-line no-unused-vars
 type HTMLInputElementValueTransformer = ( x : string ) => any;
 
 export {

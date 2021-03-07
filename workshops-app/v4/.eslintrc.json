@@ -20,6 +20,7 @@
         "import/extensions": 0,
         "import/no-unresolved": 1,
         "indent": [ "error", 4 ],
+        "max-len": 0,
         "space-in-parens": [ "error", "always" ]
     }
 }

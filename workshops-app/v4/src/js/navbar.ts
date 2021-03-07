@@ -1,5 +1,6 @@
 class Navbar {
     navMobile = document.querySelector( '.nav-mobile' ) as HTMLElement;
+
     btnMenu = document.querySelector( '.btn-menu' ) as HTMLElement;
 
     onClickBtnMenu = () => {

@@ -1,6 +1,7 @@
-import { OptionalNonFunctionPropertiesToStringArray  } from '../utils/types.js';
+import { OptionalNonFunctionPropertiesToStringArray } from '../utils/types.js';
 
 class User {
+    // eslint-disable-next-line no-unused-vars,no-useless-constructor,no-empty-function
     constructor( public email : string, public password : string ) { }
 
     validateEmail() {
@@ -14,17 +15,17 @@ class User {
         if( !emailPat.test( this.email ) ) {
             errors.push( 'Email format is not valid' );
         }
-       
+
         return errors;
     }
-    
+
     validatePassword() {
         const errors = [];
 
         if( this.password === '' ) {
             errors.push( 'Password is empty' );
         }
-       
+
         return errors;
     }
 
@@ -46,7 +47,7 @@ class User {
         this.email = email;
         return this.validateEmail();
     }
-    
+
     setPassword( password : string ) {
         this.password = password;
         return this.validatePassword();

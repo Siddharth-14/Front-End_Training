@@ -4,10 +4,11 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "start": "http-server -c-1 ./",
         "build:css": "sass --style=compressed ./src:dist/css",
         "build:ts": "tsc",
-        "lint": "eslint . --ext .ts"
+        "lint": "eslint . --ext .ts",
+        "lint:fix": "eslint . --ext .ts --fix",
+        "start": "http-server -c-1 ./"
     },
     "keywords": [],
     "author": "",
