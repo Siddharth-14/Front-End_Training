@@ -18,10 +18,10 @@
 - npm commands (DONE)
 
 ### The Callback Pattern
-- What are callbacks
-- Examples
-- Callback-last
-- Error-first
+- What are callbacks (DONE)
+- Examples (DONE)
+- Callback-last (DONE)
+- Error-first (DONE)
 
 ### Event Emitter
 - When to use Event Emitters
