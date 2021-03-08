@@ -1,6 +1,5 @@
 console.log( 'arithmetic module started executing' );
 
-
 console.log( '*** module.exports ***' );
 console.log( module.exports ); // initially {}
 console.log( exports ); // intially {}
