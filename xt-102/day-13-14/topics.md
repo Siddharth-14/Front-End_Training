@@ -9,7 +9,7 @@
 ### Installing Node.js
 - Download and Install (DONE)
 - Node REPL (DONE)
-- First Hello World
+- First Hello World (DONE)
 
 ### Modules and npm
 - Anatomy of a module
