@@ -12,10 +12,10 @@
 - First Hello World (DONE)
 
 ### Modules and npm
-- Anatomy of a module
-- Private code
-- Accessing and using modules
-- npm commands
+- Anatomy of a module (DONE)
+- Private code (DONE)
+- Accessing and using modules (DONE)
+- npm commands (DONE)
 
 ### The Callback Pattern
 - What are callbacks
