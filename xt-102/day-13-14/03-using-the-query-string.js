@@ -11,21 +11,20 @@ const server = http.createServer(function( req, res ) {
     console.log( parsedUrl );
     console.log( 'pathname = ', parsedUrl.pathname )
     console.log( 'query = ', parsedUrl.query )
-    
-    switch( parsedUrl.pathname ) {
-        case '/api/teams':
-            res.write( 'CSR Team, Fun Friday Team, NASA Project, Group A, Group B, Group C, Group D' );
+    console.log(parsedUrl.query["x"])
+    switch(parsedUrl.query["op"]){
+        case 'addition':
+            res.write( "" + (parseInt(parsedUrl.query["x"]) + parseInt(parsedUrl.query["y"])) );
             break;
-        case '/api/meetings':
-            res.write( 'Milestone 3 meeting, Project party' );
+        case 'subtraction':
+            res.write( ""+(parseInt(parsedUrl.query["x"]) - parseInt(parsedUrl.query["y"])) );
             break;
-        case '/api/calendar':
-            res.write( 'Milestone 3 presentation' );
+        case 'multiplication':
+            res.write( ""+(parseInt(parsedUrl.query["x"]) * parseInt(parsedUrl.query["y"])) );
             break;
         default:
-            res.write( 'hello world' );
+            res.write( 'error' );
     }
-    
     res.end();
 });
 
