@@ -1,13 +1,18 @@
 const http = require( 'http' );
+const url = require( 'url' );
 
 // https://nodejs.org/dist/latest-v14.x/docs/api/http.html#http_http_createserver_options_requestlistener
 // we create a server and say what to do when an HTTP request is received
 const server = http.createServer(function( req, res ) {
     // a string - for a request http://localhost:8080/api/teams, it is /api/teams
     
-    console.log( req.url );
+    const parsedUrl = url.parse( req.url, true );
     
-    switch( req.url ) {
+    console.log( parsedUrl );
+    console.log( 'pathname = ', parsedUrl.pathname )
+    console.log( 'query = ', parsedUrl.query )
+    
+    switch( parsedUrl.pathname ) {
         case '/api/teams':
             res.write( 'CSR Team, Fun Friday Team, NASA Project, Group A, Group B, Group C, Group D' );
             break;
