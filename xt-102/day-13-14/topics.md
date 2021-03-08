@@ -12,24 +12,24 @@
 - First Hello World (DONE)
 
 ### Modules and npm
-- Anatomy of a module
-- Private code
-- Accessing and using modules
-- npm commands
+- Anatomy of a module (DONE)
+- Private code (DONE)
+- Accessing and using modules (DONE)
+- npm commands (DONE)
 
 ### The Callback Pattern
-- What are callbacks
-- Examples
-- Callback-last
-- Error-first
+- What are callbacks (DONE)
+- Examples (DONE)
+- Callback-last (DONE)
+- Error-first (DONE)
 
 ### Event Emitter
-- When to use Event Emitters
-- Binding Functions to Events
+- When to use Event Emitters (DONE)
+- Binding Functions to Events (DONE)
 - Examples
-- Creating an Event Emitter
+- Creating an Event Emitter (DONE)
 - Error Handling
-- Callbacks: Error-first
+- Callbacks: Error-first (DONE)
 - Errors in Event Emitters
 - Uncaught Exceptions
 - Using Domains
