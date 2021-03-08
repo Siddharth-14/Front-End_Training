@@ -1,14 +1,14 @@
 # XT-102
 
 ## Day 13, 14
-- JavaScript Closures
-- Event Loop
-- Blocking The Event Loop
+- JavaScript Closures (DONE)
+- Event Loop (DONE)
+- Blocking The Event Loop (DONE)
 - Node.js Philosophy (userland vs. core)
 
 ### Installing Node.js
-- Download and Install
-- Node REPL
+- Download and Install (DONE)
+- Node REPL (DONE)
 - First Hello World
 
 ### Modules and npm

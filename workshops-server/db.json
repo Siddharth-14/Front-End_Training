@@ -1018,6 +1018,30 @@
       "upvoteCount": 0,
       "createdDate": "Mar 04, 2021",
       "id": 70
+    },
+    {
+      "sequenceId": 123,
+      "name": "New session in React v17",
+      "speaker": "Jane Doe",
+      "duration": 6.25,
+      "level": "Basic",
+      "abstract": "Hello",
+      "upvoteCount": 0,
+      "workshopId": 2,
+      "createdDate": "Mar 07, 2021",
+      "id": 71
+    },
+    {
+      "sequenceId": 123,
+      "name": "New session in React v17",
+      "speaker": "Jane Doe",
+      "duration": 2.5,
+      "level": "Basic",
+      "abstract": "New session",
+      "upvoteCount": 0,
+      "workshopId": 2,
+      "createdDate": "Mar 07, 2021",
+      "id": 72
     }
   ],
   "users": [
