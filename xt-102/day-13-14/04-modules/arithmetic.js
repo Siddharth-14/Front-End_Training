@@ -17,6 +17,7 @@ const divide = ( x, y ) => x / y;
 // module.exports now refers to a new object
 // exports still refers to the old object
 module.exports = {
+    add,
     subtract,
     multiply,
     divide
