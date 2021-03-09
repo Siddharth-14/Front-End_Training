@@ -8,7 +8,8 @@ npm i --save-dev eslint
 ./node_modules/.bin/eslint --init
 ```
 __NOTE__: Use backslashes on Windows
-- Create a _.eslintignore_ file. Make sure to ignore all code except the ones you created as part of the app (ignore node_modules, Font Awesome folder, libs folder, dist folder etc.)
+- Create a _.eslintignore_ file. Make sure to ignore all code except the ones you created as part of the app (ignore node_modules, Font Awesome folder, libs folder, dist folder etc.)  
+__Reference__: Check https://eslint.org/docs/user-guide/configuring/ignoring-code#ignorepatterns-in-config-files for file path patterns (glob patterns) to specify files and folders to ignore
 - Add a lint script to package.json. Also add one to automatically fix where possible the lint issues
 ```
 "script" : {
