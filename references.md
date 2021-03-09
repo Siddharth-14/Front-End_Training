@@ -51,6 +51,10 @@ https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML_sections_and_
 - [JavaScript Form Validation - Tutorial 2](https://www.javascripttutorial.net/javascript-dom/javascript-form-validation/)
 - [JavaScript Design Patterns, Addy Osmani (free book, online)](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)
 - [Javascript "use strict" Tutorial with Examples](http://qnimate.com/javascript-strict-mode-in-nutshell/)
+- [querySelectorAll and getElementsByClassName](https://stackoverflow.com/questions/14377590/queryselector-and-queryselectorall-vs-getelementsbyclassname-and-getelementbyid#:~:text=A%20variable%20generated%20with%20querySelectorAll,moment%20the%20method%20was%20called).)
+- [getElementsByClassName versus querySelector - Article on Treehouse](https://teamtreehouse.com/community/getelementsbyclassname-versus-queryselector)
+- [querySelectorAll() vs getElementsByClassName](https://unicorntears.dev/posts/queryselectorall-vs-getelementsbyclassname/)
+- [querySelector vs getElementById](https://dev.to/eidorianavi/queryselector-vs-getelementbyid-gm1)
 
 ## Accessibility
 - [Supplied documentation](./docs/05-web-accessibility.pdf)
