@@ -11,6 +11,10 @@ rs.on( 'data', function( chunk ) {
     console.log( chunk );
 });
 
+rs.on( 'end', function() {
+    console.log( 'completed reading the file' );
+});
+
 // start reading... (start sipping a straw - default is 16KB)
 rs.read();
 
