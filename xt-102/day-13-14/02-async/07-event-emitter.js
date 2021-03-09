@@ -1,5 +1,8 @@
 const EventEmitter = require( 'events' );
 
+// domain is a generic error handler mechanism
+const domain = require( 'domain' );
+
 function sumAsync( x, y ) {
     const event = new EventEmitter();
 
@@ -19,8 +22,19 @@ function sumAsync( x, y ) {
     return event;
 };
 
-const event = sumAsync( 12, 13 );
+const event = sumAsync( 12, 'hello' );
+const event2 = sumAsync( 13, 'world' );
 
+// the domain is a common error-handling mechanism for many events
+const domainAsyncArithmetic = domain.create( 'domain_async_arithmetic' );
+domainAsyncArithmetic.add( event );
+domainAsyncArithmetic.add( event2 );
+
+// domainAsyncArithmetic.on( 'error', function( error ) {
+//     console.log( error.message );
+// });
+
+// you need not handle this
 event.on( 'update', function( result ) {
     console.log( 'something is cooking. let us wait...' );
 });
@@ -35,6 +49,15 @@ event.on( 'done', function( result ) {
     // event2.on( 'done'... (the story repeats)
 });
 
-event.on( 'error', function( error ) {
+// we MUST handle error events
+// event.on( 'error', function( error ) {
+//     console.log( error.message );
+// });
+
+// foo(); // error -> such errors can be caught by process object
+
+// this event is fired if an error is raised by anyone 
+// Using uncaughtException is a bad practice
+process.on( 'uncaughtException', function( error ) {
     console.log( error.message );
 });

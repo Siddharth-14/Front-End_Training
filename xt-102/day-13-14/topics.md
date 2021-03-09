@@ -26,18 +26,18 @@
 ### Event Emitter
 - When to use Event Emitters (DONE)
 - Binding Functions to Events (DONE)
-- Examples
+- Examples (DONE)
 - Creating an Event Emitter (DONE)
-- Error Handling
+- Error Handling (DONE)
 - Callbacks: Error-first (DONE)
-- Errors in Event Emitters
-- Uncaught Exceptions
-- Using Domains
+- Errors in Event Emitters (DONE)
+- Uncaught Exceptions (DONE)
+- Using Domains (DONE)
 
 ### Buffers
-- Why Buffers exist
-- Creating Buffers; Reading Buffers; Writing Buffers
-- Manipulating Buffers
+- Why Buffers exist (DONE)
+- Creating Buffers; Reading Buffers; Writing Buffers (DONE)
+- Manipulating Buffers (DONE)
 
 ### Streams
 - What are streams
@@ -48,3 +48,4 @@
 - Node for Web HTTP Module
 
 ### Hands-on exercises
+node copy.js ./hello-world.txt ./hello-copy.txt
