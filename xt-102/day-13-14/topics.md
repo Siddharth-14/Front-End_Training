@@ -40,12 +40,12 @@
 - Manipulating Buffers (DONE)
 
 ### Streams
-- What are streams
-- Read Stream API; Write Stream API
-- Flow Control
-- Piping
-- Duplex Stream; Transform Stream
-- Node for Web HTTP Module
+- What are streams (DONE)
+- Read Stream API; Write Stream API (DONE)
+- Flow Control (DONE)
+- Piping (DONE)
+- Duplex Stream; Transform Stream (DONE)
+- Node for Web HTTP Module (DONE)
 
 ### Hands-on exercises
 node copy.js ./hello-world.txt ./hello-copy.txt
