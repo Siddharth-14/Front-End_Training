@@ -4,8 +4,10 @@ import { ObjectWithStringValues } from './types.js';
 const getFormData = ( formEl : HTMLFormElement ) => {
     const formData : ObjectWithStringValues = {};
 
-    for( let i = 0; i < formEl.length; i += 1 ) {
-        const input : HTMLInputElement = formEl[i] as HTMLInputElement;
+    const inputs = formEl.elements;
+
+    for( let i = 0; i < inputs.length; i += 1 ) {
+        const input : HTMLInputElement = inputs[i] as HTMLInputElement;
         if( input.name !== '' ) {
             formData[input.name] = input.value;
         }
