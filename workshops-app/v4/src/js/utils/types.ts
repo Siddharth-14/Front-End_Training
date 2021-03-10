@@ -3,7 +3,7 @@ type AnyObject = {
 };
 
 type ObjectWithStringValues = {
-    [key : string]: any
+    [key : string]: string
 };
 
 // Reference for below types (it has been adapted for typing errors object in model validation)
