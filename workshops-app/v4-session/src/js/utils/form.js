@@ -1,9 +1,12 @@
 // gather named inputs in a form into an object
 const getFormData = ( formEl ) => {
-    const formData = {};
+    const formData = {}; // { email: 'john.doe@example.com' , password: 'password' }
 
-    for( let i = 0; i < formEl.length; i++ ) {
-        const input = formEl[i];
+    const inputs = formEl.elements;
+
+    for( let i = 0; i < inputs.length; i += 1 ) {
+        const input = inputs[i];
+
         if( input.name !== '' ) {
             formData[input.name] = input.value;
         }
