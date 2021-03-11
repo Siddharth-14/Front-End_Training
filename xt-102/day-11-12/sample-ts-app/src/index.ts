@@ -1,5 +1,4 @@
 import IWorkshop from './IWorkshop';
-import 'jquery';
 
 $(document).ready(function() {
     const fetchWorkshops = async () => {
