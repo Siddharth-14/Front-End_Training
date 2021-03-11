@@ -8,6 +8,7 @@
     </head>
     <body>
         <button id="create">Create detaced DOM tree</button>
+
         <script>
             var detachedTrees = [];
 
@@ -19,6 +20,8 @@
                     ul.appendChild(li);
                 }
                 
+                // document.body.appendChild( ul )
+
                 detachedTrees.push( ul );
             }
 
