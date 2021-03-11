@@ -1,47 +1,47 @@
 1. Choose the one that is NOT a screen reader.
 a) JAWS
 b) VoiceOver
-c) Vispero
+c) Vispero (ANS)
 d) NVDA
 
 2. Choose the highest level of conformance as per WCAG 2.1
 a) A
 b) AA
-c) AAA
+c) AAA (Ans)
 d) AAAA
 
 3. Which of these is NOT a category of WCAG 2.1 guidelines
 a) Perceivable
-b) Organizable
+b) Organizable (Ans)
 c) Understandable
 d) Robust
 
 4. Which WCAG 2.1 category does the guideline "Avoid designing/developing content that causes seizures" come under?
 a) Perceivable
-b) Operable
+b) Operable (Ans)
 c) Understandable
 d) Robust
 
 5. Which WCAG 2.1 category does the guideline "Present content in different ways" come under?
-a) Perceivable
+a) Perceivable (Ans)
 b) Operable
 c) Understandable
 d) Robust
 
 6. Which of these HTML elements should be used only once in a page?
 a) nav
-b) h1
+b) h1 (Ans)
 c) aside
 d) article
 
 7. Choose the element that DOES NOT qualify as a landmark for a Screen Reader.
 a) main
 b) nav
-c) div
+c) div (Ans)
 d) form
 
 8. We would like to add a link as a focusable element in natural source order. Choose the best action on your part as a developer.
-a) No special action is needed
+a) No special action is needed (Ans)
 b) Set tabindex="-1"
 c) tabindex="0"
 d) tabindex="1"
@@ -49,29 +49,29 @@ d) tabindex="1"
 9. Which of these values for tabindex is best avoided?
 a) -1
 b) 0
-c) 1
+c) 1 (Ans)
 d) No tabindex for naturally focusable elements
 
 10. Which of these CSS font units will you prefer?
 a) pt
 b) px
-c) em
+c) em (Ans)
 d) cm
 
 11. Choose the web accessibility standards that relate to the US government
-a) Section 508
+a) Section 508 (Ans)
 b) WCAG 2.1
 c) ARIA 1.1
 d) JAWS 14
 
 12. Which of these if present WILL ALWAYS BE the first child of a table element?
-a) caption
+a) caption (Ans)
 b) thead
 c) tbody
 d) tr
 
 13. To make SVG images accessible (announced as images) we use
-a) role="img"
+a) role="img" (Ans)
 b) aria-role="img"
 c) alt="img"
 d) aria-alt="img"
@@ -79,41 +79,41 @@ d) aria-alt="img"
 14. Which of these is used to associate requirements on an input field? For example to link an input to a div that reads "Password must have 8 characters, at least 1 uppercase, and 1 lowercase".
 a) aria-label
 b) aria-labelledby
-c) aria-describedby
+c) aria-describedby (Ans)
 d) aria-controls
 
 15. Captions for videos that can be turned on or off are called
 a) Transcripts
-b) Closed captions
+b) Closed captions (Ans)
 c) Open captions
 d) Transliterations
 
 16. Choose the one which is NOT a live region role in ARIA 1.1
 a) alert
 b) log
-c) list
+c) list (Ans)
 d) status
 
 17. Choose the one which is NOT a landmark role in ARIA 1.1
 a) banner
 b) form
 c) navigation
-d) application
+d) application (Ans)
 
 18. Choose the one which is NOT an ARIA 1.1 state
 a) aria-disabled
-b) aria-describedby
+b) aria-describedby (Ans)
 c) aria-hidden
 d) aria-invalid
 
 19. ____________ incorporate by reference ____________ guidelines. Fill in the blanks appropriately.
 a) ARIA, WCAG
 b) WCAG, Section 508
-c) Section 508, WCAG
+c) Section 508, WCAG (Ans)
 d) WCAG, ARAI
 
 20. Choose the CORRECT statement from the following
-a) ARIA can be counter-productive to accessibility if not used properly
-b) ARIA can be used to be build custom interactive widgets in an accessible way
-c) ARIA roles convey semantics and automatically enable user interactivity when used via Assistive Technologies (ATs).
+a) ARIA can be counter-productive to accessibility if not used properly (Ans)
+b) ARIA can be used to be build custom interactive widgets in an accessible way (Ans)
+c) ARIA roles convey semantics and automatically enable user interactivity when used via Assistive Technologies (ATs). (Ans)
 d) ARIA role on an element is preferable when compared to native HTML semantic elements.

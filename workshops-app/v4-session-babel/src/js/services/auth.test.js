@@ -35,5 +35,3 @@ describe( 'login function', () => {
         });
     });
 });
-
-export {}
