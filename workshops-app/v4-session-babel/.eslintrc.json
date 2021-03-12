@@ -21,5 +21,9 @@
         "indent": [ "error", 4 ],
         "keyword-spacing": 0,
         "space-in-parens": [ "error", "always" ]
-    }
+    },
+    "ignorePatterns": [
+        "jest.config.js",
+        "webpack.config.js"
+    ]
 }
