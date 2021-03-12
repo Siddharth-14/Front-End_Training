@@ -4,7 +4,7 @@ const formatDate = ( isoDateStr = '', format = 'standard' ) => {
             return new Date( isoDateStr ).toDateString().substr( 0, 18 );
         case 'standard':
         default:
-            return isoDateStr.substr( 0, 10 );
+            return isoDateStr.substr( 0, 11 );
     }
 };
 
