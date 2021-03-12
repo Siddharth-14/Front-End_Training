@@ -121,3 +121,42 @@
                 - label and association with input
                 - make sure form has submit button
         - in calendar page explain how you used relative and absolute positioning to position the calendar entry within the calendar
+
+
+## Milestone 4
+- Used ESLint for linting - JSLint, TSLint
+    - Ensures code quality
+    - Adapted AirBNB styles
+        - customized
+    - Describe what steps you took to enable ESLint
+        - eslintrc.json
+        - .eslintignore
+    - How is a rule configured in ESLInt - How did you understand the rule
+        - Turn it off (0), Warning (1), Error (2)
+        - Extra configs
+    - How did you fix
+    - Code quality, uniformity in code across team
+    - Scripts in package.json
+    - RUn and show you dont have errors
+- Unit testing
+    - Describe unit testing - what is it
+    - Jasmine, Mocha, JSUnit, Jest 
+    - How did you install
+    - How did you get Jest to understand ES2015 imports (refer v4-session-babel/jest.config.js). We also need Babel for it
+        - .babelrc -> plugin and presets -> explain the different ones you installed
+    - Scripts in package.json
+    - How to run the test, and run and show
+    - Explain the unit test
+    - No "regression" (things that are workign still work fine)
+- Webpack
+    - To bundle the JS, CSS and create a distribution folder to be deployed on a web folder
+    - It understand ES2015 imports and bundles all dependencies
+    - Extends dependencies concept to CSS
+    - Bundle is fast to load (SPA)
+        - One bundle page
+    - Installations for webpack
+    - Configuring it
+        - loaders
+            - different loaders
+            - HTMLWebpack plugin
+    - Creating the build
