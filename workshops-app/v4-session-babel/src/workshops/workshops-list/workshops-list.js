@@ -1,6 +1,14 @@
-import { getWorkshops } from '/src/js/services/workshops.js';
-import { formatDate } from '/src/js/utils/date.js';
-import Workshop from '/src/js/models/Workshop.js';
+import '../../js/navbar';
+
+import { getWorkshops } from '../../js/services/workshops.js';
+import { formatDate } from '../../js/utils/date.js';
+import Workshop from '../../js/models/Workshop.js';
+
+import '../../common/utils.scss';
+import '../../common/app.scss';
+import '../../common/nav.scss';
+
+import './workshops-list.scss';
 
 class WorkshopList {
     workshops = null;

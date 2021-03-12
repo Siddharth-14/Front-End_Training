@@ -1,5 +1,5 @@
-import AppConfig from '../config.js';
-import { getToken } from '../services/auth.js';
+import AppConfig from '../config';
+import { getToken } from '../services/auth';
 
 const makeAjaxRequest = ( {
     method, endpoint, body, authenticated

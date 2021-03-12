@@ -1,4 +1,4 @@
-import { makeAjaxRequest } from '../utils/ajax.js';
+import { makeAjaxRequest } from '../utils/ajax';
 
 const addSession = async ( session ) => makeAjaxRequest( {
     method: 'post',

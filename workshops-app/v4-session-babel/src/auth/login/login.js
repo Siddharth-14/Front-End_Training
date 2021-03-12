@@ -1,7 +1,11 @@
 // eslint-disable-next-line import/no-unresolved, import/no-absolute-path
-import { login } from '/src/js/services/auth.js';
-import User from '/src/js/models/User.js';
-import { hideError, showError } from '/src/js/utils/form.js';
+import { login } from '../../js/services/auth';
+import User from '../../js/models/User';
+import { hideError, showError } from '../../js/utils/form';
+
+import '../../common/utils.scss';
+import '../../common/app.scss';
+import '../../common/nav.scss';
 
 class LoginPage {
     // same as saying this.loginForm = ... within the constructor

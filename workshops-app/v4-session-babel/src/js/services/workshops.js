@@ -1,4 +1,4 @@
-import { makeAjaxRequest } from '../utils/ajax.js';
+import { makeAjaxRequest } from '../utils/ajax';
 
 const getWorkshops = async () => makeAjaxRequest( {
     method: 'GET',

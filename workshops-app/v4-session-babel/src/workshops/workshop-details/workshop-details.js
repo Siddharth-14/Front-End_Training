@@ -1,10 +1,20 @@
-import { formatDate } from '/src/js/utils/date.js';
-import { showError, hideError } from '/src/js/utils/form.js';
-import { getQueryParams } from '/src/js/utils/url.js';
-import { addSession } from '/src/js/services/sessions.js';
-import { getWorkshopById } from '/src/js/services/workshops.js';
-import Workshop from '/src/js/models/Workshop.js';
-import Session from '/src/js/models/Session.js';
+import '../../js/navbar';
+
+import { formatDate } from '../../js/utils/date';
+import { showError, hideError } from '../../js/utils/form.js';
+import { getQueryParams } from '../../js/utils/url.js';
+import { addSession } from '../../js/services/sessions.js';
+import { getWorkshopById } from '../../js/services/workshops.js';
+
+import Workshop from '../../js/models/Workshop.js';
+import Session from '../../js/models/Session.js';
+
+import '../../common/utils.scss';
+import '../../common/app.scss';
+import '../../common/nav.scss';
+
+import './workshop-details.scss';
+import './workshop-details.print.scss';
 
 const identity = ( x ) => x;
 
