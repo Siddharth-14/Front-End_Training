@@ -24,24 +24,24 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
 
         <script type="text/babel">
-            /**
-            * Within {} in JSX we can have
-            * string
-            * number
-            * boolean
-            * React element
-            * array of the above
-            * null and undefined
-            */
-            function MeetingCard( { name, date, startTime, endTime, attendees, meetingRoom } ) {
+            function MeetingLocationAndDate( { date, startTime, endTime, meetingRoom } ) {
+                return (
+                    <React.Fragment>
+                        <div>Location: {meetingRoom}</div>
+                        <div>{date.toDateString()}, {startTime} - {endTime}</div>
+                    </React.Fragment>
+                );
+            }
+
+            function MeetingCard( { name, attendees, ...meetingLocationAndDateDetails } ) {
                 const heading = <h2>{name}</h2>;
+                console.log( meetingLocationAndDateDetails );
 
                 return (
                     <div className="meeting-card">
                         {heading}
                         <hr />
-                        <div>Location: {meetingRoom}</div>
-                        <div>{date.toDateString()}, {startTime} - {endTime}</div>
+                        <MeetingLocationAndDate {...meetingLocationAndDateDetails.date} />
                         <div>
                             Attendees: {attendees}
                         </div>
