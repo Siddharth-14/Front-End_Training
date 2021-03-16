@@ -16,21 +16,21 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
 
         <script type="text/babel">
-            // search / filter page card with meeting details
-            // Components MUST begin with uppercase letter
-            function MeetingCard( props ) {
-                console.log( props );
-
-                return (
-                    <div>
-                        <div>{props.name}</div>
-                        <div>{props.date.toDateString()}, {props.startTime} - {props.endTime}</div>
-                    </div>
-                );
+            // React.Component sets up
+            // Properties: constructor( props ) { this.props = props; }
+            // Methods: React.Component::setState(), React.Component::forceUpdate()
+            class MeetingCard extends React.Component {
+                render() {
+                    return (
+                        <div>
+                            <div>{this.props.name}</div>
+                            <div>{this.props.date.toDateString()}, {this.props.startTime} - {this.props.endTime}</div>
+                        </div>
+                    );
+                }
             }
 
-            const cards = (
-                <React.Fragment>
+            const cards = [
                     <MeetingCard 
                         name="Project Presentation"
                         date={new Date( 2021, 2, 16 )}
@@ -49,10 +49,22 @@
                             <span>Hello</span>
                             <span>World</span>
                     </MeetingCard>
-                </React.Fragment>
-            );
+            ];
 
-            // called the MeetingCard function, passed the props, and the returned UI was rendered
+            // 1 For every custom class component type, it creates an object. The constructor is passed the props
+            // const c1 = new MeetingCard( {
+            //     name: "Project Presentation",
+            //     date: new Date( 2021, 2, 16 ),
+            //     startTime: 12
+            //     endTime: 13
+            //     key: 1,
+            //     children: [
+            //         <span>Hello</span>,
+            //         <span>World</span>
+            //     ]
+            // } )
+            // 2. const el = c1.render()
+            // 3. ReactDOM will create the necessary DOM and show the element within the #root element
             ReactDOM.render( cards, document.getElementById( 'root' ) );
         </script>
     </body>
