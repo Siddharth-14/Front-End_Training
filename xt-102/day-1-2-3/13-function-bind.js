@@ -9,4 +9,5 @@ foo2();
 
 console.log( foo instanceof Function ); // true
 
-foo
+const boundFoo = foo.bind( { x: 100 } );
+boundFoo();
