@@ -8,7 +8,7 @@ class User {
         const emailPat = /\w+@example.com/;
         const errors = [];
 
-        if( this.email.trim() === '' ) {
+        if( !this.email.trim() ) {
             errors.push( 'Email is empty or has only spaces' );
         }
 
@@ -22,7 +22,7 @@ class User {
     validatePassword() {
         const errors = [];
 
-        if( this.password === '' ) {
+        if( !this.password.trim() ) {
             errors.push( 'Password is empty' );
         }
        

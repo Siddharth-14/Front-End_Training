@@ -4,7 +4,7 @@ const getFormData = ( formEl ) => {
 
     for( let i = 0; i < formEl.length; i++ ) {
         const input = formEl[i];
-        if( input.name !== '' ) {
+        if( input.name ) {
             formData[input.name] = input.value;
         }
     }

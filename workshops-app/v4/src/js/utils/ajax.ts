@@ -8,9 +8,7 @@ export type AjaxRequestOptions<T> = {
     authenticated?: boolean
 }
 
-function makeAjaxRequest<T>( {
-    method, endpoint, body, authenticated
-} : AjaxRequestOptions<T> ) {
+function makeAjaxRequest<T>( { method, endpoint, body, authenticated } : AjaxRequestOptions<T> ) {
     // const { method, endpoint, body, authenticated } = options;
     const headers = new Headers();
 

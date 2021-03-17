@@ -26,6 +26,7 @@ https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML_sections_and_
 - [A guide to flexbox - CSS Tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 - [RWD Patterns](https://developers.google.com/web/fundamentals/design-and-ux/responsive/patterns)
 - [Mondrian with CSS Grid](https://www.youtube.com/watch?v=qNtJ5p3h2A4). Also https://googlecreativelab.github.io/coder-projects/projects/mondrian/
+- [CSS3 Speech Module](https://css-tricks.com/almanac/properties/s/speak/)
 
 ## JavaScript
 - [Supplied documentation](./docs/04-js.pdf)
