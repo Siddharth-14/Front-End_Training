@@ -1,105 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <style>
-            body {
-                font-size: 1.5em;
-            }
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-size: 1.5em;
+      }
 
-            .todo-list-app {
-                padding: 1em;
-            }
+      .todo-list-app {
+        padding: 1em;
+      }
 
-            .todo-list {
-                width: 320px;
-                margin: 0 auto;
-                list-style-type: none;
-                padding: 0;
-                margin: 0;
-            }
+      .todo-list {
+        width: 320px;
+        margin: 0 auto;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
 
-            .todo-list li {
-                display: flex;
-                padding: 0.5em;
-                border: 1px solid lightgray;
-                border-radius: 8px;
-                margin-top: 0.5em;
-                margin-bottom: 0.5em;
-            }
+      .todo-list li {
+        display: flex;
+        padding: 0.5em;
+        border: 1px solid lightgray;
+        border-radius: 8px;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+      }
 
-            .todo-list li button {
-                align-self: flex-end;
-            }
+      .todo-list li button {
+        align-self: flex-end;
+      }
 
-            .todo-list .task-name {
-                flex-basis: auto;
-                flex-grow: 1;
-                margin-left: 0.5em;
-            }
-        </style>
-    </head>
-    <body>
-        <div id="root"></div>
+      .todo-list .task-name {
+        flex-basis: auto;
+        flex-grow: 1;
+        margin-left: 0.5em;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/17.0.1/umd/react.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/17.0.1/umd/react.development.js"></script>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.1/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.1/umd/react-dom.development.js"></script>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
 
-        <script type="text/babel">
-            function TaskInput( { placeholder, buttonText } ) {
-                // const { placeholder, buttonText } = props;
-                
-                return (
-                    <form>
-                        <input type="text" className="task-input" placeholder={placeholder} />
-                        <button>{buttonText}</button>
-                    </form>
-                );
-            }
+    <script type="text/babel">
+      var Task = function (name, checked = false) {
+        this.name = name;
+        this.completed = checked;
+      };
 
-            function TaskListItem( { name, completed } ) {
-                return (
-                    <li>
-                        <input type="checkbox" checked={completed} />
-                        <span class="task-name">{name}</span>
-                        <button>Delete</button>
-                    </li>
-                );
-            }
+      class TaskInput extends React.Component {
+        inputRef = React.createRef();
 
-            function TaskList( { tasks } ) {
-                return (
-                    <ul className="todo-list">
-                        {tasks.map(task => <TaskListItem {...task} />)}
-                    </ul>
-                );
-            }
+        caller = (event) => {
+          event.preventDefault();
+          this.props.onAddListener(this.inputRef.current.value);
+        };
 
-            function TodoListApp( { tasks } ) {
-                return (
-                    <div className="todo-list-app">
-                        <TaskInput placeholder="Go shopping" buttonText="Add" />
-                        <TaskList tasks={tasks} />
-                    </div>
-                );
-            }
+        render() {
+          return (
+            <form>
+              <input
+                type="text"
+                className="task-input"
+                placeholder={this.props.onplaceholder}
+                ref={this.inputRef}
+              />
+              <button onClick={this.caller}>{this.props.buttonText}</button>
+            </form>
+          );
+        }
+      }
 
-            const tasks = [
-                { name: 'Buy milk', completed: true },
-                { name: 'Learn React', completed: false },
-            ];
+      class TaskListItem extends React.Component {
+        render() {
+          return (
+            <li>
+              <input type="checkbox" checked={this.props.completed} />
+              <span className="task-name">{this.props.name}</span>
+              <button
+                onClick={() => {
+                  this.props.onRemove(this.props.index);
+                }}
+              >
+                Delete
+              </button>
+            </li>
+          );
+        }
+      }
 
+      function TaskList({ onRemoveListener, tasks }) {
+        let index = 0;
+        return (
+          <ul className="todo-list">
+            {tasks.map(
+              (task) => (
+                (task.index = index++),
+                (
+                  <TaskListItem
+                    onRemove={onRemoveListener}
+                    key={index}
+                    {...task}
+                  />
+                )
+              )
+            )}
+          </ul>
+        );
+      }
 
-            ReactDOM.render(
-                <TodoListApp tasks={tasks} />,
-                document.getElementById( 'root' )
-            )
-        </script>
-    </body>
+      class TodoListApp extends React.Component {
+        state = {
+          tasks: [
+            { name: "Buy milk", completed: true },
+            { name: "Learn React", completed: false },
+          ],
+        };
+
+        onAddTask = (text) => {
+          let temp = new Task(text);
+          this.setState((state) => {
+            state.tasks.push(temp);
+            return {
+              tasks: state.tasks,
+            };
+          });
+        };
+
+        onRemoveTask = (index) => {
+          this.setState((state) => {
+            delete state.tasks[index];
+            return {
+              tasks: state.tasks,
+            };
+          });
+        };
+
+        render() {
+          return (
+            <div className="todo-list-app">
+              <TaskInput
+                onAddListener={this.onAddTask}
+                placeholder="Go shopping"
+                buttonText="Add"
+              />
+              <TaskList
+                onRemoveListener={this.onRemoveTask}
+                tasks={this.state.tasks}
+              />
+            </div>
+          );
+        }
+      }
+
+      ReactDOM.render(<TodoListApp />, document.getElementById("root"));
+    </script>
+  </body>
 </html>
