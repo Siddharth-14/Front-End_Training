@@ -36,17 +36,10 @@
             }
 
             function MeetingsList( { meetings } ) {
-                // EXERCISE: generate meetingReactEls array using meetings.map()
+                const meetingReactEls = meetings.map( meeting => <MeetingCard {...meeting} /> );
 
-                const meetingReactEls = [];
-                
-                for( let i = 0; i < meetings.length; i++ ) {
-                    let meeting = meetings[i];
-
-                    meetingReactEls.push(
-                        <MeetingCard {...meeting} />
-                    );
-                }
+                console.log( meetings );
+                console.log( meetingReactEls );
 
                 return (
                     <React.Fragment>
