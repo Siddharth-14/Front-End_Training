@@ -16,7 +16,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
 
         <script type="text/babel">
-            const span = React.createElement( 'span', { key: 1 }, '0' );
+            const span = <span key={1}>0</span>
             const buttonPlus = React.createElement( 'button', { key: 2 }, '+' );
             
             // If prop value is NOT a string or a variable that holds a string, we put it within {} in JSX
