@@ -22,23 +22,28 @@
                 }
 
                 increment = () => {
-                    // setState() is an async function - state change is NOT immediate
-                    this.setState({
-                        currentValue: this.state.currentValue + 1 // { currentValue: 0 + 1 }
+                    this.setState(( state ) => {
+                        return {
+                            currentValue: state.currentValue + 1
+                        }
                     });
-                    // state remains unchanged - it remains { currentValue: 0 }
-                    this.setState({
-                        currentValue: this.state.currentValue + 1 // { currentValue: 0 + 1 }
+                    this.setState(( state ) => {
+                        return {
+                            currentValue: state.currentValue + 1
+                        }
                     });
-                    // state remains unchanged - it remains { currentValue: 0 }
                 }
                 
                 decrement = () => {
-                    this.setState({
-                        currentValue: this.state.currentValue - 1
+                    this.setState(( state ) => {
+                        return {
+                            currentValue: state.currentValue - 1
+                        }
                     });
-                    this.setState({
-                        currentValue: this.state.currentValue - 1
+                    this.setState(( state ) => {
+                        return {
+                            currentValue: state.currentValue - 1
+                        }
                     });
                 }
 
