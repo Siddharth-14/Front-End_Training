@@ -76,6 +76,9 @@
                 componentWillUpdate( nextProps, nextState ) {
                     console.log( 'cwu' );
 
+                    console.log( 'this.props (current props) = ', this.props ); // { p: 1, q: 2 }
+                    console.log( 'nextProps = ', nextProps ); // { p: 10, q: 20 }
+                    
                     console.log( 'this.state (current state) = ', this.state );
                     console.log( 'nextState = ', nextState );
                 }
@@ -91,6 +94,9 @@
                 // You can call setState() here
                 componentDidUpdate( prevProps, prevState ) {
                     console.log( 'cdu' );
+
+                    console.log( 'this.props (current state) = ', this.props );
+                    console.log( 'prevProps = ', prevProps );
                     
                     console.log( 'prevState = ', prevState );
                     console.log( 'this.state (current state) = ', this.state );
@@ -103,7 +109,15 @@
                 }
             }
 
-            ReactDOM.render( <X />, document.getElementById( 'root' ) );
+            // const x = new X( { p: 1, q: 2 } )
+            // x.render() and get the UI, and create the DOM and show it
+            ReactDOM.render( <X p={1} q={2} />, document.getElementById( 'root' ) );
+            
+            setTimeout(function() {
+                // THIS DOES MOT HAPPEN -> this DOES NOT create a new component instance (no new X( { p: 10, q: 10 } ))
+                // THIS HAPPENS -> x.shouldComponentUpdate(), .... and update phase lifecycle methods are called
+                ReactDOM.render( <X p={10} q={20} />, document.getElementById( 'root' ) );
+            }, 5000);
 
             setTimeout(function() {
                 ReactDOM.render( <div>New component</div>, document.getElementById( 'root' ) );
