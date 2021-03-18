@@ -138,7 +138,7 @@
 
         onRemoveTask = (index) => {
           this.setState((state) => {
-            delete state.tasks[index];
+            state.tasks.splice(index,1);
             return {
               tasks: state.tasks,
             };
