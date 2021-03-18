@@ -3,6 +3,9 @@
 ## Lab guides
 Lab guides for various topics can be found [here](./docs/lab-guides/)
 
+## React
+- [How to manage React State with Arrays](https://www.robinwieruch.de/react-state-array-add-update-remove)
+
 ## GIT
 - [Supplied documentation](./docs/01-git.pdf)
 - [Resources on Git](https://git-scm.com/doc)
@@ -16,8 +19,8 @@ https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML_sections_and_
 - [Google style guide for HTML/CSS](https://google.github.io/styleguide/htmlcssguide.html)
 
 ## CSS
-- [Supplied documentation](./docs/03-css.pdf)
-- [Supplied documentation](./docs/03-css3.pdf)
+- [Supplied documentation (CSS)](./docs/03-css.pdf)
+- [Supplied documentation (CSS3)](./docs/03-css3.pdf)
 - [Shorthand properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties)
 - [box-sizing: border-box](https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing)
 - [Airbnb Style Guide for CSS](https://github.com/airbnb/css)

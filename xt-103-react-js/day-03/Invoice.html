@@ -17,44 +17,73 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
 
         <script type="text/babel">
-            function Invoice( { products, customer } ) {
-                return (
-                    <div className="container my-5">
-                        <h1 className="h3">
-                            Invoice
-                            <div>
-                                <small>Customer: {customer}</small>
-                            </div>
-                        </h1>
-                        <table className="table">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Quantity</th>
-                                    <th>Price</th>
-                                    <th>Total Price</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {
-                                    products.map( ( { name, quantity, price } ) => (
-                                        <tr key={name}>
-                                            <td>{name}</td>
-                                            <td>{quantity}</td>
-                                            <td>{price}</td>
-                                            <td>{quantity * price}</td>
-                                        </tr>
-                                    ))
-                                }
-                            </tbody>
-                            <tfoot>
-                                {
-                                    
-                                }
-                            </tfoot>
-                        </table>
-                    </div>
-                )
+            class Invoice extends React.Component {
+                state = {
+                    currentProducts: [ ...this.props.products ]
+                };
+
+                deleteItem = ( idx ) => {
+                    this.setState( state => {
+                        // always make a copy of arrays and objects in the state
+                        const newCurrentProducts = [ ...state.currentProducts ];
+
+                        // for( let i = 0; i < state.currentProducts.length; i++ ) {
+                        //     if( state.currentProducts[i].name == productName ) {
+                                
+                        //     }
+                        // }
+                        newCurrentProducts.splice( idx, 1 );
+
+                        return {
+                            currentProducts: newCurrentProducts
+                        };
+                    });
+                }
+
+                render() {
+                    const { customer } = this.props;
+                    const { currentProducts : products } = this.state;
+
+                    return (
+                        <div className="container my-5">
+                            <h1 className="h3">
+                                Invoice
+                                <div>
+                                    <small>Customer: {customer}</small>
+                                </div>
+                            </h1>
+                            <table className="table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Quantity</th>
+                                        <th>Price</th>
+                                        <th>Total Price</th>
+                                        <th>Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {
+                                        products.map( ( { name, quantity, price }, idx ) => (
+                                            <tr key={name}>
+                                                <td>{name}</td>
+                                                <td>{quantity}</td>
+                                                <td>{price}</td>
+                                                <td>{quantity * price}</td>
+                                                <td><button onClick={() => this.deleteItem( idx )}>Delete</button></td>
+                                            </tr>
+                                        ))
+                                    }
+                                </tbody>
+                                <tfoot>
+                                    {
+
+                                    }
+                                </tfoot>
+                            </table>
+                        </div>
+                    );
+                }
             }
 
             const products = [
