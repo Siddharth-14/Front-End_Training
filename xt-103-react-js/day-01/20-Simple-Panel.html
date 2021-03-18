@@ -36,17 +36,30 @@
                     open: true
                 };
 
+                onClickHandler = () => {
+                    this.setState(state => {
+                        return {
+                            open: !state.open
+                        };
+                    });
+                }
+
                 render() {
                     const { heading, children } = this.props;
+                    const { open } = this.state;
 
                     console.log( heading, children );
 
                     return (
                         <div className="panel">
-                            <div className="panel-heading">{heading}</div>
-                            <div className="panel-body">
-                                {children}
-                            </div>
+                            <div className="panel-heading" onClick={this.onClickHandler}>{heading}</div>
+                            {
+                                open ? (
+                                    <div className="panel-body">
+                                        {children}
+                                    </div>
+                                ) : null
+                            }
                         </div>
                     );
                 }
