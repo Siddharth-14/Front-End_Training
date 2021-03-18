@@ -1,5 +1,6 @@
 const http = require( 'http' );
 const url = require( 'url' );
+const { add, subtract, multiply } = require( './04-modules/arithmetic.js' );
 
 // https://nodejs.org/dist/latest-v14.x/docs/api/http.html#http_http_createserver_options_requestlistener
 // we create a server and say what to do when an HTTP request is received
@@ -7,25 +8,21 @@ const server = http.createServer(function( req, res ) {
     // a string - for a request http://localhost:8080/api/teams, it is /api/teams
     
     const parsedUrl = url.parse( req.url, true );
-    
-    console.log( parsedUrl );
-    console.log( 'pathname = ', parsedUrl.pathname )
-    console.log( 'query = ', parsedUrl.query )
-    
-    switch( parsedUrl.pathname ) {
-        case '/api/teams':
-            res.write( 'CSR Team, Fun Friday Team, NASA Project, Group A, Group B, Group C, Group D' );
+
+    switch(parsedUrl.query["op"]){
+        case 'addition':
+            console.log(add(parseInt(parsedUrl.query["x"]),parseInt(parsedUrl.query["y"])));
+            res.write( ""+add(parseInt(parsedUrl.query["x"]),parseInt(parsedUrl.query["y"])));
             break;
-        case '/api/meetings':
-            res.write( 'Milestone 3 meeting, Project party' );
+        case 'subtraction':
+            res.write( ""+subtract(parseInt(parsedUrl.query["x"]),parseInt(parsedUrl.query["y"])));
             break;
-        case '/api/calendar':
-            res.write( 'Milestone 3 presentation' );
+        case 'multiplication':
+            res.write( ""+multiply(parseInt(parsedUrl.query["x"]),parseInt(parsedUrl.query["y"])));
             break;
         default:
-            res.write( 'hello world' );
+            res.write( 'error' );
     }
-    
     res.end();
 });
 
