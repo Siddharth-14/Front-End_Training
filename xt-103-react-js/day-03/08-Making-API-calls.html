@@ -61,7 +61,7 @@
                 }
 
                 componentDidMount() {
-                    fetch( `http://workshops-server.herokuapp.com/workshops` )
+                    fetch( `https://workshops-server.herokuapp.com/workshops` )
                         .then(response => {
                             if( !response.ok ) {
                                 throw new Error( 'Something went wrong' );
@@ -80,7 +80,7 @@
                                 status: WorkshopsList.ERROR_LOADING,
                                 error: error
                             });
-                        })
+                        });
                 }
             }
 
