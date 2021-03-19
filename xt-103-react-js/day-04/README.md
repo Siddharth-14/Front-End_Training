@@ -12,6 +12,7 @@
         - start "ticking" the clock after rendering the clock for the first time
 - Hooks are only for function components
     - we cannot use hooks in class components - it will result in an error
+    - we cannot call hooks anywhere EXCEPT function component. Custom hooks can call other hooks, but custom hooks themselves can be called ONLY from function components
 
 
 ## Why hooks?
