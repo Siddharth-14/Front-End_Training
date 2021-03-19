@@ -16,35 +16,26 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
 
         <script type="text/babel">
-            class DigitalClock extends React.Component {
-                state = {
-                    time: null
-                }
+            function DigitalClock( { message } ) {
+                const [ time, setTime ] = React.useState( (new Date()).toTimeString() );
 
-                startClock = () => {
-                    this.id = setInterval(() => {
-                        console.log( 'we are about to change state' );
+                let id;
 
-                        this.setState({
-                            time: (new Date()).toTimeString()
-                        });
+                const startClock = () => {
+                    id = setInterval(() => {
+                        console.log( 'changing the time' );
+                        setTime( (new Date()).toTimeString() );
                     }, 1000);
-                }
+                };
 
-                render() {
-                    return (
-                        <React.Fragment>
-                            <div>
-                                {this.props.message} {this.state.time}
-                            </div>
-                            <button onClick={this.startClock}>Start ticking</button>
-                        </React.Fragment>
-                    );
-                }
-
-                componentWillUnmount() {
-                    clearInterval( this.id );
-                }
+                return (
+                    <React.Fragment>
+                        <div>
+                            {message} {time}
+                        </div>
+                        <button onClick={startClock}>Start ticking</button>
+                    </React.Fragment>
+                );
             }
 
             ReactDOM.render( <DigitalClock message="The time in India is " />, document.getElementById( 'root' ) );
