@@ -21,6 +21,8 @@
                 const [ running, setRunning ] = React.useState( false );
 
                 React.useEffect(() => {
+                    console.log( 'effect runs' );
+
                     if( running ) {
                         let id = setInterval(() => {
                             setTimeElapsed( t => t + 1 );
