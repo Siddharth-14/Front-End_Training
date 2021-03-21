@@ -5,6 +5,7 @@ Lab guides for various topics can be found [here](./docs/lab-guides/)
 
 ## React
 - [How to manage React State with Arrays](https://www.robinwieruch.de/react-state-array-add-update-remove)
+- [How to fetch data with React Hooks?](https://www.robinwieruch.de/react-hooks-fetch-data)
 
 ## GIT
 - [Supplied documentation](./docs/01-git.pdf)
