@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            .btn {
+                border: 0;
+                margin: 5px;
+                background-color: navy;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="root"></div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/17.0.1/umd/react.development.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.1/umd/react-dom.development.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+
+        <script type="text/babel">
+            function getCounter( CounterPresentation ) {
+                return class extends React.Component {
+                    state = {
+                        counter: 0
+                    };
+
+                    increment = () => {
+                        this.setState(state => {
+                            return {
+                                counter: state.counter + 1
+                            };
+                        });
+                    }
+                    
+                    decrement = () => {
+                        this.setState(state => {
+                            return {
+                                counter: state.counter - 1
+                            };
+                        });
+                    }
+
+                    setCounter = ( counter ) => {
+                        this.setState({
+                            counter
+                        });
+                    }
+
+                    render() {
+                        return <CounterPresentation
+                                    increment={this.increment}
+                                    decrement={this.decrement}
+                                    setCounter={this.setCounter}
+                                    counter={this.state.counter} />
+                    }
+                };
+            } 
+
+            class Counter extends React.Component {
+                render() {
+                    const { increment, decrement, counter } = this.props;
+
+                    return (
+                        <div>
+                            <button onClick={decrement}>-</button>
+                            <span>{counter}</span>
+                            <button onClick={increment}>+</button>
+                        </div>
+                    );
+                }
+            }
+
+            class FancyCounter extends React.Component {
+                render() {
+                    const { increment, decrement, setCounter, counter } = this.props;
+
+                    return (
+                        <div>
+                            <button onClick={decrement} className="btn">-</button>
+                            <span>{counter}</span>
+                            <button onClick={increment} className="btn">+</button>
+                            <button onClick={() => setCounter( 0 )}>Reset</button>
+                        </div>
+                    );
+                }
+            }
+
+            const CounterContainer = getCounter( Counter );
+            const FancyCounterContainer = getCounter( FancyCounter );
+
+            ReactDOM.render( 
+                <React.Fragment>
+                    <CounterContainer />
+                    <FancyCounterContainer />
+                </React.Fragment>,
+                document.getElementById( 'root' ) );
+        </script>
+    </body>
+</html>
