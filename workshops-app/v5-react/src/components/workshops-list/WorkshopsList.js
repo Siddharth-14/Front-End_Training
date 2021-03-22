@@ -19,15 +19,18 @@ class WorkshopsList extends Component {
         switch( status ) {
             case WorkshopsList.LOADING:
                 el = (
-                    <div>We are fetching workshops. Please wait</div>
+                    <div className="alert alert-primary">We are fetching workshops. Please wait</div>
                 );
                 break;
             case WorkshopsList.LOADED:
                 el = (
-                    <ul>
+                    <ul className="my-4">
                     {
                         workshops.map( workshop => (
-                            <li key={workshop.id}>{workshop.name}</li>
+                            <li key={workshop.id}>
+                                {workshop.name}
+                                <div dangerouslySetInnerHTML={ { __html: workshop.description } }></div>
+                            </li>
                         ))
                     }
                     </ul>
@@ -35,14 +38,16 @@ class WorkshopsList extends Component {
                 break;
             case WorkshopsList.ERROR_LOADING:
                 el = (
-                    <div>{error.message}</div>
+                    <div className="alert alert-danger">{error.message}</div>
                 );
                 break;
             default: 
                 el = null;
         }
 
-        return el;
+        return (
+            <div className="container">{el}</div>
+        );
     }
 
     componentDidMount() {

@@ -24,8 +24,9 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
 
         <script type="text/babel">
-            function getCounter( CounterPresentation ) {
-                return class extends React.Component {
+            function getCounter( CounterPresentation ) { // Higher-Order Component (HOC) is actually a function
+                return class extends React.Component { // an "anonymous" class is generated and returned each time the HOC is called
+                    // define shared state and logic
                     state = {
                         counter: 0
                     };
@@ -52,6 +53,7 @@
                         });
                     }
 
+                    // render the component passed as argument, as a child component - pass it whatever it requires
                     render() {
                         return <CounterPresentation
                                     increment={this.increment}
@@ -62,6 +64,7 @@
                 };
             } 
 
+            // the "Presentation component" - it assumes it shall get whatever it needs and simply needs to render -  so a function component can also be used (in fact function component is more appropriate)
             class Counter extends React.Component {
                 render() {
                     const { increment, decrement, counter } = this.props;
@@ -76,6 +79,7 @@
                 }
             }
 
+            // another "Presentation component"
             class FancyCounter extends React.Component {
                 render() {
                     const { increment, decrement, setCounter, counter } = this.props;
@@ -91,9 +95,11 @@
                 }
             }
 
+            // generate "Container components" by calling the HOC
             const CounterContainer = getCounter( Counter );
             const FancyCounterContainer = getCounter( FancyCounter );
 
+            // use the Container components which in turn render the Presentation components as children
             ReactDOM.render( 
                 <React.Fragment>
                     <CounterContainer />
