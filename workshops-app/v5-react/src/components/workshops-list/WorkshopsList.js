@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import { getWorkshops } from '../../services/workshops';
+
+import { Link } from 'react-router-dom';
 
 class WorkshopsList extends Component {
     static LOADING = 'LOADING';
@@ -28,8 +30,9 @@ class WorkshopsList extends Component {
                     {
                         workshops.map( workshop => (
                             <li key={workshop.id}>
-                                {workshop.name}
+                                <Link to={'/workshops/' + workshop.id}>{workshop.name}</Link>
                                 <div dangerouslySetInnerHTML={ { __html: workshop.description } }></div>
+                                <button class="btn btn-sm btn-primary">Hide / Show</button>
                             </li>
                         ))
                     }
@@ -51,11 +54,11 @@ class WorkshopsList extends Component {
     }
 
     componentDidMount() {
-        axios.get( `https://workshops-server.herokuapp.com/workshops` )
-            .then(response => {
+        getWorkshops()
+            .then(workshops => {
                 this.setState({
                     status: WorkshopsList.LOADED,
-                    workshops: response.data
+                    workshops
                 });
             })
             .catch(error => {
