@@ -19,6 +19,7 @@ function addSession( id, session ) {
         session,
         { 
             headers: {
+                'Accept': 'application/json',
                 'Content-Type': 'application/json'
             }
         }
