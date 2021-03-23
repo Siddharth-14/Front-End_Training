@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import axios from "axios";
+import { getWorkshops } from "../../services/workshops";
+
+import { Link } from "react-router-dom";
 
 class WorkshopsList extends Component {
   static LOADING = "LOADING";
@@ -7,22 +9,13 @@ class WorkshopsList extends Component {
   static ERROR_LOADING = "ERROR_LOADING";
 
   state = {
-    status: WorkshopsList.LOADING,
-    showDescriptions: [false,false,false,false,false,false,false,false,false,false,false,false],
+    status: WorkshopsList.LOADING
     // workshops: null,
     // error: null
   };
 
-  toggleDescriptions = (id) => {
-    let currDescriptions = [...this.state.showDescriptions];
-    currDescriptions[id-1] = !this.state.showDescriptions[id-1]
-    this.setState((curState) => ({
-      showDescriptions: currDescriptions,
-    }));
-  };
-
   render() {
-    const { status, workshops, error, showDescriptions } = this.state;
+    const { status, workshops, error } = this.state;
     let el = null;
 
     switch (status) {
@@ -35,28 +28,17 @@ class WorkshopsList extends Component {
         break;
       case WorkshopsList.LOADED:
         el = (
-          <div>
-            <ul className="p-0 flex-wrap my-4 flex-column justify-content-between">
-              {workshops.map((workshop) => (
-                <li className="py-4 px-4 card shadow mx-4 my-2" key={workshop.id}>
-                  <h3>{workshop.name}</h3>
-                  {showDescriptions[workshop.id-1] && (
-                    <div
-                      className="mt-3"
-                      dangerouslySetInnerHTML={{ __html: workshop.description }}
-                    ></div>
-                  )}
-                  <button
-                    className="mt-2 btn btn-sm btn-primary"
-                    style={{width:"20%"}}
-                    onClick={()=>this.toggleDescriptions(workshop.id)}
-                  >
-                    {showDescriptions[workshop.id-1] ? "Hidedetails" : "Showdetails"}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <ul className="my-4">
+            {workshops.map((workshop) => (
+              <li key={workshop.id}>
+                <Link to={"/workshops/" + workshop.id}>{workshop.name}</Link>
+                <div
+                  dangerouslySetInnerHTML={{ __html: workshop.description }}
+                ></div>
+                <button class="btn btn-sm btn-primary">Hide / Show</button>
+              </li>
+            ))}
+          </ul>
         );
         break;
       case WorkshopsList.ERROR_LOADING:
@@ -70,18 +52,17 @@ class WorkshopsList extends Component {
   }
 
   componentDidMount() {
-    axios
-      .get(`https://workshops-server.herokuapp.com/workshops`)
-      .then((response) => {
+    getWorkshops()
+      .then((workshops) => {
         this.setState({
           status: WorkshopsList.LOADED,
-          workshops: response.data,
+          workshops
         });
       })
       .catch((error) => {
         this.setState({
           status: WorkshopsList.ERROR_LOADING,
-          error,
+          error
         });
       });
   }
