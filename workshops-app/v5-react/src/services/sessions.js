@@ -2,7 +2,11 @@ import axios from 'axios';
 
 function getSessionForWorkshopById(id) {
     return axios
-      .get(`https://workshops-server.herokuapp.com/workshops/${id}/sessions`)
+      .get(`https://workshops-server.herokuapp.com/workshops/${id}/sessions`,{ 
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
       .then((response) => response.data);
 }
 
