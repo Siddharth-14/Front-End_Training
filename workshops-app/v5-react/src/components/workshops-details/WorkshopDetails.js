@@ -1,9 +1,10 @@
-import React, { Component } from "react";
+import React, { Component, lazy, Suspense } from "react";
 import { Link, Route } from 'react-router-dom';
-import SessionsList from '../sessions-list/SessionsList';
 import { getWorkshopById } from "../../services/workshops";
 import Moment from "react-moment";
-import AddSession from "../add-session/AddSession";
+
+import SessionsList from '../sessions-list/SessionsList';
+const AddSession = lazy(() => import( "../add-session/AddSession" ));
 
 class WorkshopDetails extends Component {
   static LOADING = "LOADING";
@@ -80,7 +81,9 @@ class WorkshopDetails extends Component {
             <Link to={this.props.match.url + '/add_sessions'}>Add a new session</Link>
 
             <Route path={this.props.match.path + '/sessions'} component={( props ) => <SessionsList id={workshop.id} {...props} />} />
-            <Route path={this.props.match.path + '/add_sessions'} component={( props ) => <AddSession id={workshop.id} {...props} />} />
+            <Suspense fallback={<div>Wait a moment...Loading the add session form</div>}>
+                <Route path={this.props.match.path + '/add_sessions'} component={( props ) => <AddSession id={workshop.id} {...props} />} />
+            </Suspense>
           </div>
         );
         break;
