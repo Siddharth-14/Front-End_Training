@@ -6,7 +6,7 @@ class UserForm extends Component {
     render() {
         return (
             <React.Fragment>
-                <input type="text" name="username" onChange={( event ) => updateUsername( event.target.value )} value={store.getState().form.username} />
+                <input type="text" name="username" onChange={( event ) => store.dispatch( updateUsername( event.target.value ) )} value={store.getState().form.username} />
                 {store.getState().form.username}
             </React.Fragment>
         );
