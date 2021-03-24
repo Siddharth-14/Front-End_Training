@@ -1,6 +1,7 @@
 import {
     INCREMENT,
-    DECREMENT
+    DECREMENT,
+    UPDATE_USERNAME
 } from './constants';
 
 // action creators
@@ -16,7 +17,17 @@ function decrement() {
     };
 }
 
+function updateUsername( username ) {
+    return {
+        type: UPDATE_USERNAME,
+        payload: {
+            username
+        }
+    };
+}
+
 export {
     increment,
-    decrement
+    decrement,
+    updateUsername
 };

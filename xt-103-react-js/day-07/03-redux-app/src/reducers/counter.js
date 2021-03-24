@@ -3,20 +3,20 @@ import {
     DECREMENT
 } from '../actions/constants';
 
-function counterReducer( curState = { counter : 0 }, action ) {
+function counterReducer( curState = { value : 0 }, action ) {
     let newState;
 
     switch( action.type ) {
         case INCREMENT:
             newState = {
                 ...curState,
-                counter: curState.counter + 1
+                value: curState.value + 1
             };
             break;
         case DECREMENT:
             newState = {
                 ...curState,
-                counter: curState.counter - 1
+                value: curState.value - 1
             };
             break;
         default:
