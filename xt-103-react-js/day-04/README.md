@@ -28,5 +28,5 @@
     - This helps us to share state and logic across components which do something similar
 
 ### Problem with hooks
-- Hooks have a steep learning hooks
+- Hooks have a steep learning curve
     - Easy to go wrong with hooks

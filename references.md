@@ -75,6 +75,8 @@ https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML_sections_and_
 - [Pa11y - GitHub project](https://github.com/pa11y/pa11y)
 - [Using Axe core with Selenium for automated testing](https://github.com/dequelabs/axe-webdriverjs)
 - [Getting started with Tenon](https://tenon.io/documentation/quick-start)
+- [How to make inline error messages accessible](https://hiddedevries.nl/en/blog/2017-04-04-how-to-make-inline-error-messages-accessible)
+- [Usable and Accessible Form Validation and Error Recovery](https://webaim.org/techniques/formvalidation/)
 
 ## Node and npm
 - [Supplied documentation](./docs/06-node-npm-command-reference.pdf)
