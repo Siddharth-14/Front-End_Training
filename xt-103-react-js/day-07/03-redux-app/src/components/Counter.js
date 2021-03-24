@@ -10,7 +10,7 @@ class Counter extends Component {
         return (
             <React.Fragment>
                 <button onClick={() => store.dispatch( decrement() )}>-</button>
-                <span id="counter">{store.getState().counter}</span>
+                <span id="counter">{store.getState().counter.value}</span>
                 <button onClick={() => store.dispatch( increment() )}>+</button>
             </React.Fragment>
         );
