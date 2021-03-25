@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, createRef } from 'react';
 import store from '../store';
 import {
     increment,
@@ -6,13 +6,15 @@ import {
 } from '../actions/creators';
 
 class Counter extends Component {
+    inputRef = createRef();
+
     render() {
         return (
             <React.Fragment>
-                <button onClick={() => store.dispatch( decrement() )}>-</button>
-                <input type="number" />
+                <button onClick={() => store.dispatch( decrement( parseInt( this.inputRef.current.value ) ) )}>-</button>
+                <input type="number" ref={this.inputRef} defaultValue="1" />
                 <span id="counter">{store.getState().counter.value}</span>
-                <button onClick={() => store.dispatch( increment() )}>+</button>
+                <button onClick={() => store.dispatch( increment( parseInt( this.inputRef.current.value ) ) )}>+</button>
             </React.Fragment>
         );
     }
