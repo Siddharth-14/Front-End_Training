@@ -1,14 +1,25 @@
-import React, { Component, createRef } from 'react';
+import React, { createRef } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-function Counter( { increment, decrement, value } ) {
+import {
+    increment,
+    decrement
+} from '../actions/creators';
+
+import { selectValue } from '../reducers/counter';
+
+function Counter() {
     let inputRef = createRef();
+
+    const dispatch = useDispatch();
+    const value = useSelector( selectValue );
 
     return (
         <React.Fragment>
-            <button onClick={() => decrement( parseInt( inputRef.current.value ) )}>-</button>
+            <button onClick={() => dispatch( decrement( parseInt( inputRef.current.value ) ) )}>-</button>
             <input type="number" ref={inputRef} defaultValue="1" />
             <span id="counter">{value}</span>
-            <button onClick={() => increment( parseInt( inputRef.current.value ) )}>+</button>
+            <button onClick={() => dispatch( increment( parseInt( inputRef.current.value ) ) )}>+</button>
         </React.Fragment>
     );
 }

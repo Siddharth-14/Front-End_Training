@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Counter from './containers/Counter';
-import UserForm from './containers/UserForm';
+import Counter from './components/Counter';
+import UserForm from './components/UserForm';
 
 import { Provider } from 'react-redux';
 import store from './store';
