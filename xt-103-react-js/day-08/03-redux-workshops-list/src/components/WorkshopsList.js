@@ -1,10 +1,7 @@
 import React from 'react';
-import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
 import {
-    workshopsLoading,
-    workshopsLoaded,
-    workshopsErrorLoading,
+    loadWorkshopsThunk,
     WORKSHOPS_LIST_LOADING,
     WORKSHOPS_LIST_LOADED,
     WORKSHOPS_LIST_ERROR_LOADING
@@ -17,15 +14,10 @@ function WorkshopsList() {
     const { status, workshops, error } = useSelector( getWorkshops );
 
     React.useEffect(() => {
-        dispatch( workshopsLoading() );
-
-        axios.get( `https://workshops-server.herokuapp.com/workshops` )
-            .then(response => {
-                dispatch( workshopsLoaded( response.data ) );
-            })
-            .catch(error => {
-                dispatch( workshopsErrorLoading( error ) );
-            });
+        // we are dispatching a function
+        // Thunk middleware keeps quiet when we dispatch a normal action (object)
+        // Thunk middleware will execute the function if you dispatch a function
+        dispatch( loadWorkshopsThunk() );
     }, [ ]);
 
     let el;

@@ -4,6 +4,8 @@ import {
     WORKSHOPS_LIST_LOADED
 } from './constants';
 
+import axios from 'axios';
+
 function workshopsLoading() {
     return {
         type: WORKSHOPS_LIST_LOADING
@@ -28,8 +30,25 @@ function workshopsErrorLoading( error ) {
     };
 }
 
+function loadWorkshopsThunk() {
+    return function( dispatch ) {
+        // action
+        dispatch( workshopsLoading() );
+
+        // side-effect
+        axios.get( `https://workshops-server.herokuapp.com/workshops` )
+            .then(response => {
+                dispatch( workshopsLoaded( response.data ) );
+            })
+            .catch(error => {
+                dispatch( workshopsErrorLoading( error ) );
+            });
+    };
+}
+
 export {
     workshopsLoading,
     workshopsLoaded,
-    workshopsErrorLoading
+    workshopsErrorLoading,
+    loadWorkshopsThunk
 };
