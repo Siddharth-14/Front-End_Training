@@ -5,8 +5,6 @@ import {
 function formReducer( curState = { username : '' }, action ) {
     let newState;
 
-    console.log( action );
-
     switch( action.type ) {
         case UPDATE_USERNAME:
             newState = {
@@ -17,8 +15,6 @@ function formReducer( curState = { username : '' }, action ) {
         default:
             newState = curState;
     }
-
-    console.log( newState );
 
     return newState;
 }

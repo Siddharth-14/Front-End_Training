@@ -1,10 +1,11 @@
 import React, { Component, createRef } from 'react';
-import store from '../store';
 
 class Counter extends Component {
+    
     inputRef = createRef();
-
+    
     render() {
+        console.log( 'render' );
         const { increment, decrement, value } = this.props;
 
         return (

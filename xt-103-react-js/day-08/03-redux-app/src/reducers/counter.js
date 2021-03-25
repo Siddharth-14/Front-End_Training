@@ -23,8 +23,6 @@ function counterReducer( curState = { value : 0 }, action ) {
             newState = curState;
     }
 
-    console.log( newState );
-
     return newState;
 }
 
