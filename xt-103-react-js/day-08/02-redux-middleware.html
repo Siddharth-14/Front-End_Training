@@ -95,8 +95,11 @@
                 if( store.getState().counter < 10 ) {
                     next( action );
                 }
+
+                // store.dispatch( increment() );
             };
 
+            // action dispatched -> loggerMiddleware -> preventBeyond10 -> store (state update) -> preventBeyond10 -> loggerMiddleware -> subscribed views are re-rendered
             const store = Redux.createStore( counterReducer, Redux.applyMiddleware( loggerMiddleware, preventBeyond10 ) ); 
 
             // UI
