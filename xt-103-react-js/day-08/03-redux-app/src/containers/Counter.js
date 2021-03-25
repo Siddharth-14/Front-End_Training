@@ -1,31 +1,27 @@
-import React, { Component } from 'react';
 import CounterPresentation from '../components/Counter';
-import store from '../store';
-
 import {
     increment,
     decrement
 } from '../actions/creators';
 
-export default class CounterContainer extends Component {
-    increment = ( value ) => {
-        store.dispatch( increment( parseInt( value ) ) );
-    }
-    
-    decrement = ( value ) => {
-        store.dispatch( decrement( parseInt( value ) ) );
-    }
+import { connect } from 'react-redux';
 
-    render() {
-        return (
-            <CounterPresentation
-                value={store.getState().counter.value}
-                increment={this.increment}
-                decrement={this.decrement} />
-        )
-    }
-
-    componentDidMount() {
-        store.subscribe( () => this.forceUpdate() );
-    }
+function mapStateToProps( state ) {
+    return {
+        value: state.counter.value,
+    };
 }
+
+function mapDispatchToProps( dispatch ) {
+    return {
+        increment( value ) {
+            dispatch( increment( parseInt( value ) ) );
+        },
+        decrement( value ) {
+            dispatch( decrement( parseInt( value ) ) );
+        }
+    };
+}
+
+/// the component which is generated is refreshed only if what mapStateToProps returns a new value
+export default connect( mapStateToProps, mapDispatchToProps )( CounterPresentation );
