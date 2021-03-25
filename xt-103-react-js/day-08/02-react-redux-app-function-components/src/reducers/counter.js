@@ -26,4 +26,9 @@ function counterReducer( curState = { value : 0 }, action ) {
     return newState;
 }
 
+// Selectors
+export function selectValue( state ) {
+    return state.counter.value;
+}
+
 export default counterReducer;
