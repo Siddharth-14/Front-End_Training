@@ -1,5 +1,3 @@
-// EXERCISE: Define appropriate mapStateToProps() and mapDispatchToProps(). Use connect() to generate the container component automatically
-
 import React, { Component } from 'react';
 import UserFormPresentation from '../components/UserForm';
 import store from '../store';
