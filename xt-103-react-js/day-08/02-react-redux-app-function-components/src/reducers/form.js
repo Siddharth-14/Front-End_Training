@@ -19,4 +19,8 @@ function formReducer( curState = { username : '' }, action ) {
     return newState;
 }
 
+export function selectUsername( state ) {
+    return state.form.username;
+}
+
 export default formReducer;
