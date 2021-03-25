@@ -1,45 +1,42 @@
 import React from 'react';
 import axios from 'axios';
+import { useSelector, useDispatch } from 'react-redux';
+import {
+    workshopsLoading,
+    workshopsLoaded,
+    workshopsErrorLoading,
+    WORKSHOPS_LIST_LOADING,
+    WORKSHOPS_LIST_LOADED,
+    WORKSHOPS_LIST_ERROR_LOADING
+} from '../actions';
+
+import { getWorkshops } from '../reducers/workshops';
 
 function WorkshopsList() {
-    const [ state, setState ] = React.useState({
-        status: WorkshopsList.LOADING,
-        workshops: null,
-        error: null
-    });
+    const dispatch = useDispatch();
+    const { status, workshops, error } = useSelector( getWorkshops );
 
-    console.log( 'state = ', state );
-
-    const { status, workshops, error } = state;
-    
     React.useEffect(() => {
+        dispatch( workshopsLoading() );
+
         axios.get( `https://workshops-server.herokuapp.com/workshops` )
             .then(response => {
-                setState({
-                    // spread the existing state object if you want to preserve existing state properties
-                    // ...state,
-                    status: WorkshopsList.LOADED,
-                    workshops: response.data
-                });
+                dispatch( workshopsLoaded( response.data ) );
             })
             .catch(error => {
-                setState({
-                    // ...state,
-                    status: WorkshopsList.ERROR_LOADING,
-                    error
-                });
+                dispatch( workshopsErrorLoading( error ) );
             });
     }, [ ]);
 
     let el;
 
     switch( status ) {
-        case WorkshopsList.LOADING:
+        case WORKSHOPS_LIST_LOADING:
             el = (
                 <div>We are fetching workshops. Please wait</div>
             );
             break;
-        case WorkshopsList.LOADED:
+        case WORKSHOPS_LIST_LOADED:
             el = (
                 <ul>
                 {
@@ -50,7 +47,7 @@ function WorkshopsList() {
                 </ul>
             );
             break;
-        case WorkshopsList.ERROR_LOADING:
+        case WORKSHOPS_LIST_ERROR_LOADING:
             el = (
                 <div>{error.message}</div>
             );
@@ -61,9 +58,5 @@ function WorkshopsList() {
 
     return el;
 }
-
-WorkshopsList.LOADING = 'LOADING';
-WorkshopsList.LOADED = 'LOADED';
-WorkshopsList.ERROR_LOADING = 'ERROR_LOADING';
 
 export default WorkshopsList;

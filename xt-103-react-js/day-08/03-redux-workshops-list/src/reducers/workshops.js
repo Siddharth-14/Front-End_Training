@@ -8,7 +8,7 @@ const initialState = {
     status: '',
     workshops: null,
     error: null
-}
+};
 
 function workshopsReducer( curState = initialState, action ) {
     let newState;
@@ -39,6 +39,10 @@ function workshopsReducer( curState = initialState, action ) {
     }
 
     return newState;
+}
+
+export function getWorkshops( state ) {
+    return state.workshopsList;
 }
 
 export default workshopsReducer;
