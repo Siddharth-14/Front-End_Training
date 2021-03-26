@@ -4,16 +4,10 @@ function getHome( req, res ) {
     // res.send( 'Hello, Express' );
     // process.cwd() -> folder where Node proceds was started (project root folder)
     // res.sendFile( path.join( process.cwd(), 'src/views/index.html' ) );
-    res.render( 'index',{
-        title:'Home | Workshops App',
-        appName: 'Workshops App',
-        features:[
-            "You can search for workshops",
-            "You can view sessions for workshops",
-            "You can request for a session in a workshop",
-            "You can vote on sessions",
-        ]
-    } );
+    res.render( 'index', {
+        title: 'Home | Workshops App',
+        appName: 'Workshops App'
+    });
 }
 
 // EXERCISE: Do the same for about (create and serve about.html)
