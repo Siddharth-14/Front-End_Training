@@ -4,6 +4,7 @@ const indexRouter = require( './routes/index' );
 
 const app = express();
 
+// npm i ejs
 app.set( 'view engine', 'ejs' );
 app.set( 'views', path.join( process.cwd(), 'src/views' ) );
 
