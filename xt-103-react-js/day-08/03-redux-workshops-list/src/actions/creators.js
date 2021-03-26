@@ -31,9 +31,11 @@ function workshopsErrorLoading( error ) {
 }
 
 function loadWorkshopsThunk() {
-    return function( dispatch ) {
+    return function( dispatch, getState ) {
         // action
         dispatch( workshopsLoading() );
+
+        // to get store state of required call getState()
 
         // side-effect
         axios.get( `https://workshops-server.herokuapp.com/workshops` )
