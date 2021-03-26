@@ -4,6 +4,9 @@ const indexRouter = require( './routes/index' );
 
 const app = express();
 
+app.set( 'view engine', 'ejs' );
+app.set( 'views', path.join( process.cwd(), 'src/views' ) );
+
 // we set up the static file server middleware (to serve CSS, JS, images, font files etc.)
 // you can set up multiple folders by calling express.static() multiple times
 app.use( express.static( path.join( process.cwd(), 'public' ) ) )
