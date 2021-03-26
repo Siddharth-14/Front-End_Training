@@ -7,6 +7,7 @@ const errorHandler = require( './middleware/error-handler' );
 const indexRouter = require( './routes/index' );
 const workshopsRouter = require( './routes/workshops' );
 
+const authApiRouter = require( './api/routes/auth' );
 const workshopsApiRouter = require( './api/routes/workshops' );
 
 const app = express();
@@ -30,6 +31,7 @@ app.use( express.static( path.join( process.cwd(), 'public' ) ) )
 // A router can be "mounted" on a path
 app.use( indexRouter );
 app.use( workshopsRouter );
+app.use( '/api', authApiRouter );
 app.use( '/api', workshopsApiRouter );
 
 app.use( errorHandler );
