@@ -12,6 +12,9 @@ app.set( 'views', path.join( process.cwd(), 'src/views' ) );
 // reads form data and sets up req.body
 app.use( express.urlencoded() );
 
+// reads JSON data in the request body and sets it up on req.body
+app.use( express.json() );
+
 // we set up the static file server middleware (to serve CSS, JS, images, font files etc.)
 // you can set up multiple folders by calling express.static() multiple times
 app.use( express.static( path.join( process.cwd(), 'public' ) ) )
