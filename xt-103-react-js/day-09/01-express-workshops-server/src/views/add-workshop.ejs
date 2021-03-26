@@ -2,7 +2,7 @@
 <html lang="en">
     <%- include( 'partials/header', { title: title } ); -%>
     <body>
-        <%- include( 'partials/navbar', { activeLink: '/workshops' } ); -%>
+        <%- include( 'partials/navbar', { activeLink: '/workshops/add' } ); -%>
         <div class="container my-4">
             <div class="jumbotron">
                 <h1>Add a new workshop</h1>
@@ -11,6 +11,34 @@
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" name="name" id="name" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <input type="text" name="description" id="description" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="startDate">Start Date</label>
+                        <input type="date" name="startDate" id="startDate" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="endDate">End Date</label>
+                        <input type="date" name="endDate" id="endDate" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <input type="text" name="address" id="address" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input type="text" name="city" id="city" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="state">State</label>
+                        <input type="text" name="state" id="state" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="imageUrl">Image Url</label>
+                        <input type="text" name="imageUrl" id="imageUrl" class="form-control" />
                     </div>
                     <div class="form-group">
                         <input type="submit" value="Add workshop" class="btn btn-primary" />

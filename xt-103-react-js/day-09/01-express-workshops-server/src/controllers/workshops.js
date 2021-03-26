@@ -15,7 +15,14 @@ function getAddWorkshop( req, res ) {
 
 function postAddWorkshop( req, res ) {
     const formData = req.body;
-
+    formData.location = {
+        "address":formData.address,
+        "city":formData.city,
+        "state":formData.state,
+    }
+    delete formData.address;
+    delete formData.city;
+    delete formData.state;
     res.json( formData );
 }
 
