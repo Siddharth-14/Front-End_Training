@@ -7,6 +7,20 @@ function getWorkshops( req, res ) {
     });
 }
 
+function getAddWorkshop( req, res ) {
+    res.render( 'add-workshop', {
+        title: 'Add Workshop | Workshops App'
+    });
+}
+
+function postAddWorkshop( req, res ) {
+    const formData = req.body;
+
+    res.json( formData );
+}
+
 module.exports = {
-    getWorkshops
+    getWorkshops,
+    getAddWorkshop,
+    postAddWorkshop
 };
