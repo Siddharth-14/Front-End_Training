@@ -1,6 +1,7 @@
 const path = require( 'path' );
 const express = require( 'express' );
 const indexRouter = require( './routes/index' );
+const workshopsRouter = require( './routes/workshops' );
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.use( express.static( path.join( process.cwd(), 'public' ) ) )
 
 // A router can be "mounted" on a path
 app.use( indexRouter );
+app.use( workshopsRouter );
 
 const PORT = process.env.PORT || 3000;
 
