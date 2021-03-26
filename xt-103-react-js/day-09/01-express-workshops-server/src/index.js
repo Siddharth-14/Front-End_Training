@@ -3,6 +3,8 @@ const express = require( 'express' );
 const indexRouter = require( './routes/index' );
 const workshopsRouter = require( './routes/workshops' );
 
+const workshopsApiRouter = require( './api/routes/workshops' );
+
 const app = express();
 
 // npm i ejs
@@ -22,6 +24,7 @@ app.use( express.static( path.join( process.cwd(), 'public' ) ) )
 // A router can be "mounted" on a path
 app.use( indexRouter );
 app.use( workshopsRouter );
+app.use( '/api', workshopsApiRouter );
 
 const PORT = process.env.PORT || 3000;
 
