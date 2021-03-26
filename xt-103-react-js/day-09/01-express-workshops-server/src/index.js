@@ -1,5 +1,9 @@
 const path = require( 'path' );
 const express = require( 'express' );
+
+const requestLogger = require( './middleware/request-logger' );
+const errorHandler = require( './middleware/error-handler' );
+
 const indexRouter = require( './routes/index' );
 const workshopsRouter = require( './routes/workshops' );
 
@@ -10,6 +14,8 @@ const app = express();
 // npm i ejs
 app.set( 'view engine', 'ejs' );
 app.set( 'views', path.join( process.cwd(), 'src/views' ) );
+
+app.use( requestLogger );
 
 // reads form data and sets up req.body
 app.use( express.urlencoded() );
@@ -25,6 +31,8 @@ app.use( express.static( path.join( process.cwd(), 'public' ) ) )
 app.use( indexRouter );
 app.use( workshopsRouter );
 app.use( '/api', workshopsApiRouter );
+
+app.use( errorHandler );
 
 const PORT = process.env.PORT || 3000;
 
