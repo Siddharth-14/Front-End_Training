@@ -1,8 +1,13 @@
+const path = require( 'path' );
 const express = require( 'express' );
 const indexRouter = require( './routes/index' );
 
 const app = express();
 
+// we set up the static file server middleware (to serve CSS, JS, images, font files etc.)
+app.use( express.static( path.join( process.cwd(), 'public' ) ) )
+
+// A router can be "mounted" on a path
 app.use( indexRouter );
 
 const PORT = process.env.PORT || 3000;
