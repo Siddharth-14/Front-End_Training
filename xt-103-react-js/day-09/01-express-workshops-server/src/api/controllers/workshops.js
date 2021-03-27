@@ -6,28 +6,21 @@ function getWorkshops( req, res ) {
 
 function getWorkshopById( req, res ) {
     const id = parseInt( req.params.id, 10 );
-    const fieldsStr = req.query.fields;
-    let fields;
-
-    if( fieldsStr ) {
-        fields = fieldsStr.split( ',' );
-    }
-
-    const workshop = workshops.find( workshop => workshop.id === id );
-
-    if( workshop ) {
+    const start = req.query.start;
+    const end = req.query.end;
+    
+    const workshop = workshops.filter( workshop => {
+        if(workshop.id>=start && workshop.id<=end){
+            return workshop;
+        };
+    })
+    
+    if( workshop.length>0 ) {
+        
         const workskhopWithFields = {};
-
-        if( fields ) {
             for( let key in workshop ) {
-                if( fields.includes( key ) ) {
                     workskhopWithFields[key] = workshop[key];
-                }
             }
-        } else {
-            workskhopWithFields = workshop;
-        }
-
         res.json( workskhopWithFields );
     } else {
         res.status( 404 );
