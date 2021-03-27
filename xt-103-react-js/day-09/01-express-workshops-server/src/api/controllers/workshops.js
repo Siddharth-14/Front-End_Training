@@ -1,22 +1,25 @@
 const workshops = require( '../../../data/workshops.json' );
 
+// can be called as /api/workshops?start=start_id&end=end_id
 function getWorkshops( req, res ) {
     res.json( workshops );
 }
 
 function getWorkshopById( req, res ) {
     const id = parseInt( req.params.id, 10 );
-    const start = req.query.start;
-    const end = req.query.end;
-    
-    const workshop = workshops.filter( workshop => {
-        if(workshop.id>=start && workshop.id<=end){
-            return workshop;
-        };
-    })
-    
-    if( workshop.length>0 ) {
-        
+    const fieldsStr = req.query.fields;
+    let fields;
+
+    if( fieldsStr ) {
+        fields = fieldsStr.split( ',' );
+    }
+
+    const workshop = workshops.find( workshop => workshop.id === id );
+
+    // to get an array with a subset of items
+    // const requiredWorkshops = workshops.filter( workshop => workshop.id >= 2 && workshop.id <= 5 )
+
+    if( workshop ) {
         const workskhopWithFields = {};
             for( let key in workshop ) {
                     workskhopWithFields[key] = workshop[key];
