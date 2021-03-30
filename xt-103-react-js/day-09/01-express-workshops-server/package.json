@@ -4,7 +4,8 @@
     "description": "",
     "main": "src/index.js",
     "scripts": {
-        "start": "nodemon .",
+        "start:nodemon": "nodemon .",
+        "start": "node .",
         "copy:libs": "cpx \"node_modules/bootstrap/dist/**/*.*\" public/bootstrap"
     },
     "keywords": [],
