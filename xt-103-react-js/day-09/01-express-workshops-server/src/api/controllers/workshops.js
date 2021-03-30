@@ -2,6 +2,9 @@ const workshops = require( '../../../data/workshops.json' );
 
 // can be called as /api/workshops?start=start_id&end=end_id
 function getWorkshops( req, res ) {
+    // const claims = res.local.claims;
+    // const claims = req.claims;
+
     res.json( workshops );
 }
 
