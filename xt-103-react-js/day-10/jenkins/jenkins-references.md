@@ -9,4 +9,3 @@
 - [Pipeline Examples](https://www.jenkins.io/doc/pipeline/examples/)
 - [Jenkins - Tutorial](https://www.jenkins.io/doc/pipeline/tour/getting-started/)
 - [Build a Node.js and React app with npm](https://www.jenkins.io/doc/tutorials/build-a-node-js-and-react-app-with-npm/)
-- [Hosting a MERN Application using a fully automated DevOps Pipeline, by Nishkarsh Raj, on Medium.com](https://medium.com/@noicecurse/hosting-a-containerized-mern-application-on-aws-fargate-c96a971ca4ce)

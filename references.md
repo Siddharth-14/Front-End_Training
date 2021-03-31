@@ -7,6 +7,7 @@ Lab guides for various topics can be found [here](./docs/lab-guides/)
 - [How to manage React State with Arrays](https://www.robinwieruch.de/react-state-array-add-update-remove)
 - [How to fetch data with React Hooks?](https://www.robinwieruch.de/react-hooks-fetch-data)
 - [5 Tips to Improve the Performance of Your React Apps - DigitalOcean](https://www.digitalocean.com/community/tutorials/react-keep-react-fast)
+- [Atomic Design and ReactJS, by Danilo Woznica](https://danilowoz.com/blog/atomic-design-with-react)
 
 ## GIT
 - [Supplied documentation](./docs/01-git.pdf)
