@@ -10,8 +10,8 @@
     - Economies of scale - per unit cost of resource is lower in cloud
 - Cloud service providers
     - Amazon Web Services
-    - Google Cloud Platform
     - Microsoft Azure
+    - Google Cloud Platform
 - No upfront cost
     - We "pay as we use the resources"
 - Our application is up and running
